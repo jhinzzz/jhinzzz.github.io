@@ -1,2 +1,1421 @@
-<!DOCTYPE html><meta charset="utf-8"><meta http-equiv="refresh" content="0; URL=https://jhinzzz.github.io/">
-<meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026全球地缘经济与投资策略深度分析</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --war-color: #dc2626;
+            --oil-color: #d97706;
+            --dollar-color: #1e40af;
+            --gold-color: #b45309;
+            --economy-color: #16a34a;
+            --primary-dark: #0f172a;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --border-light: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 0.75rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .navbar-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .navbar-logo span {
+            color: var(--gold-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-menu a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.4rem 0.6rem;
+            border-radius: 6px;
+        }
+
+        .nav-menu a:hover {
+            color: #ffffff;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav-menu a.war { color: #fca5a5; }
+        .nav-menu a.oil { color: #fcd34d; }
+        .nav-menu a.dollar { color: #93c5fd; }
+        .nav-menu a.gold { color: #fcd34d; }
+        .nav-menu a.economy { color: #86efac; }
+
+        /* 英雄区 */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #1e3a8a 100%);
+            min-height: 45vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 2rem 3rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(217, 119, 6, 0.2);
+            border: 1px solid #d97706;
+            color: #fcd34d;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        /* 核心结论卡片 */
+        .executive-summary {
+            max-width: 1100px;
+            margin: -3rem auto 2rem;
+            padding: 2rem;
+            background: var(--bg-white);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .executive-summary h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .summary-card {
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid;
+        }
+
+        .summary-card.war { background: #fef2f2; border-color: var(--war-color); }
+        .summary-card.oil { background: #fffbeb; border-color: var(--oil-color); }
+        .summary-card.dollar { background: #eff6ff; border-color: var(--dollar-color); }
+        .summary-card.gold { background: #fffbeb; border-color: var(--gold-color); }
+        .summary-card.economy { background: #f0fdf4; border-color: var(--economy-color); }
+
+        .summary-card h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-card p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* 模块章节 */
+        .module {
+            background: var(--bg-white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+        }
+
+        .module.war::before { background: linear-gradient(180deg, var(--war-color), #991b1b); }
+        .module.oil::before { background: linear-gradient(180deg, var(--oil-color), #92400e); }
+        .module.dollar::before { background: linear-gradient(180deg, var(--dollar-color), #1e3a8a); }
+        .module.gold::before { background: linear-gradient(180deg, var(--gold-color), #78350f); }
+        .module.economy::before { background: linear-gradient(180deg, var(--economy-color), #166534); }
+
+        .module-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        .module-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .module.war .module-icon { background: linear-gradient(135deg, var(--war-color), #991b1b); }
+        .module.oil .module-icon { background: linear-gradient(135deg, var(--oil-color), #92400e); }
+        .module.dollar .module-icon { background: linear-gradient(135deg, var(--dollar-color), #1e3a8a); }
+        .module.gold .module-icon { background: linear-gradient(135deg, var(--gold-color), #78350f); }
+        .module.economy .module-icon { background: linear-gradient(135deg, var(--economy-color), #166534); }
+
+        .module-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .module-header .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-left: 0.5rem;
+        }
+
+        /* 结论框 */
+        .conclusion-box {
+            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+            border-left: 4px solid var(--economy-color);
+            padding: 1.25rem 1.5rem;
+            margin: 1.25rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .conclusion-box.warning {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border-left-color: var(--oil-color);
+        }
+
+        .conclusion-box.danger {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            border-left-color: var(--war-color);
+        }
+
+        .conclusion-box.info {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border-left-color: var(--dollar-color);
+        }
+
+        .conclusion-box.gold {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border-left-color: var(--gold-color);
+        }
+
+        .conclusion-box h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .conclusion-box p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .conclusion-box ul {
+            margin: 0.75rem 0 0 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .conclusion-box li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* 数据网格 */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 0.75rem;
+            margin: 1.25rem 0;
+        }
+
+        .data-card {
+            background: linear-gradient(135deg, var(--bg-light), #f1f5f9);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .data-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .data-card .value {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .data-card.war .value { color: var(--war-color); }
+        .data-card.oil .value { color: var(--oil-color); }
+        .data-card.dollar .value { color: var(--dollar-color); }
+        .data-card.gold .value { color: var(--gold-color); }
+        .data-card.economy .value { color: var(--economy-color); }
+
+        .data-card .label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* 场景卡片 */
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.25rem 0;
+        }
+
+        .scenario-card {
+            background: var(--bg-white);
+            border: 2px solid var(--border-light);
+            border-radius: 10px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .scenario-card:hover {
+            border-color: var(--dollar-color);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.1);
+        }
+
+        .scenario-probability {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .scenario-probability.high { background: #dcfce7; color: #166534; }
+        .scenario-probability.medium { background: #fef3c7; color: #92400e; }
+        .scenario-probability.low { background: #fee2e2; color: #991b1b; }
+
+        .scenario-card h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .scenario-card p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* 表格 */
+        .table-container {
+            overflow-x: auto;
+            margin: 1.25rem 0;
+            border-radius: 10px;
+            border: 1px solid var(--border-light);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-white);
+            font-size: 0.8rem;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .data-table th {
+            background: linear-gradient(135deg, var(--primary-dark), #1e3a8a);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:hover {
+            background: var(--bg-light);
+        }
+
+        /* 对比卡片 */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.25rem 0;
+        }
+
+        .comparison-card {
+            background: var(--bg-white);
+            border: 2px solid var(--border-light);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .comparison-card h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .comparison-card p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* 标签 */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1.25rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.65rem;
+            font-weight: 500;
+            border: 1px solid var(--border-light);
+        }
+
+        .tag.war { background: #fef2f2; color: var(--war-color); border-color: #fecaca; }
+        .tag.oil { background: #fffbeb; color: var(--oil-color); border-color: #fde68a; }
+        .tag.dollar { background: #eff6ff; color: var(--dollar-color); border-color: #bfdbfe; }
+        .tag.gold { background: #fffbeb; color: var(--gold-color); border-color: #fcd34d; }
+        .tag.economy { background: #f0fdf4; color: var(--economy-color); border-color: #bbf7d0; }
+
+        /* 页脚 */
+        .footer {
+            background: var(--primary-dark);
+            color: #ffffff;
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer p {
+            color: #94a3b8;
+            font-size: 0.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .footer-divider {
+            width: 50px;
+            height: 3px;
+            background: var(--gold-color);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .navbar-inner {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .nav-menu {
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            .hero {
+                padding: 4rem 1rem 2rem;
+                min-height: 35vh;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .executive-summary {
+                margin: -2rem 1rem 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .module {
+                padding: 1.5rem 1rem;
+            }
+
+            .module-header h2 {
+                font-size: 1.25rem;
+            }
+
+            .summary-grid,
+            .data-grid,
+            .scenario-grid,
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .module {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+
+        .module:nth-child(2) { animation-delay: 0.1s; }
+        .module:nth-child(3) { animation-delay: 0.15s; }
+        .module:nth-child(4) { animation-delay: 0.2s; }
+        .module:nth-child(5) { animation-delay: 0.25s; }
+        .module:nth-child(6) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-logo">🌍 全球<span>地缘经济</span></div>
+            <ul class="nav-menu">
+                <li><a href="#war" class="war">⚔️ 战争</a></li>
+                <li><a href="#oil" class="oil">🛢️ 原油</a></li>
+                <li><a href="#dollar" class="dollar">💵 美元</a></li>
+                <li><a href="#gold" class="gold">🥇 黄金</a></li>
+                <li><a href="#economy" class="economy">📊 经济</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 英雄区 -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">📊 深度投资分析报告</span>
+            <h1>2026全球地缘经济与投资策略</h1>
+            <p>五大核心模块深度分析 · 数据驱动 · 结论明确</p>
+            <div class="hero-meta">
+                <span>📅 2026年3月25日</span>
+                <span>🌐 全球视角</span>
+                <span>📈 投资导向</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心结论摘要 -->
+    <div class="executive-summary">
+        <h3>🎯 核心结论摘要</h3>
+        <div class="summary-grid">
+            <div class="summary-card war">
+                <h4>⚔️ 战争局势</h4>
+                <p>特朗普最可能"宣布胜利撤军+有限核协议"，概率60%以上，4-6周内见分晓</p>
+            </div>
+            <div class="summary-card oil">
+                <h4>🛢️ 原油走势</h4>
+                <p>霍尔木兹海峡危机持续，油价100-120美元维持6个月以上，滞胀格局锁定</p>
+            </div>
+            <div class="summary-card dollar">
+                <h4>💵 美元周期</h4>
+                <p>短期105-106见顶，中期回落102-103，长期下行通道95-98，拐点临近</p>
+            </div>
+            <div class="summary-card gold">
+                <h4>🥇 黄金策略</h4>
+                <p>暴跌21%是流动性危机历史复刻，4100-4300美元是优质布局窗口，长期突破6000美元</p>
+            </div>
+            <div class="summary-card economy">
+                <h4>📊 经济风险</h4>
+                <p>美国衰退概率40-45%，CPI上行风险+就业走弱，滞胀而非短期衰退</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主容器 -->
+    <div class="container">
+
+        <!-- 战争模块 -->
+        <section id="war" class="module war">
+            <div class="module-header">
+                <div class="module-icon">⚔️</div>
+                <div>
+                    <h2>中东战争局势分析</h2>
+                    <span class="subtitle">伊朗冲突五种终局场景推演</span>
+                </div>
+            </div>
+
+            <div class="conclusion-box danger">
+                <h4>🎯 核心结论</h4>
+                <p><strong>最可能终局：</strong>"单边宣布胜利撤军 + 有限核协议折中"是唯一具备现实可行性的选项，概率60%以上。通过大规模空袭摧毁伊朗核设施、导弹与无人机产能，随后通过第三方斡旋达成"有限核协议"，特朗普以"摧毁了伊朗核威胁"为由宣布胜利并撤军。</p>
+                <p><strong>时间窗口：</strong>4-6周内见分晓，每拖延一周都会加深美国国内经济阵痛和海外不稳定局势。</p>
+            </div>
+
+            <h3>📋 五种终局场景概率评估</h3>
+            <div class="scenario-grid">
+                <div class="scenario-card">
+                    <span class="scenario-probability high">概率：高 (60%+)</span>
+                    <h4>场景五：宣布胜利撤军</h4>
+                    <p>特朗普认定伊朗导弹和无人机能力已被削弱到足够程度，宣布历史性胜利并撤军。市场一直在押注特朗普将快速退出，尤其是当美国国内经济阵痛可能成为严重政治问题之时。</p>
+                </div>
+
+                <div class="scenario-card">
+                    <span class="scenario-probability medium">概率：中等 (25%)</span>
+                    <h4>场景一：谈判停火与核协议</h4>
+                    <p>终结伊朗核武器计划是特朗普宣称的关键目标。阿曼调解人表示伊朗已同意永不储存浓缩铀，和平"触手可及"。但特朗普对强硬派接班人感到失望，重启谈判不确定性极高。</p>
+                </div>
+
+                <div class="scenario-card">
+                    <span class="scenario-probability low">概率：中低 (10%)</span>
+                    <h4>场景三：政权倒台</h4>
+                    <p>哈梅内伊已死，经济崩溃，伊朗经历1979年革命以来最大规模抗议。但反对派没有统一领导人，地面没有有组织力量。流亡王储礼萨·巴列维最受欢迎，但特朗普淡化其可信度。</p>
+                </div>
+
+                <div class="scenario-card">
+                    <span class="scenario-probability low">概率：低 (4%)</span>
+                    <h4>场景二：委内瑞拉模式</h4>
+                    <p>特朗普曾试图在伊朗复制政权更迭。但伊朗政权已在制裁、战争和内乱中生存47年，通过军事、宗教和政治制度根深蒂固。美国支持的领导人可能被视为背叛而非解放。</p>
+                </div>
+
+                <div class="scenario-card">
+                    <span class="scenario-probability low">概率：极低 (1%)</span>
+                    <h4>场景四：特种部队突袭核库存</h4>
+                    <p>美以已讨论向伊朗派遣特种部队夺取或摧毁高浓缩铀库存。但需要实地部署到仍在发射弹道导弹的国家，军事风险极高，容错率极低。</p>
+                </div>
+            </div>
+
+            <h3>🔍 信号混乱的本质分析</h3>
+            <div class="conclusion-box info">
+                <p>所谓"信号混乱"绝非决策失误，而是特朗普式交易型政治的刻意战术：</p>
+                <ul>
+                    <li><strong>对金融市场、中间选民：</strong>释放"战争不会长期化"的安抚信号</li>
+                    <li><strong>对共和党强硬派、军工复合体、以色列：</strong>释放"绝不半途而废"的强硬信号</li>
+                </ul>
+                <p><strong>关键矛盾：</strong>特朗普周一表示"美国已经赢得了战争，但我们赢得还不够"，与此前称战争"非常完整，差不多结束了"仅隔数小时。国防部长赫格塞斯同时表示"将是我们迄今为止最猛烈的打击日"。</p>
+            </div>
+
+            <div class="tags">
+                <span class="tag war">地缘政治</span>
+                <span class="tag war">中东局势</span>
+                <span class="tag war">政权更迭</span>
+                <span class="tag war">核协议</span>
+                <span class="tag war">军事行动</span>
+            </div>
+        </section>
+
+        <!-- 原油模块 -->
+        <section id="oil" class="module oil">
+            <div class="module-header">
+                <div class="module-icon">🛢️</div>
+                <div>
+                    <h2>原油市场与能源危机</h2>
+                    <span class="subtitle">霍尔木兹海峡危机与油价走势</span>
+                </div>
+            </div>
+
+            <div class="conclusion-box warning">
+                <h4>🎯 核心结论</h4>
+                <p><strong>油价区间：</strong>100-120美元维持6个月以上概率极高，滞胀格局锁定。</p>
+                <p><strong>供应缺口：</strong>霍尔木兹海峡航运近乎停滞，超1000艘船只被困波斯湾，两条替代管道仅能解决近一半供应缺口。</p>
+                <p><strong>衰退阈值：</strong>油价140美元维持数月可能衰退，175美元几乎必然衰退。当前WTI 99美元、布伦特108美元。</p>
+            </div>
+
+            <h3>📊 霍尔木兹海峡危机核心数据</h3>
+            <div class="data-grid">
+                <div class="data-card oil">
+                    <div class="value">700万桶/日</div>
+                    <div class="label">沙特东西管道运力</div>
+                </div>
+                <div class="data-card oil">
+                    <div class="value">180万桶/日</div>
+                    <div class="label">阿联酋管道运力</div>
+                </div>
+                <div class="data-card oil">
+                    <div class="value">1000万桶/日</div>
+                    <div class="label">仍被困波斯湾</div>
+                </div>
+                <div class="data-card oil">
+                    <div class="value">20%</div>
+                    <div class="label">海峡流量恢复率</div>
+                </div>
+                <div class="data-card oil">
+                    <div class="value">99美元</div>
+                    <div class="label">当前WTI油价</div>
+                </div>
+                <div class="data-card oil">
+                    <div class="value">108美元</div>
+                    <div class="label">当前布伦特油价</div>
+                </div>
+            </div>
+
+            <h3>⚠️ 无法突破的四大核心局限</h3>
+            <div class="conclusion-box warning">
+                <ul>
+                    <li><strong>运力覆盖不足：</strong>即便两条管道满负荷运行，每日仍有约1000万桶原油被困波斯湾，仅能解决近一半的供应缺口</li>
+                    <li><strong>管道运行短板：</strong>沙特东西管道从未长时间满负荷运行，长期高负荷运转的稳定性仍待验证</li>
+                    <li><strong>航运体系瘫痪：</strong>当前霍尔木兹海峡油轮流量仅恢复至战前日均水平的20%，多数欧洲油轮高管仍不敢派船通航</li>
+                    <li><strong>安全风险悬顶：</strong>两条管道均暴露在伊朗打击范围内，专家直言"攻击这些管道并不特别困难"</li>
+                </ul>
+            </div>
+
+            <h3>💡 独特见解：40年路径依赖清算</h3>
+            <div class="conclusion-box info">
+                <p>两条管道的应急启用，撕开了全球能源供应链40年的核心顽疾：对霍尔木兹海峡的路径依赖从未真正解决，所谓的能源安全预案全是"纸面冗余"。</p>
+                <p><strong>定价逻辑逆转：</strong>过去十年，全球原油定价锚是美联储货币政策、中国需求与欧佩克减产。但本次危机后，两条管道的最大运力就是全球原油供应的刚性底线，地缘冲突升级风险才是决定油价走势的核心变量。</p>
+                <p><strong>海湾国家战略中立权：</strong>这两条管道本质是海湾国家在美伊冲突中的"战略中立权"筹码——可以通过管道维持原油出口保住财政收入，同时向美国兑现承诺，又能向伊朗传递信号。</p>
+            </div>
+
+            <h3>🇺🇸 美国经济对油价冲击的承受能力</h3>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>✅ 免疫能力跃升</h4>
+                    <p>2025年美国原油日均产量1361万桶，全球第一。石油消费占GDP比重从1970年代6.5%降至当前1%左右。美国已是石油+成品油净出口国，日均净出口210万桶。</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>⚠️ 被低估的4个风险</h4>
+                    <p>页岩油缓冲能力基本消失（产能增速从12%降至2%）；经济脆弱性显现（非农流失9.2万，失业率4.4%）；选举周期压低衰退阈值（汽油3.88美元/加仑接近4美元红线）；美联储政策空间不足（利率3.5%-3.75%）。</p>
+                </div>
+            </div>
+
+            <div class="conclusion-box danger">
+                <h4>🔒 滞胀锁定而非短期衰退</h4>
+                <p>只要油价维持在100-120美元区间超过6个月，就会形成"油价上涨→通胀传导→美联储无法降息→高利率维持→企业投资收缩→经济低增长"的恶性循环。</p>
+                <p><strong>贫富分化加剧：</strong>高油价收益集中在德州等能源州和石油巨头，成本由全美3.3亿居民承担，加剧消费分化。</p>
+            </div>
+
+            <div class="tags">
+                <span class="tag oil">霍尔木兹海峡</span>
+                <span class="tag oil">石油管道</span>
+                <span class="tag oil">能源安全</span>
+                <span class="tag oil">供应链危机</span>
+                <span class="tag oil">滞胀风险</span>
+            </div>
+        </section>
+
+        <!-- 美元模块 -->
+        <section id="dollar" class="module dollar">
+            <div class="module-header">
+                <div class="module-icon">💵</div>
+                <div>
+                    <h2>美元走势深度分析</h2>
+                    <span class="subtitle">高盛+巴克莱观点整合与验证</span>
+                </div>
+            </div>
+
+            <div class="conclusion-box info">
+                <h4>🎯 核心结论</h4>
+                <p><strong>高盛观点：</strong>当前美元上涨是市场定价伊朗冲突的"通胀/贸易冲击"，若关注点转向"增长下行风险"，美元涨势将显著放缓。</p>
+                <p><strong>巴克莱观点：</strong>本轮美元涨幅显著不及利差变动对应水平，核心是特朗普政策不可预测性带来的"风险溢价"压制了美元上行空间。</p>
+                <p><strong>综合判断：</strong>本轮美元3月飙升难以长期维持，短期仍有温和上行空间，但中期面临三重不可逆压制，美元全球避险霸权正在出现边际松动。</p>
+            </div>
+
+            <h3>📊 美元指数走势预测</h3>
+            <div class="data-grid">
+                <div class="data-card dollar">
+                    <div class="value">105-106</div>
+                    <div class="label">短期顶部(1个月内)</div>
+                </div>
+                <div class="data-card dollar">
+                    <div class="value">102-103</div>
+                    <div class="label">中期回落(1-3个月)</div>
+                </div>
+                <div class="data-card dollar">
+                    <div class="value">95-98</div>
+                    <div class="label">长期底部(6个月+)</div>
+                </div>
+                <div class="data-card dollar">
+                    <div class="value">4-6周</div>
+                    <div class="label">周期切换时间</div>
+                </div>
+            </div>
+
+            <h3>🔍 两大机构观点全维度验证</h3>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>机构</th>
+                            <th>核心论点</th>
+                            <th>数据验证</th>
+                            <th>局限性</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>高盛</strong></td>
+                            <td>美元上涨由"通胀冲击+美联储推迟降息+利差走阔"驱动，转向衰退定价后涨势放缓</td>
+                            <td>伊朗冲突后美元指数涨近2%，美欧利差1.2%扩大至1.8%；历史规律100%匹配（1990海湾战争、2022俄乌冲突）</td>
+                            <td>低估美国增长下行风险；低估衰退周期中美元避险属性分化；忽视特朗普政策长期压制</td>
+                        </tr>
+                        <tr>
+                            <td><strong>巴克莱</strong></td>
+                            <td>美元涨幅不及利差对应水平，特朗普政策"风险溢价"压制上行，科技股支撑逻辑弱化</td>
+                            <td>按美欧利差60BP对应欧元应跌3%-4%，仅上涨1.5%；AI股涨150%后冲突爆发净流入环比降62%</td>
+                            <td>低估全球衰退周期中美元终极避险属性；高估政策风险短期影响</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>💡 超越机构的4个核心见解</h3>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>1. 美元天花板已锁定</h4>
+                    <p>特朗普频繁动用美元制裁、中东军事冲突推动石油非美元结算、对美联储持续施压，正在从根基上瓦解美元霸权核心支撑。</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>2. 周期切换比预期快</h4>
+                    <p>亚特兰大联储GDPNow对Q1增速预测从2.7%降至2.0%；消费者信心跌至3个月新低；汽油价格逼近4美元选举红线。预计4-6周完成从"通胀担忧"到"衰退担忧"切换。</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>3. 日元最强避险货币</h4>
+                    <p>日本央行是G10中唯一仍维持宽松的央行；日本是全球最大净债权国，海外净资产超3.7万亿美元。历史上每轮全球衰退周期中，日元都是G10表现最好货币，本轮升值幅度大概率超15%。</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>4. 新兴市场极端分化</h4>
+                    <p>能源进口国（土耳其、埃及、阿根廷等）面临油价上涨+美元走强+资本外流三重打击；能源出口国（俄罗斯、沙特、阿联酋等）从油价上涨获巨额顺差，货币逆势走强成避险资产。</p>
+                </div>
+            </div>
+
+            <div class="conclusion-box info">
+                <h4>📈 对大类资产的影响</h4>
+                <ul>
+                    <li><strong>G10货币：</strong>日元、瑞郎显著跑赢美元、欧元、英镑，日元兑美元年内升值目标15%</li>
+                    <li><strong>美股：</strong>能源板块受益高油价，科技股、消费股面临盈利下滑+利率上行戴维斯双杀，纳指仍有10%-15%下跌空间</li>
+                    <li><strong>美债：</strong>短期受鹰派预期压制收益率高位，衰退定价切换后10年期收益率快速回落至3.8%以下</li>
+                </ul>
+            </div>
+
+            <div class="tags">
+                <span class="tag dollar">高盛观点</span>
+                <span class="tag dollar">巴克莱观点</span>
+                <span class="tag dollar">美元周期</span>
+                <span class="tag dollar">日元避险</span>
+                <span class="tag dollar">去美元化</span>
+            </div>
+        </section>
+
+        <!-- 黄金模块 -->
+        <section id="gold" class="module gold">
+            <div class="module-header">
+                <div class="module-icon">🥇</div>
+                <div>
+                    <h2>黄金市场与投资策略</h2>
+                    <span class="subtitle">暴跌本质、避险属性争议与最终投资建议</span>
+                </div>
+            </div>
+
+            <div class="conclusion-box gold">
+                <h4>🎯 核心结论</h4>
+                <p><strong>暴跌本质：</strong>本次伊朗战争后黄金暴跌15%-21%，<strong>绝非避险属性失效</strong>，而是<strong>流动性危机下的历史规律复刻</strong>，与2008年金融危机、2020年疫情初期的黄金走势完全一致。</p>
+                <p><strong>核心认知误区：</strong>市场对黄金"避险失灵"的质疑，本质是混淆了黄金避险功能的<strong>两大适用场景</strong>——黄金的核心避险功能是对冲<strong>中长期主权信用贬值、滞胀、地缘格局重构风险</strong>，而非<strong>短期美元流动性枯竭下的保证金挤兑风险</strong>。</p>
+                <p><strong>投资机会：</strong>本次下跌没有改变黄金的长期结构性牛市逻辑，短期情绪性杀跌反而创造了长线布局窗口。4100-4300美元是优质布局窗口，中期目标4800-5354美元，长期突破6000美元。</p>
+                <p><strong>核心原则：</strong>极端下跌从来不是风险，而是长线布局的黄金坑。</p>
+            </div>
+
+            <h3>📊 当前市场核心数据</h3>
+            <div class="data-grid">
+                <div class="data-card gold">
+                    <div class="value">-21%</div>
+                    <div class="label">较峰值跌幅</div>
+                </div>
+                <div class="data-card gold">
+                    <div class="value">108亿美元</div>
+                    <div class="label">全球黄金ETF流出</div>
+                </div>
+                <div class="data-card gold">
+                    <div class="value">4100美元</div>
+                    <div class="label">渣打技术支撑</div>
+                </div>
+                <div class="data-card gold">
+                    <div class="value">5594美元</div>
+                    <div class="label">1月峰值</div>
+                </div>
+                <div class="data-card gold">
+                    <div class="value">5000美元</div>
+                    <div class="label">亚德尼年底目标</div>
+                </div>
+                <div class="data-card gold">
+                    <div class="value">6000美元</div>
+                    <div class="label">Global X预期</div>
+                </div>
+            </div>
+
+            <h3>🔍 核心认知误区拆解：黄金的"避险失灵"是市场的场景错配</h3>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>✅ 黄金真正的核心避险场景（长期有效，从未失效）</h4>
+                    <p>黄金的避险属性，本质是对冲<strong>法定货币信用贬值、主权债务违约、长期滞胀、地缘格局重构、全球货币体系动荡</strong>的终极风险。这是其5000年货币属性决定的，也是过去4年全球央行持续大规模购金的核心原因。</p>
+                    <p><strong>本次验证：</strong>美伊冲突带来的长期影响（石油美元体系松动、全球去美元化加速、美国主权债务风险上升、滞胀格局锁定）都在持续强化黄金的长期避险价值，与短期价格下跌完全无关。</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>❌ 黄金必然"失效"的短期场景（历史规律，本次完美复刻）</h4>
+                    <p>当市场出现<strong>全球性美元流动性枯竭、保证金挤兑、现金为王</strong>的极端恐慌时，所有资产都会被无差别抛售，包括黄金、美债这些传统避险资产。</p>
+                    <p><strong>核心逻辑：</strong>机构在股市、债市大幅亏损后，面临追加保证金的压力，会优先抛售流动性最好、前期盈利最丰厚的资产，而黄金恰恰同时满足这两个条件——全球日均交易量超2600亿美元，流动性仅次于美债，且2024年初至2026年1月涨幅超100%，积累了大量获利盘。</p>
+                    <p><strong>历史复刻：</strong>2008年、2020年的危机初期均出现了完全一致的走势。</p>
+                </div>
+            </div>
+
+            <h3>📉 本次暴跌的四层底层原因</h3>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>层级</th>
+                            <th>原因</th>
+                            <th>权重</th>
+                            <th>详细说明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. 核心主因</strong></td>
+                            <td>黄金定价锚彻底切换</td>
+                            <td>50%</td>
+                            <td>冲突爆发前，市场定价美联储2026年降息3-4次；冲突爆发后，油价暴涨推高通胀预期，市场降息预期快速萎缩至"全年不足1次"，甚至开始定价加息概率。实际利率飙升飙升，直接穿透了黄金上涨的根基。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. 直接触发点</strong></td>
+                            <td>地缘避险溢价全面消退</td>
+                            <td>25%</td>
+                            <td>市场始终定价"冲突很快结束、霍尔木兹海峡重置"，而非长期封锁的极端场景。冲突爆发前10天，黄金维持在战前水平，已经price in了初期的冲突升级；但随后特朗普释放停火信号、市场对冲突长期化的定价始终偏乐观，地缘避险溢价快速消退，成为下跌的直接触发点。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. 下跌放大器</strong></td>
+                            <td>流动性踩踏+去杠杆</td>
+                            <td>15%</td>
+                            <td>黄金从5594美元高点下跌，首先击穿了5000美元的关键支撑位，触发了程序化止损、杠杆多头强平，形成"下跌-止损-再下跌"的踩踏循环。股市、债市的同步下跌，导致机构面临保证金追加压力，进一步抛售黄金变现，全球黄金ETF的持续流出，又加剧了现货市场的抛售压力，最终放大了跌幅。</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. 趋势助推器</strong></td>
+                            <td>投机资金主导，交易拥挤度集中释放</td>
+                            <td>10%</td>
+                            <td>过去两年，投机性投资者逐步主导了黄金市场，而非传统的珠宝消费、央行购金，这导致黄金的波动性大幅上升。2024-2025年，黄金投机性净多头持仓创历史新高，交易拥挤度处于历史95%分位以上，一旦趋势反转，获利了结的抛压会集中释放。本次下跌中，COMEX黄金投机性净多头持仓减少超40%，是2020年以来最快的减持速度，进一步助推了下跌趋势。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>🏦 机构观点汇总</h3>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>机构/分析师</th>
+                            <th>核心观点</th>
+                            <th>目标价位</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>StoneX (Rhona O'Connell)</strong></td>
+                            <td>投资者不应"落入避险的陷阱"。在股市和美国国债崩盘时，金价几乎不可避免地会跟着下跌，因为投资者需要将其变现来筹集资金。</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Berenberg (Jason Turner)</strong></td>
+                            <td>来自对冲基金和经纪商的数据表明，金融机构一直在"清算盈利的黄金头寸"，以应付股市和债市的追加保证金要求。</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vanda</strong></td>
+                            <td>自战争爆发以来，全球黄金ETF已经遭遇了约108亿美元的资金流出。</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>世界黄金协会 (John Reade)</strong></td>
+                            <td>由于这场冲突，市场中出现了"大规模的获利了结、降低风险和去杠杆化操作"。投机性投资者在去年逐渐主导了该领域，金价变得更加波动。</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BullionVault (Adrian Ash)</strong></td>
+                            <td>黄金和白银对利率预期极其敏感。不断上升的利率推高了债券收益率，使得债券对部分投资者来说比不产生利息的黄金更具吸引力。</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>蒙特利尔银行 (BMO)</strong></td>
+                            <td>一旦风险偏好回归，黄金将收复冲突中遭受的"大部分"失地。</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>亚德尼 (Ed Yardeni)</strong></td>
+                            <td>坚持到本十年末金价达到10000美元的观点，近期大跌是短期错位</td>
+                            <td>5000美元 (年底)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Global X ETFs</strong></td>
+                            <td>近期下跌是"对投资者而言极具吸引力的入场点"，不依赖战争风险溢价</td>
+                            <td>6000美元</td>
+                        </tr>
+                        <tr>
+                            <td><strong>渣打银行</strong></td>
+                            <td>受新兴市场央行需求和地缘风险支撑，技术支撑位见于4100美元附近</td>
+                            <td>5375美元 (3个月)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>🇹🇷 土耳其央行黄金掉期事件影响</h3>
+            <div class="conclusion-box info">
+                <p><strong>事件概述：</strong>土耳其央行考虑在伦敦市场开展"黄金换外汇"掉期交易支撑里拉，消息公布后现货黄金短线回落约70美元。</p>
+                <p><strong>关键数据：</strong>土耳其央行黄金储备总值1350亿美元（占总储备62%），其中300亿美元存放于英国央行；2月CPI同比31.5%（G20首位）；美债持有量从2015年820亿美元降至2026年1月168亿美元。</p>
+                <p><strong>事件本质：</strong>这是新兴市场"去美元化"进程的典型反噬，同时反向印证了黄金作为全球央行"终极储备弹药"的核心价值。</p>
+                <p><strong>市场影响：</strong>短期（1-4周）仍有100-200美元波动空间，极端情绪下可能测试4100美元；中期（1-6个月）情绪释放后快速回归原有趋势；长期（6个月以上）反向强化黄金结构性牛市逻辑。</p>
+            </div>
+
+            <h3>📜 历史复盘：本次下跌是2008/2020年的完美复刻</h3>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>历史周期</th>
+                            <th>危机场景</th>
+                            <th>短期下跌幅度</th>
+                            <th>后续走势</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>2008年金融危机</strong></td>
+                            <td>雷曼兄弟倒闭，全球流动性枯竭</td>
+                            <td>34% (10个月)</td>
+                            <td>随后迎来强势反弹，创历史新高</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2020年疫情冲击</strong></td>
+                            <td>全球股市熔断，美元流动性恐慌</td>
+                            <td>14.7% (1个月)</td>
+                            <td>随后迎来大幅上涨，突破2000美元</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2026年伊朗战争</strong></td>
+                            <td>全球股债双杀，美元流动性收紧</td>
+                            <td>21% (55天)</td>
+                            <td>历史规律显示将迎来超此前涨幅的反弹行情</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="conclusion-box gold">
+                <h4>💡 历史已经反复证明</h4>
+                <p><strong>流动性危机导致的黄金暴跌，从来都是长线布局的黄金坑，而非趋势的终结。</strong>当市场恐慌情绪释放、美元流动性缓解、美联储政策预期转向后，黄金都会迎来远超此前涨幅的反弹行情，本次也不会例外。</p>
+            </div>
+
+            <h3>💡 黄金投资深层逻辑（综合所有分析）</h3>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>1. 美元周期切换</h4>
+                    <p>高盛+巴克莱分析确认，美元短期走强是周期现象，中期拐点已临近，长期下行通道确定。美元边际松动是黄金反弹核心催化剂。</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>2. 央行需求支撑</h4>
+                    <p>土耳其事件反向印证黄金作为"终极储备弹药"价值，新兴市场央行寻求储备多元化需求不变，央行购金趋势将持续。</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>3. 滞胀格局锁定</h4>
+                    <p>油价100-120美元维持6个月以上，形成"油价上涨→通胀传导→美联储无法降息→高利率维持→经济低增长"滞胀格局，黄金是最优对冲资产。</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>4. 去美元化加速</h4>
+                    <p>美元信用弱化不可逆，全球能源进口国加速推动石油贸易非美元结算，黄金是去美元化进程最大受益者。</p>
+                </div>
+            </div>
+
+            <h3>📈 实操投资策略（最终优化版）</h3>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>策略类型</th>
+                            <th>持仓周期</th>
+                            <th>仓位建议</th>
+                            <th>操作区间</th>
+                            <th>目标价位</th>
+                            <th>止损设置</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>长线投资者</strong></td>
+                            <td>6个月以上</td>
+                            <td>10%-20%</td>
+                            <td>4300美元下方分批加仓，每下跌100美元加仓5%，最高加至总资金的20%</td>
+                            <td>持有至6000+美元</td>
+                            <td>忽略短期波动</td>
+                        </tr>
+                        <tr>
+                            <td><strong>中线投资者</strong></td>
+                            <td>1-6个月</td>
+                            <td>≤40%</td>
+                            <td>4200-4300美元建仓60%，4100-4200美元建仓40%，总仓位不超过总资金的40%</td>
+                            <td>第一目标4800美元<br>第二目标5354美元</td>
+                            <td>统一止损4050美元</td>
+                        </tr>
+                        <tr>
+                            <td><strong>短线投资者</strong></td>
+                            <td>1个月以内</td>
+                            <td>≤10%</td>
+                            <td>美联储3月决议落地前，保持空仓或轻仓试多，不提前赌方向；仅在价格企稳4350美元以上，且4小时级别收出止跌阳柱后轻仓布局多单</td>
+                            <td>第一目标4500美元</td>
+                            <td>严格执行止损，不扛单</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>⚠️ 绝对禁止的3个致命操作</h3>
+            <div class="conclusion-box danger">
+                <ol>
+                    <li><strong>下跌过程中盲目加仓抄底、越跌越买，最终深度套牢；</strong></li>
+                    <li><strong>加杠杆扛单，赌地缘冲突带来的反弹，最终被短期波动洗出出局；</strong></li>
+                    <li><strong>因短期下跌否定黄金的长期配置价值，在底部割肉离场。</strong></li>
+                </ol>
+            </div>
+
+            <h3>🔮 中长期展望</h3>
+            <div class="conclusion-box gold">
+                <ul>
+                    <li><strong>短期（美联储决议前）：</strong>4100-4500美元区间弱势震荡，极端情况下测试4100美元强支撑</li>
+                    <li><strong>中期（1-3个月）：</strong>市场切换至衰退定价、美元涨势迎来拐点后，黄金报复性反弹，第一目标4800美元，第二目标5354美元前高</li>
+                    <li><strong>长期（6个月以上）：</strong>美元信用弱化、去美元化加速、全球滞胀格局，推动黄金突破6000美元关口</li>
+                </ul>
+            </div>
+
+            <div class="tags">
+                <span class="tag gold">黄金投资</span>
+                <span class="tag gold">资产配置</span>
+                <span class="tag gold">央行购金</span>
+                <span class="tag gold">避险资产</span>
+                <span class="tag gold">去美元化</span>
+                <span class="tag gold">滞胀对冲</span>
+                <span class="tag gold">流动性危机</span>
+            </div>
+        </section>
+
+        <!-- 经济模块 -->
+        <section id="economy" class="module economy">
+            <div class="module-header">
+                <div class="module-icon">📊</div>
+                <div>
+                    <h2>美国经济与通胀分析</h2>
+                    <span class="subtitle">CPI数据、美联储政策与衰退风险</span>
+                </div>
+            </div>
+
+            <div class="conclusion-box economy">
+                <h4>🎯 核心结论</h4>
+                <p><strong>衰退概率：</strong>美国12个月衰退概率40%-45%（高盛30%过于保守），油价冲击+就业走弱+消费疲软三重压力。</p>
+                <p><strong>通胀走势：</strong>2月CPI是"失效的后视镜"，美伊冲突引发的能源供给冲击才是决定通胀与美联储政策的核心变量。</p>
+                <p><strong>美联储政策：</strong>选举年策略下，美联储最核心诉求是避免成为市场波动与政治争议焦点，无论CPI数据如何都可按兵不动。</p>
+                <p><strong>终局判断：</strong>滞胀锁定而非短期衰退，美元信用弱化加速去美元化进程。</p>
+            </div>
+
+            <h3>📊 美国2月CPI核心数据</h3>
+            <div class="data-grid">
+                <div class="data-card economy">
+                    <div class="value">0.3%</div>
+                    <div class="label">整体CPI环比预期</div>
+                </div>
+                <div class="data-card economy">
+                    <div class="value">2.4%</div>
+                    <div class="label">整体CPI同比预期</div>
+                </div>
+                <div class="data-card economy">
+                    <div class="value">0.2%</div>
+                    <div class="label">核心CPI环比预期</div>
+                </div>
+                <div class="data-card economy">
+                    <div class="value">2.5%</div>
+                    <div class="label">核心CPI同比预期</div>
+                </div>
+                <div class="data-card economy">
+                    <div class="value">4.4%</div>
+                    <div class="label">失业率</div>
+                </div>
+                <div class="data-card economy">
+                    <div class="value">-9.2万</div>
+                    <div class="label">非农就业变化</div>
+                </div>
+            </div>
+
+            <h3>🏦 高盛前瞻预测验证</h3>
+            <div class="conclusion-box info">
+                <p>高盛给出了比市场共识更乐观的预测：核心CPI环比上涨0.17%、同比约2.42%，整体CPI环比上涨0.18%，均低于市场普遍预期。</p>
+                <p><strong>三大支撑：</strong>汽车相关通胀显著降温（二手车-0.5%，汽车保险-0.3%）；机票价格企稳（1月+6.5%后2月持平）；住房通胀持续放缓（租金、业主等价租金环比均回落至0.22%）。</p>
+            </div>
+
+            <h3>⚠️ 多重上行风险叠加</h3>
+            <div class="conclusion-box warning">
+                <ul>
+                    <li><strong>能源通胀冲击：</strong>2月CPI统计窗口期在美伊冲突爆发前，冲突已导致油价自2月底以来飙升近18%。若冲突持续，油价持续性上涨将在未来数月全面推升整体通胀、核心通胀与通胀预期</li>
+                    <li><strong>劳动力市场走弱：</strong>上月非农就业意外流失9.2万个岗位，失业率攀升至4.4%，经济衰退信号初现</li>
+                    <li><strong>政策两难：</strong>美联储被迫同时权衡"地缘冲突推高的通胀上行压力"与"就业疲软带来的稳增长压力"，滞胀环境下没有任何单边宽松空间</li>
+                </ul>
+            </div>
+
+            <h3>📉 高盛经济预测深度验证</h3>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>预测指标</th>
+                            <th>高盛预测</th>
+                            <th>合理性评估</th>
+                            <th>实际风险</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12个月衰退概率</td>
+                            <td>30%</td>
+                            <td>符合华尔街整体调整趋势（BMO 35%-40%，摩根士丹利35%）</td>
+                            <td>过于保守，实际已达40%-45%</td>
+                        </tr>
+                        <tr>
+                            <td>年底失业率</td>
+                            <td>4.6%</td>
+                            <td>与当前4.4%接近，合理</td>
+                            <td>若油价持续上涨可能升至5%+</td>
+                        </tr>
+                        <tr>
+                            <td>下半年GDP增速</td>
+                            <td>1.25%-1.75%</td>
+                            <td>考虑了油价冲击影响</td>
+                            <td>若衰退发生可能降至1%以下</td>
+                        </tr>
+                        <tr>
+                            <td>3-4月布伦特油价</td>
+                            <td>110美元</td>
+                            <td>与当前111.8美元现货几乎完全吻合</td>
+                            <td>若冲突升级可能突破120美元</td>
+                        </tr>
+                        <tr>
+                            <td>2026年油价均价</td>
+                            <td>85美元</td>
+                            <td>长期安全溢价判断有前瞻性</td>
+                            <td>严重低估，合理中枢应为90-100美元</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>🔍 高盛预测的4个致命局限性</h3>
+            <div class="conclusion-box danger">
+                <ol>
+                    <li><strong>核心假设过于乐观：</strong>报告所有预测基石是"霍尔木兹海峡5%低流量仅维持6周"，但6周内恢复海峡通航概率不足20%</li>
+                    <li><strong>衰退概率测算保守：</strong>仅测算油价上涨直接冲击，完全忽视"油价→通胀→美联储推迟降息→美债收益率上行→股市下跌→财富缩水→消费收缩→企业裁员→失业率上升"死亡循环</li>
+                    <li><strong>美联储降息预测过于鸽派：</strong>两次降息预测建立在"通胀逐步回落"前提上，但油价每上涨10美元/桶，美国CPI将上行0.3-0.5个百分点</li>
+                    <li><strong>长期油价预测保守：</strong>仅将2026年布伦特原油均价从77美元上调至85美元，严重低估本次危机对全球能源定价体系的永久性冲击</li>
+                </ol>
+            </div>
+
+            <div class="conclusion-box economy">
+                <h4>💡 独特见解：第22条军规悖论</h4>
+                <p>高盛的预测本身正在加剧"第22条军规"悖论。高盛作为华尔街最具影响力机构，其"6周内海峡恢复、冲击温和可控"的基准预测，会进一步强化市场对和平结局的乐观定价，压低油价涨幅，让特朗普无法感受到无法承受的选举压力，最终反而给了他继续战争的空间。</p>
+                <p><strong>美元霸权根基松动：</strong>本次危机让全球能源进口国彻底意识到，依赖霍尔木兹海峡、依赖美元结算的石油贸易体系，随时可能因为美国地缘军事行动而瘫痪。未来中国、印度、东南亚等主要进口国，会加速推动石油贸易非美元结算，石油美元根基会受到不可逆冲击。</p>
+            </div>
+
+            <div class="tags">
+                <span class="tag economy">CPI数据</span>
+                <span class="tag economy">美联储政策</span>
+                <span class="tag economy">衰退风险</span>
+                <span class="tag economy">滞胀格局</span>
+                <span class="tag economy">高盛预测</span>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h4>🌍 全球地缘经济与投资策略分析</h4>
+            <div class="footer-divider"></div>
+            <p>本分析基于公开信息与专业研究，整合高盛、巴克莱、彭博、IMF、世界黄金协会等权威数据</p>
+            <p>仅供参考，不构成投资建议 · 投资有风险，决策需谨慎</p>
+            <p style="margin-top: 1rem; opacity: 0.6; font-size: 0.75rem;">© 2026 All Rights Reserved | 最后更新：2026年3月25日</p>
+        </div>
+    </footer>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.2)';
+            }
+        });
+
+        // 目录高亮当前章节
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.module');
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === '#' + current) {
+                    link.style.background = 'rgba(255,255,255,0.2)';
+                    link.style.color = '#ffffff';
+                } else {
+                    link.style.background = 'transparent';
+                    link.style.color = '#cbd5e1';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
