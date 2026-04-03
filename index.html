@@ -3,1151 +3,765 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026全球地缘经济与投资策略深度分析</title>
+    <title>东京六天五晚情侣全攻略 | Ultimate 3-in-1 Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Inter"', '"Noto Sans SC"', 'sans-serif'] },
+                    colors: {
+                        primary: '#0F172A', secondary: '#475569', light: '#F8FAFC', border: '#E2E8F0', brand: '#3B82F6',
+                    },
+                    boxShadow: {
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        'float': '0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04)'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --war-color: #dc2626;
-            --oil-color: #d97706;
-            --dollar-color: #1e40af;
-            --gold-color: #b45309;
-            --economy-color: #16a34a;
-            --primary-dark: #0f172a;
-            --bg-light: #f8fafc;
-            --bg-white: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #475569;
-            --border-light: #e2e8f0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-            line-height: 1.7;
-            color: var(--text-primary);
-            background: var(--bg-light);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* 导航栏 */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(15, 23, 42, 0.98);
-            backdrop-filter: blur(10px);
-            padding: 0.75rem 2rem;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .navbar-inner {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .navbar-logo {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #ffffff;
-        }
-
-        .navbar-logo span {
-            color: var(--gold-color);
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 1rem;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-
-        .nav-menu a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.4rem 0.6rem;
-            border-radius: 6px;
-        }
-
-        .nav-menu a:hover {
-            color: #ffffff;
-            background: rgba(255,255,255,0.1);
-        }
-
-        .nav-menu a.war { color: #fca5a5; }
-        .nav-menu a.oil { color: #fcd34d; }
-        .nav-menu a.dollar { color: #93c5fd; }
-        .nav-menu a.gold { color: #fcd34d; }
-        .nav-menu a.economy { color: #86efac; }
-
-        /* 英雄区 */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #1e3a8a 100%);
-            min-height: 45vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 6rem 2rem 3rem;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(217, 119, 6, 0.2);
-            border: 1px solid #d97706;
-            color: #fcd34d;
-            padding: 0.4rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .hero h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1rem;
-            color: #cbd5e1;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-meta {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            font-size: 0.8rem;
-            color: #94a3b8;
-        }
-
-        /* 核心结论卡片 */
-        .executive-summary {
-            max-width: 1100px;
-            margin: -3rem auto 2rem;
-            padding: 2rem;
-            background: var(--bg-white);
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 10;
-        }
-
-        .executive-summary h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        .summary-card {
-            padding: 1rem;
-            border-radius: 10px;
-            border-left: 4px solid;
-        }
-
-        .summary-card.war { background: #fef2f2; border-color: var(--war-color); }
-        .summary-card.oil { background: #fffbeb; border-color: var(--oil-color); }
-        .summary-card.dollar { background: #eff6ff; border-color: var(--dollar-color); }
-        .summary-card.gold { background: #fffbeb; border-color: var(--gold-color); }
-        .summary-card.economy { background: #f0fdf4; border-color: var(--economy-color); }
-
-        .summary-card h4 {
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .summary-card p {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        /* 主容器 */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
-
-        /* 模块章节 */
-        .module {
-            background: var(--bg-white);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid var(--border-light);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .module::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 6px;
-            height: 100%;
-        }
-
-        .module.war::before { background: linear-gradient(180deg, var(--war-color), #991b1b); }
-        .module.oil::before { background: linear-gradient(180deg, var(--oil-color), #92400e); }
-        .module.dollar::before { background: linear-gradient(180deg, var(--dollar-color), #1e3a8a); }
-        .module.gold::before { background: linear-gradient(180deg, var(--gold-color), #78350f); }
-        .module.economy::before { background: linear-gradient(180deg, var(--economy-color), #166534); }
-
-        .module-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--border-light);
-        }
-
-        .module-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .module.war .module-icon { background: linear-gradient(135deg, var(--war-color), #991b1b); }
-        .module.oil .module-icon { background: linear-gradient(135deg, var(--oil-color), #92400e); }
-        .module.dollar .module-icon { background: linear-gradient(135deg, var(--dollar-color), #1e3a8a); }
-        .module.gold .module-icon { background: linear-gradient(135deg, var(--gold-color), #78350f); }
-        .module.economy .module-icon { background: linear-gradient(135deg, var(--economy-color), #166534); }
-
-        .module-header h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-        }
-
-        .module-header .subtitle {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-            margin-left: 0.5rem;
-        }
-
-        /* 结论框 */
-        .conclusion-box {
-            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
-            border-left: 4px solid var(--economy-color);
-            padding: 1.25rem 1.5rem;
-            margin: 1.25rem 0;
-            border-radius: 0 10px 10px 0;
-        }
-
-        .conclusion-box.warning {
-            background: linear-gradient(135deg, #fffbeb, #fef3c7);
-            border-left-color: var(--oil-color);
-        }
-
-        .conclusion-box.danger {
-            background: linear-gradient(135deg, #fef2f2, #fee2e2);
-            border-left-color: var(--war-color);
-        }
-
-        .conclusion-box.info {
-            background: linear-gradient(135deg, #eff6ff, #dbeafe);
-            border-left-color: var(--dollar-color);
-        }
-
-        .conclusion-box.gold {
-            background: linear-gradient(135deg, #fffbeb, #fef3c7);
-            border-left-color: var(--gold-color);
-        }
-
-        .conclusion-box.purple {
-            background: linear-gradient(135deg, #f5f3ff, #ede9fe);
-            border-left-color: #7c3aed;
-        }
-
-        .conclusion-box h4 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .conclusion-box p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .conclusion-box ul {
-            margin: 0.75rem 0 0 1.5rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .conclusion-box li {
-            margin-bottom: 0.4rem;
-        }
-
-        .conclusion-box ol {
-            margin: 0.75rem 0 0 1.5rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .conclusion-box ol li {
-            margin-bottom: 0.4rem;
-        }
-
-        /* 数据网格 */
-        .data-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 0.75rem;
-            margin: 1.25rem 0;
-        }
-
-        .data-card {
-            background: linear-gradient(135deg, var(--bg-light), #f1f5f9);
-            padding: 1rem;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid var(--border-light);
-            transition: all 0.3s ease;
-        }
-
-        .data-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .data-card .value {
-            font-size: 1.4rem;
-            font-weight: 800;
-            margin-bottom: 0.25rem;
-        }
-
-        .data-card.war .value { color: var(--war-color); }
-        .data-card.oil .value { color: var(--oil-color); }
-        .data-card.dollar .value { color: var(--dollar-color); }
-        .data-card.gold .value { color: var(--gold-color); }
-        .data-card.economy .value { color: var(--economy-color); }
-
-        .data-card .label {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        /* 场景卡片 */
-        .scenario-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin: 1.25rem 0;
-        }
-
-        .scenario-card {
-            background: var(--bg-white);
-            border: 2px solid var(--border-light);
-            border-radius: 10px;
-            padding: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .scenario-card:hover {
-            border-color: var(--dollar-color);
-            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.1);
-        }
-
-        .scenario-probability {
-            display: inline-block;
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.65rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .scenario-probability.high { background: #dcfce7; color: #166534; }
-        .scenario-probability.medium { background: #fef3c7; color: #92400e; }
-        .scenario-probability.low { background: #fee2e2; color: #991b1b; }
-
-        .scenario-card h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .scenario-card p {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        /* 表格 */
-        .table-container {
-            overflow-x: auto;
-            margin: 1.25rem 0;
-            border-radius: 10px;
-            border: 1px solid var(--border-light);
-        }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--bg-white);
-            font-size: 0.8rem;
-        }
-
-        .data-table th,
-        .data-table td {
-            padding: 0.75rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .data-table th {
-            background: linear-gradient(135deg, var(--primary-dark), #1e3a8a);
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 0.75rem;
-        }
-
-        .data-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .data-table tr:hover {
-            background: var(--bg-light);
-        }
-
-        /* 对比卡片 */
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-            margin: 1.25rem 0;
-        }
-
-        .comparison-card {
-            background: var(--bg-white);
-            border: 2px solid var(--border-light);
-            border-radius: 10px;
-            padding: 1rem;
-        }
-
-        .comparison-card h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .comparison-card p {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        /* 标签 */
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-top: 1.25rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-light);
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 0.25rem 0.6rem;
-            border-radius: 20px;
-            font-size: 0.65rem;
-            font-weight: 500;
-            border: 1px solid var(--border-light);
-        }
-
-        .tag.war { background: #fef2f2; color: var(--war-color); border-color: #fecaca; }
-        .tag.oil { background: #fffbeb; color: var(--oil-color); border-color: #fde68a; }
-        .tag.dollar { background: #eff6ff; color: var(--dollar-color); border-color: #bfdbfe; }
-        .tag.gold { background: #fffbeb; color: var(--gold-color); border-color: #fcd34d; }
-        .tag.economy { background: #f0fdf4; color: var(--economy-color); border-color: #bbf7d0; }
-        .tag.purple { background: #f5f3ff; color: #7c3aed; border-color: #ddd6fe; }
-
-        /* 页脚 */
-        .footer {
-            background: var(--primary-dark);
-            color: #ffffff;
-            text-align: center;
-            padding: 2.5rem 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer h4 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer p {
-            color: #94a3b8;
-            font-size: 0.8rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .footer-divider {
-            width: 50px;
-            height: 3px;
-            background: var(--gold-color);
-            margin: 1rem auto;
-            border-radius: 2px;
-        }
-
-        /* 响应式 */
-        @media (max-width: 768px) {
-            .navbar-inner {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .nav-menu {
-                justify-content: center;
-                gap: 0.5rem;
-            }
-
-            .hero {
-                padding: 4rem 1rem 2rem;
-                min-height: 35vh;
-            }
-
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-
-            .executive-summary {
-                margin: -2rem 1rem 1.5rem;
-                padding: 1.5rem;
-            }
-
-            .module {
-                padding: 1.5rem 1rem;
-            }
-
-            .module-header h2 {
-                font-size: 1.25rem;
-            }
-
-            .summary-grid,
-            .data-grid,
-            .scenario-grid,
-            .comparison-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* 动画 */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .module {
-            animation: fadeInUp 0.5s ease-out forwards;
-        }
-
-        .module:nth-child(2) { animation-delay: 0.1s; }
-        .module:nth-child(3) { animation-delay: 0.15s; }
-        .module:nth-child(4) { animation-delay: 0.2s; }
-        .module:nth-child(5) { animation-delay: 0.25s; }
-        .module:nth-child(6) { animation-delay: 0.3s; }
-
-        /* 章节标题 */
-        .section-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin: 1.5rem 0 1rem;
-            padding-left: 0.75rem;
-            border-left: 3px solid var(--gold-color);
-        }
-
-        /* 重点提示 */
-        .highlight {
-            background: linear-gradient(135deg, #fef3c7, #fde68a);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-weight: 600;
-        }
+        body { background-color: #F8FAFC; color: theme('colors.primary'); }
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
         
-        /* 数据更新时间 */
-        .data-update-time {
-            font-size: 0.75rem;
-            color: #94a3b8;
-            text-align: center;
-            padding: 0.5rem;
-            background: #f1f5f9;
-            border-radius: 6px;
-            margin-bottom: 1rem;
-        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .view-section { display: none; animation: fadeInView 0.4s ease-out forwards; }
+        .view-section.active { display: block; }
+        @keyframes fadeInView { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .section-header { display: inline-flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid theme('colors.primary'); }
+        
+        .info-card { background: #FFFFFF; border-radius: 16px; border: 1px solid theme('colors.border'); box-shadow: theme('boxShadow.card'); overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .info-card:hover { transform: translateY(-2px); box-shadow: theme('boxShadow.float'); border-color: #CBD5E1; }
+
+        .list-dot li { position: relative; padding-left: 1rem; margin-bottom: 0.375rem; }
+        .list-dot li::before { content: "•"; position: absolute; left: 0; color: theme('colors.secondary'); font-weight: bold; }
+
+        .timeline-step { position: relative; padding-left: 2rem; padding-bottom: 1.5rem; }
+        .timeline-step::before { content: ""; position: absolute; left: 0.35rem; top: 0.25rem; bottom: -0.25rem; width: 2px; background: #E2E8F0; }
+        .timeline-step:last-child::before { display: none; }
+        .timeline-step::after { content: ""; position: absolute; left: 0; top: 0.35rem; width: 0.8rem; height: 0.8rem; border-radius: 50%; background: #3B82F6; border: 2px solid #EFF6FF; }
+
+        /* AI 助手样式 */
+        #ai-chat-widget { transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); transform: translateY(110%); opacity: 0; pointer-events: none; }
+        #ai-chat-widget.active { transform: translateY(0); opacity: 1; pointer-events: auto; }
+        .chat-message { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .typing-indicator span { animation: blink 1.4s infinite both; height: 6px; width: 6px; background: #94A3B8; border-radius: 50%; display: inline-block; margin: 0 1px; }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes blink { 0% { opacity: 0.2; } 20% { opacity: 1; } 100% { opacity: 0.2; } }
     </style>
 </head>
-<body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="navbar-inner">
-            <div class="navbar-logo">🌍 全球<span>地缘经济</span></div>
-            <ul class="nav-menu">
-                <li><a href="#war" class="war">⚔️ 战争</a></li>
-                <li><a href="#oil" class="oil">🛢️ 原油</a></li>
-                <li><a href="#dollar" class="dollar">💵 美元</a></li>
-                <li><a href="#gold" class="gold">🥇 黄金</a></li>
-                <li><a href="#economy" class="economy">📊 经济</a></li>
-            </ul>
+<body class="antialiased selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- 顶部悬浮导航与三模式切换器 -->
+    <nav class="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row justify-between items-center py-3 lg:py-0 lg:h-16 gap-3 lg:gap-0">
+                <!-- Logo -->
+                <div class="font-bold text-slate-800 text-lg hidden lg:block w-auto flex-shrink-0">
+                    <i class="fa-solid fa-map-location-dot text-blue-600 mr-2"></i>东京浪漫指南
+                </div>
+                
+                <!-- 核心：三模式切换器 -->
+                <div class="bg-slate-100 p-1 rounded-xl flex items-center shadow-inner w-full lg:w-auto overflow-x-auto no-scrollbar">
+                    <button onclick="switchMode('itinerary')" id="btn-mode-itinerary" class="flex-shrink-0 lg:flex-none px-4 py-1.5 rounded-lg text-sm font-bold transition-all bg-white text-slate-900 shadow-sm">
+                        🗺️ 行程管家
+                    </button>
+                    <button onclick="switchMode('food')" id="btn-mode-food" class="flex-shrink-0 lg:flex-none px-4 py-1.5 rounded-lg text-sm font-medium transition-all text-slate-500 hover:text-slate-700">
+                        🍽️ 美食与体验
+                    </button>
+                    <button onclick="switchMode('shopping')" id="btn-mode-shopping" class="flex-shrink-0 lg:flex-none px-4 py-1.5 rounded-lg text-sm font-medium transition-all text-slate-500 hover:text-slate-700">
+                        🛍️ 购物宝典
+                    </button>
+                </div>
+
+                <!-- 页面内锚点导航 (根据模式动态显示隐藏) -->
+                <div id="nav-itinerary-links" class="flex w-full lg:w-auto justify-center lg:justify-end gap-4 lg:gap-6 overflow-x-auto no-scrollbar flex-shrink-0">
+                    <a href="#prep" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-suitcase"></i> 准备</a>
+                    <a href="#daily" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-calendar-days"></i> 行程</a>
+                    <a href="#budget" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-wallet"></i> 预算</a>
+                </div>
+                <div id="nav-food-links" class="hidden flex w-full lg:w-auto justify-center lg:justify-end gap-4 lg:gap-6 overflow-x-auto no-scrollbar flex-shrink-0">
+                    <a href="#food-michelin" class="text-xs md:text-sm font-medium text-slate-500 hover:text-orange-600 py-1"><i class="fa-solid fa-utensils"></i> 高分餐厅</a>
+                    <a href="#food-bars" class="text-xs md:text-sm font-medium text-slate-500 hover:text-purple-600 py-1"><i class="fa-solid fa-martini-glass"></i> 微醺指南</a>
+                    <a href="#food-culture" class="text-xs md:text-sm font-medium text-slate-500 hover:text-pink-600 py-1"><i class="fa-solid fa-fan"></i> 文化体验</a>
+                </div>
+                <div id="nav-shopping-links" class="hidden flex w-full lg:w-auto justify-center lg:justify-end gap-4 lg:gap-6 overflow-x-auto no-scrollbar flex-shrink-0">
+                    <a href="#shop-electronics" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-camera"></i> 数码服饰</a>
+                    <a href="#shop-brands" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-wine-glass"></i> 烟酒高奢</a>
+                    <a href="#shop-anime" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-gamepad"></i> 二次元</a>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <!-- 英雄区 -->
-    <section class="hero">
-        <div class="hero-content">
-            <span class="hero-badge">📊 深度投资分析报告</span>
-            <h1>2026 全球地缘经济与投资策略</h1>
-            <p>五大核心模块深度分析 · 数据驱动 · 结论明确 · 汇丰高盛观点评估</p>
-            <div class="hero-meta">
-                <span>📅 2026 年 3 月 30 日更新</span>
-                <span>🌐 全球视角</span>
-                <span>📈 投资导向</span>
+    <!-- ========================================== -->
+    <!-- VIEW 1: 行程管家模式 (Itinerary) -->
+    <!-- ========================================== -->
+    <main id="view-itinerary" class="view-section active pt-32 lg:pt-20">
+        <!-- Hero -->
+        <section class="relative pt-8 pb-12 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4">东京六天五晚松弛感行程</h1>
+                <p class="text-lg text-slate-600 font-medium mb-6">4月29日 - 5月4日 · 深度浪漫体验版</p>
+                <div class="flex flex-wrap justify-center gap-3 text-xs md:text-sm">
+                    <span class="px-3 py-1 bg-red-50 text-red-600 font-bold border border-red-200 rounded-full"><i class="fa-solid fa-triangle-exclamation"></i> 避开黄金周人潮</span>
+                    <span class="px-3 py-1 bg-slate-50 text-slate-700 font-medium border border-slate-200 rounded-full"><i class="fa-solid fa-plane"></i> HKG 09:00 飞 / NRT 17:05 返</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 行前准备 -->
+        <section id="prep" class="py-12 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-clipboard-check text-blue-600"></i> 行前生死线</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="info-card p-6">
+                        <h3 class="font-bold text-slate-800 mb-4 border-b pb-2">抢票时间轴</h3>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li><span class="font-bold text-red-500">提前30天必抢：</span>三鹰之森吉卜力美术馆 (极难抢)、Shibuya Sky日落票、富士回游特急指定席。</li>
+                            <li><span class="font-bold text-orange-500">提前 7 天预定：</span>迪士尼乐园门票及园内餐厅预约。</li>
+                            <li><span class="font-bold text-blue-500">提前 3 天完成：</span>Visit Japan Web (VJW) 海关申报二维码截图。</li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-6">
+                        <h3 class="font-bold text-slate-800 mb-4 border-b pb-2">交通与支付基础</h3>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li><i class="fa-solid fa-train"></i> 购买 <b>JR东京广域周游券(3日)</b>，覆盖乐园、周边游与送机。</li>
+                            <li><i class="fa-brands fa-apple"></i> Apple Pay 绑定 <b>Suica (西瓜卡)</b> 用于地铁和便利店。</li>
+                            <li><i class="fa-solid fa-credit-card"></i> 携带 JCB 信用卡（商场折扣）+ 银联卡 + 3万日元现金备用。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 每日行程 -->
+        <section id="daily" class="py-12 bg-white border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-calendar-days text-blue-600"></i> 每日路线图</h2>
+                <div class="space-y-6">
+                    
+                    <!-- Day 1 -->
+                    <div class="info-card flex flex-col md:flex-row border-l-4 border-l-blue-500">
+                        <div class="bg-slate-50 md:w-48 p-5 border-r border-slate-100 flex-shrink-0">
+                            <div class="text-xs font-bold text-blue-600 mb-1">4.29 (周三)</div>
+                            <h3 class="text-lg font-black text-slate-900">落地与二次元</h3>
+                        </div>
+                        <div class="p-5 flex-1 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div><span class="text-xs font-bold text-slate-400">下午</span><p class="text-sm mt-1">成田VJW通关，乘Skyliner至秋叶原酒店入住。</p></div>
+                            <div><span class="text-xs font-bold text-slate-400">傍晚</span><p class="text-sm mt-1">秋叶原电器街踩点（找中古相机、二次元手办）。</p></div>
+                            <div><span class="text-xs font-bold text-slate-400">晚上</span><p class="text-sm mt-1">晚餐：六歌仙烧肉。饭后鸟良商店小酌。</p></div>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 -->
+                    <div class="info-card flex flex-col md:flex-row border-l-4 border-l-pink-500">
+                        <div class="bg-slate-50 md:w-48 p-5 border-r border-slate-100 flex-shrink-0">
+                            <div class="text-xs font-bold text-pink-600 mb-1">4.30 (周四)</div>
+                            <h3 class="text-lg font-black text-slate-900">迪士尼乐园</h3>
+                            <span class="text-[10px] bg-red-100 text-red-600 px-1 rounded mt-2 block w-max">06:30 极速早起</span>
+                        </div>
+                        <div class="p-5 flex-1 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div><span class="text-xs font-bold text-slate-400">早晨</span><p class="text-sm mt-1">6:30出门避开人潮。入园立抢美女与野兽DPA。</p></div>
+                            <div><span class="text-xs font-bold text-slate-400">白天</span><p class="text-sm mt-1">花钱买松弛，刷太空山/飞溅山，园区拍照打卡。</p></div>
+                            <div><span class="text-xs font-bold text-slate-400">晚上</span><p class="text-sm mt-1">水晶宫餐厅晚餐，20:00 观赏城堡烟花大赏。</p></div>
+                        </div>
+                    </div>
+
+                    <!-- Day 3 -->
+                    <div class="info-card flex flex-col md:flex-row border-l-4 border-l-amber-500">
+                        <div class="bg-slate-50 md:w-48 p-5 border-r border-slate-100 flex-shrink-0">
+                            <div class="text-xs font-bold text-amber-600 mb-1">5.1 (周五)</div>
+                            <h3 class="text-lg font-black text-slate-900">宫崎骏与日落</h3>
+                        </div>
+                        <div class="p-5 flex-1 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div><span class="text-xs font-bold text-slate-400">上午</span><p class="text-sm mt-1">乘JR中央线直达三鹰，参观<b>吉卜力美术馆</b>，吉祥寺午餐。</p></div>
+                            <div><span class="text-xs font-bold text-slate-400">下午</span><p class="text-sm mt-1">原宿表参道 City Walk。顺路逛涩谷 Parco <b>宝可梦中心</b>。</p></div>
+                            <div><span class="text-xs font-bold text-slate-400">傍晚至夜</span><p class="text-sm mt-1">登 <b>Shibuya Sky</b> 看日落。晚餐叙叙苑烧肉，Bar High Five 微醺。</p></div>
+                        </div>
+                    </div>
+
+                    <!-- Day 4 -->
+                    <div class="info-card flex flex-col md:flex-row border-l-4 border-l-emerald-500">
+                        <div class="bg-slate-50 md:w-48 p-5 border-r border-slate-100 flex-shrink-0">
+                            <div class="text-xs font-bold text-emerald-600 mb-1">5.2 (周六)</div>
+                            <h3 class="text-lg font-black text-slate-900">周边一日游</h3>
+                        </div>
+                        <div class="p-5 flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-emerald-50 p-3 rounded"><span class="text-xs font-bold text-emerald-700">☀️ 晴天方案：富士山</span><p class="text-sm mt-1">乘“富士回游”。逛河口湖八音盒之森、自然生活馆、乘游船。</p></div>
+                            <div class="bg-blue-50 p-3 rounded"><span class="text-xs font-bold text-blue-700">🌧️ 阴雨方案：镰仓</span><p class="text-sm mt-1">江之电直奔高校前打卡，漫步湘南海岸，参拜镰仓大佛。</p></div>
+                        </div>
+                    </div>
+
+                    <!-- Day 5 -->
+                    <div class="info-card flex flex-col md:flex-row border-l-4 border-l-purple-500">
+                        <div class="bg-slate-50 md:w-48 p-5 border-r border-slate-100 flex-shrink-0">
+                            <div class="text-xs font-bold text-purple-600 mb-1">5.3 (周日)</div>
+                            <h3 class="text-lg font-black text-slate-900">浅草高达银座</h3>
+                        </div>
+                        <div class="p-5 flex-1 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div><span class="text-xs font-bold text-slate-400">上午 (老城)</span><p class="text-sm mt-1">行李存车站。浅草寺雷门求签，中午在码头搭乘水上巴士。</p></div>
+                            <div><span class="text-xs font-bold text-slate-400">下午 (台场)</span><p class="text-sm mt-1">游船直达台场。打卡<b>富士电视台</b>和<b>DiverCity 独角兽高达</b>。</p></div>
+                            <div><span class="text-xs font-bold text-slate-400">晚上 (高奢)</span><p class="text-sm mt-1">乘百合鸥号去银座，逛优衣库旗舰店与高奢百货。登晴空塔看夜景。</p></div>
+                        </div>
+                    </div>
+
+                    <!-- Day 6 -->
+                    <div class="info-card flex flex-col md:flex-row border-l-4 border-l-slate-800 bg-slate-800 text-white">
+                        <div class="bg-slate-900 md:w-48 p-5 border-r border-slate-700 flex-shrink-0">
+                            <div class="text-xs font-bold text-slate-400 mb-1">5.4 (周一)</div>
+                            <h3 class="text-lg font-black text-white">返程送机</h3>
+                        </div>
+                        <div class="p-5 flex-1 grid grid-cols-1 sm:grid-cols-3 gap-4 text-slate-300">
+                            <div><span class="text-xs font-bold text-slate-400">上午</span><p class="text-sm mt-1 text-white">睡到自然醒。买伴手礼，11点退房。</p></div>
+                            <div><span class="text-xs font-bold text-slate-400">中午</span><p class="text-sm mt-1 text-white">13:40 搭乘 Skyliner 特急直达成田机场。</p></div>
+                            <div><span class="text-xs font-bold text-slate-400">下午</span><p class="text-sm mt-1 text-white">机场买免税威士忌、伴手礼。17:05 登机返回香港。</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 预算与联络 -->
+        <section id="budget" class="py-12 bg-slate-900 text-slate-300">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- 预算图表 -->
+                    <div class="lg:col-span-2 bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <h3 class="text-xl font-bold text-white mb-6">总体预算结构 (CNY)</h3>
+                        <div class="flex flex-col md:flex-row gap-6 items-center">
+                            <div class="w-full md:w-1/2">
+                                <table class="w-full text-sm text-left">
+                                    <tr class="border-b border-slate-700"><td class="py-2 text-slate-400">住宿 (6晚)</td><td class="py-2 text-right">3,250-4,750</td></tr>
+                                    <tr class="border-b border-slate-700"><td class="py-2 text-slate-400">交通机酒</td><td class="py-2 text-right">2,259</td></tr>
+                                    <tr class="border-b border-slate-700"><td class="py-2 text-slate-400">餐饮微醺</td><td class="py-2 text-right">9,750-13,750</td></tr>
+                                    <tr class="border-b border-slate-700"><td class="py-2 text-slate-400">门票游玩</td><td class="py-2 text-right">2,620</td></tr>
+                                    <tr class="border-b border-slate-700"><td class="py-2 text-slate-400">购物额度</td><td class="py-2 text-right">12,500-44,000</td></tr>
+                                    <tr><td class="py-3 font-bold text-white">预估总计</td><td class="py-3 font-bold text-right text-blue-400 text-lg">2.6万-6.5万</td></tr>
+                                </table>
+                            </div>
+                            <div class="w-full md:w-1/2 h-48"><canvas id="budgetChart"></canvas></div>
+                        </div>
+                    </div>
+                    <!-- 紧急电话 -->
+                    <div class="bg-red-900/20 rounded-2xl p-6 border border-red-900/50 relative overflow-hidden">
+                        <h3 class="font-bold text-white mb-4"><i class="fa-solid fa-phone text-red-400"></i> 紧急联络 (建议截图)</h3>
+                        <ul class="space-y-4 text-sm">
+                            <li><div class="text-[10px] text-red-400/80 mb-1">日本求助</div><span class="text-white font-bold">110</span> (报警) / <span class="text-white font-bold">119</span> (医疗急救)</li>
+                            <li><div class="text-[10px] text-red-400/80 mb-1">领事保护</div>外交部: <span class="text-white">12308</span><br>驻日使馆: <span class="text-white">03-6450-2195</span></li>
+                            <li><div class="text-[10px] text-red-400/80 mb-1">机场咨询</div>成田: 0476-34-8088</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- VIEW 2: 美食与体验模式 (Food & Culture) - RESTORED -->
+    <!-- ========================================== -->
+    <main id="view-food" class="view-section pt-32 lg:pt-20 bg-white">
+        
+        <section class="relative pt-8 pb-10 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-4xl font-black text-slate-900 tracking-tight mb-3">感官盛宴：吃喝玩乐全收录</h1>
+                <p class="text-sm text-slate-600 font-medium">米其林 · 和牛烧肉 · 隐秘酒吧 · 茶道和服</p>
+            </div>
+        </section>
+
+        <!-- 高分餐厅库 -->
+        <section id="food-michelin" class="py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-utensils text-orange-500"></i> 高分美食甄选</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="info-card p-5 border-t-4 border-t-orange-500">
+                        <h3 class="font-bold text-orange-900 mb-3 text-sm"><i class="fa-solid fa-star text-orange-500"></i> 米其林与法餐</h3>
+                        <ul class="space-y-3 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">SÉZANNE (三星)</span><span class="font-medium text-slate-900">约 ¥30,000/人</span></li>
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">Florilège (二星+绿星)</span><span class="font-medium text-slate-900">约 ¥25,000/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">Takumi 乃木坂</span><span class="font-medium text-slate-900">约 ¥18,000/人</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 border-t-4 border-t-red-600">
+                        <h3 class="font-bold text-red-900 mb-3 text-sm"><i class="fa-solid fa-fire text-red-600"></i> 顶级和牛烧肉</h3>
+                        <ul class="space-y-3 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">韩之厨房别邸 (神户牛)</span><span class="font-medium text-slate-900">约 ¥15,000/人</span></li>
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">USHIHACHI 極 (A4)</span><span class="font-medium text-slate-900">约 ¥10,000/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">寿喜烧十二天 (A5放题)</span><span class="font-medium text-slate-900">约 ¥16,000/人</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 border-t-4 border-t-blue-500">
+                        <h3 class="font-bold text-blue-900 mb-3 text-sm"><i class="fa-solid fa-fish-fins text-blue-500"></i> 寿司绝赏</h3>
+                        <ul class="space-y-3 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">THE SAKAI Tokyo</span><span class="font-medium text-slate-900">约 ¥28,000/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">寿司胜 立川</span><span class="font-medium text-slate-900">约 ¥10,000/人</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 border-t-4 border-t-amber-600">
+                        <h3 class="font-bold text-amber-900 mb-3 text-sm"><i class="fa-solid fa-bowl-rice text-amber-600"></i> 传统日料绝品</h3>
+                        <ul class="space-y-3 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">美浓金 (神田鳗鱼饭)</span><span class="font-medium text-slate-900">约 ¥8,500/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">蟹一心 (品川蟹料理)</span><span class="font-medium text-slate-900">约 ¥20,000/人</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 微醺指南 -->
+        <section id="food-bars" class="py-12 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-martini-glass-citrus text-purple-600"></i> 东京夜色微醺指南</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="info-card p-5 border-l-4 border-l-amber-700">
+                        <h3 class="font-bold text-slate-800 mb-2 text-sm">威士忌名所</h3>
+                        <p class="text-[10px] text-slate-500 mb-3">世界各地的稀有酒款汇聚地</p>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">Zoetrope (300+藏酒)</span><span>¥4,000/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">Roppongi Whisky Salon</span><span>¥5,000/人</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 border-l-4 border-l-purple-600">
+                        <h3 class="font-bold text-slate-800 mb-2 text-sm">世界级特调鸡尾酒</h3>
+                        <p class="text-[10px] text-slate-500 mb-3">亚洲 Top 50 调酒师主理</p>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">Bar High Five (银座)</span><span>¥6,000/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">Tender Bar (手工冰块)</span><span>¥7,000/人</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 border-l-4 border-l-rose-500">
+                        <h3 class="font-bold text-slate-800 mb-2 text-sm">自然酒与酿酒厂</h3>
+                        <p class="text-[10px] text-slate-500 mb-3">有机葡萄酒与现场酿造</p>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">Wineshop Flow (涩谷)</span><span>¥4,500/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">FUJIMARU酿酒厂</span><span>¥6,500/人</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 border-l-4 border-l-slate-600">
+                        <h3 class="font-bold text-slate-800 mb-2 text-sm">烟火气居酒屋</h3>
+                        <p class="text-[10px] text-slate-500 mb-3">烤串、啤酒与深夜食堂</p>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">居酒屋 黑田 (新宿)</span><span>¥3,500/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">鸟良商店 (24h鸡肉)</span><span>¥3,000/人</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文化体验 -->
+        <section id="food-culture" class="py-12 bg-white border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-fan text-pink-500"></i> 深度文化体验</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="info-card p-5 bg-pink-50/50">
+                        <h3 class="font-bold text-pink-900 mb-3 text-sm flex items-center gap-2"><i class="fa-solid fa-leaf"></i> 传统茶道</h3>
+                        <ul class="space-y-3 text-xs text-slate-700">
+                            <li class="flex justify-between border-b border-pink-100 pb-2"><span class="font-bold text-slate-800">银座 HiSUi TOKYO</span><span>¥11,000 / 项</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">Jasumo 传统院</span><span>¥5,000 / 人</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 bg-rose-50/50">
+                        <h3 class="font-bold text-rose-900 mb-3 text-sm flex items-center gap-2"><i class="fa-solid fa-shirt"></i> 和服写真</h3>
+                        <ul class="space-y-3 text-xs text-slate-700">
+                            <li class="flex justify-between border-b border-rose-100 pb-2"><span class="font-bold text-slate-800">浅草常规租赁漫步</span><span>¥5,500 / 天</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">银座高定和服体验</span><span>¥35,000 / 次</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 bg-slate-50">
+                        <h3 class="font-bold text-slate-800 mb-3 text-sm flex items-center gap-2"><i class="fa-solid fa-palette"></i> 匠人技艺尝鲜</h3>
+                        <ul class="space-y-3 text-xs text-slate-700">
+                            <li class="flex justify-between border-b border-slate-200 pb-2"><span class="font-bold text-slate-800">花道插花体验</span><span>¥12,000 / 人</span></li>
+                            <li class="flex justify-between border-b border-slate-200 pb-2"><span class="font-bold text-slate-800">书法挥毫体验</span><span>¥8,000 / 人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">古典日本舞体验</span><span>¥15,000 / 人</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- VIEW 3: 购物宝典模式 (Shopping Guide) -->
+    <!-- ========================================== -->
+    <main id="view-shopping" class="view-section pt-32 lg:pt-20 bg-white">
+        
+        <section class="relative pt-8 pb-10 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-4xl font-black text-slate-900 tracking-tight mb-3">血拼实操硬核指南</h1>
+                <p class="text-sm text-slate-600 font-medium">电器比价 · 名酒差价 · 服饰潮牌 · 二次元实价 · 退税防坑</p>
+            </div>
+        </section>
+
+        <!-- 数码电器与潮流服饰 -->
+        <section id="shop-electronics" class="py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-camera-retro text-blue-600"></i> 数码电器 & 潮流服饰指南</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="info-card p-6 border-t-4 border-blue-500">
+                        <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2 text-lg">
+                            <i class="fa-solid fa-laptop text-blue-500"></i> 相机与电子产品 (秋叶原主战区)
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-slate-800 text-sm mb-1">全新产品：Bic Camera / Yodobashi</h4>
+                                <ul class="list-dot text-xs text-slate-600 space-y-1">
+                                    <li><span class="font-bold text-slate-800">比价技巧：</span>同一家店不同楼层价格可能不同。Bic Camera 5楼是相机专区，1楼是Apple和IQOS。</li>
+                                    <li><span class="font-bold text-slate-800">信用卡优惠：</span>记得使用 JCB 或银联卡，通常除了免税还能再额外享受 5% 左右的专享折扣。</li>
+                                </ul>
+                            </div>
+                            <div class="bg-amber-50 p-4 rounded-xl border border-amber-100">
+                                <h4 class="font-bold text-amber-900 text-sm mb-1">省钱秘籍：中古数码 (二手)</h4>
+                                <ul class="list-dot text-xs text-amber-800 space-y-1">
+                                    <li><span class="font-bold">巨大差价：</span>相机和镜头如果接受 9成新/箱说全的中古品，能直接 <span class="bg-amber-200 px-1 rounded font-bold">节省 30% - 50%</span> 的费用。</li>
+                                    <li><span class="font-bold">寻宝推荐：</span>秋叶原的 Mandarake 或各大中古电器专门店，成色标定极为严格，可放心淘。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card p-6 border-t-4 border-pink-500">
+                        <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2 text-lg">
+                            <i class="fa-solid fa-shirt text-pink-500"></i> 服饰潮牌与高奢穿搭
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex gap-3">
+                                <div class="text-xl pt-1 text-slate-400"><i class="fa-solid fa-store"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm mb-1">原宿与表参道 (前卫潮流)</h4>
+                                    <p class="text-xs text-slate-600">聚集大量设计师品牌与潮牌。表参道满是高奢旗舰店(LV/Prada)。年轻人平价时尚在竹下通。</p>
+                                </div>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex gap-3">
+                                <div class="text-xl pt-1 text-slate-400"><i class="fa-solid fa-music"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm mb-1">涩谷 109 & Parco (日韩流行)</h4>
+                                    <p class="text-xs text-slate-600">年轻化、多元化的流行服饰大本营，涩谷109是日系时尚潮流发源地。</p>
+                                </div>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex gap-3">
+                                <div class="text-xl pt-1 text-red-500"><i class="fa-solid fa-bag-shopping"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm mb-1">银座 (高奢与国民旗舰)</h4>
+                                    <p class="text-xs text-slate-600">除了世界顶奢百货，这里还拥有 <span class="font-bold text-slate-800">UNIQLO 优衣库全球最大旗舰店</span> (12层，含定制UT)，十分好逛。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 烟酒免税与高奢 -->
+        <section id="shop-brands" class="py-12 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-wine-glass text-blue-600"></i> 烟酒免税与高奢选购</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="info-card p-5 border-t-4 border-t-emerald-600 flex flex-col">
+                        <h3 class="font-bold text-emerald-900 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-bottle-droplet"></i> 日本威士忌与清酒</h3>
+                        <p class="text-[10px] text-red-500 bg-red-50 px-2 py-1 rounded font-bold mb-3 border border-red-100 text-center">注意神级差价！买前必比价！</p>
+                        <ul class="space-y-3 text-xs text-slate-600 flex-1">
+                            <li class="border-b border-slate-100 pb-2">
+                                <span class="font-bold text-slate-800 block mb-1">🥃 白州威士忌真实比价：</span>
+                                ❌ 唐吉诃德 (免税): ¥19,900<br>
+                                ✅ 银座 Ginza Six (含税): <span class="text-emerald-600 font-bold">¥15,400</span><br>
+                                <span class="text-[10px] text-slate-400">退税后差价高达5000+日元！</span>
+                            </li>
+                            <li>
+                                <span class="font-bold text-slate-800 block mb-1">🍶 机场补漏：</span>
+                                獭祭清酒、梅酒等，建议最后在成田机场免税店带走，不用拎一路。
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card p-5 border-t-4 border-t-slate-800">
+                        <h3 class="font-bold text-slate-800 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-smoking"></i> 机场免税香烟</h3>
+                        <p class="text-[10px] text-slate-500 mb-3">价格比市区便宜1000-2000日元/条</p>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>七星尊贵5包(铁盒)</span><span class="font-medium text-slate-900">¥7,500</span></li>
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>七星硬盒 (200支)</span><span class="font-medium text-slate-900">¥4,100</span></li>
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>和平软黄特醇</span><span class="font-medium text-slate-900">¥4,300</span></li>
+                            <li class="flex justify-between pb-1"><span>梅比乌斯 (樱花限定)</span><span class="font-medium text-slate-900">约¥5,500</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card p-5 border-t-4 border-t-amber-800">
+                        <h3 class="font-bold text-amber-900 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-joint"></i> 进口雪茄名品</h3>
+                        <p class="text-[10px] text-slate-500 mb-3">主战区：六本木高端专卖店</p>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>COHIBA Siglo II (单支)</span><span class="font-medium text-slate-900">¥3,100</span></li>
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>COHIBA 兔年限定版</span><span class="font-medium text-slate-900">¥40,000</span></li>
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>Davidoff Escurio (6支)</span><span class="font-medium text-slate-900">¥7,000</span></li>
+                            <li class="flex justify-between pb-1"><span>Camaroto 红盒雪茄</span><span class="font-medium text-slate-900">¥3,900</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card p-5 border-t-4 border-t-blue-600">
+                        <h3 class="font-bold text-blue-900 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-bag-shopping"></i> 银座高奢退税指南</h3>
+                        <p class="text-[10px] text-slate-500 mb-3">银座三越 / 和光 / GINZA SIX</p>
+                        <ul class="space-y-3 text-xs text-slate-600">
+                            <li><i class="fa-solid fa-check text-green-500 mr-1"></i> <b class="text-slate-800">三越百货 95折：</b>带护照在一楼领 Guest Card，买奢侈品(部分除外)直接 <span class="bg-blue-100 px-1 rounded font-bold">折上免税</span>。</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-1"></i> <b class="text-slate-800">Japan Duty Free：</b>三越8楼市中心免税店，买完 <span class="font-bold text-slate-900">直接去机场提货</span>，解放双手极度松弛。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 二次元与潮玩实价 -->
+        <section id="shop-anime" class="py-12 bg-white border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-gamepad text-blue-600"></i> 二次元专区实价对照</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="info-card p-0">
+                        <div class="bg-yellow-50 px-5 py-3 border-b border-yellow-100 font-bold text-yellow-900">
+                            Pokémon Center (涩谷 Parco 6楼)
+                        </div>
+                        <table class="w-full text-sm text-left">
+                            <tr class="border-b border-slate-100 bg-slate-50 text-slate-500"><th class="py-2 px-4 font-normal">热门商品</th><th class="py-2 px-4 font-normal text-right">参考价(日元)</th></tr>
+                            <tr class="border-b border-slate-50"><td class="py-3 px-4">Leisure Style 皮卡丘毛绒</td><td class="py-3 px-4 text-right font-medium">¥2,640</td></tr>
+                            <tr class="border-b border-slate-50"><td class="py-3 px-4">My Little Bestie 小火马</td><td class="py-3 px-4 text-right font-medium">¥7,150</td></tr>
+                            <tr class="border-b border-slate-50"><td class="py-3 px-4">皮卡丘&玛力露 三只装</td><td class="py-3 px-4 text-right font-medium">¥4,950</td></tr>
+                            <tr><td class="py-3 px-4">年度限定徽章套装</td><td class="py-3 px-4 text-right font-medium">¥2,280</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="info-card p-0">
+                        <div class="bg-slate-800 px-5 py-3 border-b border-slate-900 font-bold text-white flex justify-between">
+                            <span>高达基地 THE GUNDAM BASE</span>
+                            <span class="text-xs font-normal text-slate-400 font-mono">台场 DiverCity 7楼</span>
+                        </div>
+                        <table class="w-full text-sm text-left">
+                            <tr class="border-b border-slate-100 bg-slate-50 text-slate-500"><th class="py-2 px-4 font-normal">模型级别 / 限定</th><th class="py-2 px-4 font-normal text-right">参考价(日元)</th></tr>
+                            <tr class="border-b border-slate-50"><td class="py-3 px-4">HG 1/144 RX-78-2 (基地限定)</td><td class="py-3 px-4 text-right font-medium">¥1,650</td></tr>
+                            <tr class="border-b border-slate-50"><td class="py-3 px-4">RG 1/144 高达艾比安 (限定)</td><td class="py-3 px-4 text-right font-medium">¥11,000</td></tr>
+                            <tr class="border-b border-slate-50"><td class="py-3 px-4">MG 1/100 百式 ver.2.0 (限定)</td><td class="py-3 px-4 text-right font-medium">¥17,600</td></tr>
+                            <tr><td class="py-3 px-4">PG 1/60 独角兽高达 (普通版)</td><td class="py-3 px-4 text-right font-medium">¥33,000</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 退税规则 -->
+        <section id="shop-rules" class="py-12 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 lg:p-8 flex flex-col md:flex-row gap-6 items-center">
+                    <div class="flex-shrink-0 text-blue-500 text-5xl"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">免税、限额与托运避坑守则</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-sm text-blue-800">
+                            <p><b>起退金额：</b>单店单笔消费满 <span class="bg-blue-200 px-1 rounded">5,000日元(含税)</span> 即可10%免税。结账出示护照原件。</p>
+                            <p><b>包装限制：</b>免税消耗品(食品/药妆)会被装进免税专用密封袋，<span class="text-red-500 font-bold">在日本境内绝对不可拆封</span>，否则可能查补税。</p>
+                            <p><b>液体托运：</b>免税买的化妆水、<span class="font-bold border-b border-blue-400">酒类（单件超100ml）必须放托运行李</span>，切勿随身带上飞机。</p>
+                            <p><b>海关限额：</b>回国入关时，每人免税香烟限带 <span class="bg-blue-200 px-1 rounded">200支(1条)</span>，免税酒类限带 <span class="bg-blue-200 px-1 rounded">3瓶(每瓶不超过760ml)</span>。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="text-center text-xs text-slate-400 py-12 uppercase tracking-widest font-medium">
+            <p>End of Shopping Guide. Have a great haul!</p>
+        </div>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- AI 专属行程管家悬浮控件 -->
+    <!-- ========================================== -->
+    <button id="ai-trigger-btn" class="fixed bottom-6 right-6 w-14 h-14 bg-blue-600 text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-blue-700 hover:scale-105 transition-all z-50">
+        <span class="text-2xl">✨</span>
+    </button>
+
+    <div id="ai-chat-widget" class="fixed bottom-24 right-6 w-[90vw] sm:w-96 max-w-sm bg-white rounded-2xl shadow-2xl border border-slate-200 z-50 flex flex-col overflow-hidden">
+        <div class="bg-slate-900 px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2 text-white">
+                <span class="text-xl">✨</span><span class="font-bold text-sm tracking-wide">专属全能管家</span>
+            </div>
+            <button id="ai-close-btn" class="text-slate-400 hover:text-white transition-colors"><i class="fa-solid fa-xmark text-lg"></i></button>
+        </div>
+        <div id="chat-messages" class="flex-1 h-80 p-4 overflow-y-auto bg-slate-50 space-y-4">
+            <div class="flex items-start gap-2 chat-message">
+                <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0">✨</div>
+                <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 text-sm text-slate-700 shadow-sm leading-relaxed">
+                    你好！我是您的专属 AI 助理。当前三合一攻略已包含了所有核心行程、餐厅酒吧以及购物比价数据。无论是查路线、选餐厅还是问退税，都可以直接问我！
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- 核心结论摘要 -->
-    <div class="executive-summary">
-        <h3>🎯 核心结论摘要</h3>
-        <div class="summary-grid">
-            <div class="summary-card war">
-                <h4>⚔️ 战争局势</h4>
-                <p>霍尔木兹海峡3月3日封闭，十余艘油轮遇袭，伊朗允许"非敌对国家"油轮通过，冲突长期化概率高</p>
-            </div>
-            <div class="summary-card oil">
-                <h4>🛢️ 原油走势</h4>
-                <p>WTI原油102.67美元/桶(+3.04%)，布伦特108.55美元/桶(+3.07%)；供应缺口支撑油价中枢上移</p>
-            </div>
-            <div class="summary-card dollar">
-                <h4>💵 美元美债</h4>
-                <p>美元指数100.21(+0.04%)，美债10年期4.438%；去美元化加速，新加坡黄金枢纽计划印证</p>
-            </div>
-            <div class="summary-card gold">
-                <h4>🥇 黄金策略</h4>
-                <p>现货黄金4511.89美元/盎司(+0.42%)，周波动区间4444-4516美元；4400-4500美元为长线布局窗口</p>
-            </div>
-            <div class="summary-card economy">
-                <h4>📊 经济风险</h4>
-                <p>标普500连续五周下跌(-0.39%)，纳指-0.73%；VIX约30未破40，流动性危机是核心驱动</p>
+        <div class="p-3 bg-white border-t border-slate-200">
+            <div class="flex gap-2">
+                <input type="text" id="chat-input" placeholder="例: 吉卜力抢票是几号?..." class="flex-1 bg-slate-100 border-transparent focus:bg-white focus:ring-2 focus:ring-blue-100 rounded-xl px-4 py-2 text-sm outline-none">
+                <button id="chat-send-btn" class="bg-blue-600 text-white w-10 h-10 rounded-xl flex items-center justify-center shadow-md hover:bg-blue-700 flex-shrink-0">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
             </div>
         </div>
     </div>
-
-    <!-- 主容器 -->
-    <div class="container">
-
-        <!-- 数据更新时间 -->
-        <div class="data-update-time">
-            📌 数据更新时间：2026年3月30日 北京时间13:18-22:37 | 数据来源：新浪财经、英为财情、金十数据等
-        </div>
-
-        <!-- 黄金模块 -->
-        <section id="gold" class="module gold">
-            <div class="module-header">
-                <div class="module-icon">🥇</div>
-                <div>
-                    <h2>黄金市场与投资策略</h2>
-                    <span class="subtitle">汇丰高盛观点评估 + 新加坡计划强化黄金长期牛市逻辑</span>
-                </div>
-            </div>
-
-            <div class="conclusion-box gold">
-                <h4>🎯 核心结论</h4>
-                <p><strong>当前金价：</strong>截至2026年3月30日13:18，国际现货黄金报4511.89美元/盎司，+0.42% [[1]]。</p>
-                <p><strong>日内波动：</strong>最高4516.57美元/盎司，开盘价4491.93美元/盎司 [[1]]。</p>
-                <p><strong>现货白银：</strong>突破71美元/盎司，日内涨1.88%-2.00% [[30]][[33]]。</p>
-                <p><strong>汇丰观点评估：</strong>波动性加大正确，但"3月下跌15%"数据需更新；长期去美元化逻辑正确。</p>
-                <p><strong>高盛观点评估：</strong>5400美元目标价合理，3800美元下行风险过于悲观；央行购金支撑逻辑正确。</p>
-                <p><strong>投资机会：</strong>4400-4500美元区间是长线优质加仓窗口，中期目标4800-5354美元，长期突破6000美元。</p>
-            </div>
-
-            <h3 class="section-title">📊 黄金市场核心数据（3月30日最新）</h3>
-            <div class="data-grid">
-                <div class="data-card gold">
-                    <div class="value">4511.89 美元</div>
-                    <div class="label">现货黄金 (13:18)</div>
-                </div>
-                <div class="data-card gold">
-                    <div class="value">+0.42%</div>
-                    <div class="label">日内涨跌幅</div>
-                </div>
-                <div class="data-card gold">
-                    <div class="value">71.10 美元</div>
-                    <div class="label">现货白银</div>
-                </div>
-                <div class="data-card gold">
-                    <div class="value">+2.00%</div>
-                    <div class="label">白银涨跌幅</div>
-                </div>
-                <div class="data-card gold">
-                    <div class="value">1002-1004 元</div>
-                    <div class="label">上海金AU9999</div>
-                </div>
-                <div class="data-card gold">
-                    <div class="value">4400-4500 美元</div>
-                    <div class="label">长线加仓窗口</div>
-                </div>
-                <div class="data-card gold">
-                    <div class="value">6000+ 美元</div>
-                    <div class="label">长期目标</div>
-                </div>
-                <div class="data-card gold">
-                    <div class="value">863 吨</div>
-                    <div class="label">2025央行净购金</div>
-                </div>
-            </div>
-
-            <h3 class="section-title">🔍 汇丰vs高盛观点对比评估</h3>
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>机构</th>
-                            <th>核心观点</th>
-                            <th>数据验证</th>
-                            <th>合理性评估</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>汇丰</strong></td>
-                            <td>• 黄金像风险资产<br>• 3月累计下跌15%<br>• 强势美元是逆风<br>• 2026年关键词：波动性</td>
-                            <td>• 周波动超12% ✅<br>• 当前4512美元较月初上涨 ⚠️<br>• 美元指数100+ ✅<br>• 波动性加大 ✅</td>
-                            <td>⭐⭐⭐⭐<br>短期观点正确，长期逻辑未变</td>
-                        </tr>
-                        <tr>
-                            <td><strong>高盛</strong></td>
-                            <td>• 2026年底目标5400美元<br>• 战术性下探3800美元<br>• 央行月均购金60吨<br>• 中期前景稳固</td>
-                            <td>• 较当前涨20% 合理<br>• 支撑位4300-4400 ⚠️<br>• 月均60-70吨 ✅<br>• 央行购金863吨 ✅</td>
-                            <td>⭐⭐⭐⭐<br>目标价合理，下行风险过于悲观</td>
-                        </tr>
-                        <tr>
-                            <td><strong>本报告</strong></td>
-                            <td>• 中期目标4800-5354美元<br>• 支撑位4300-4400美元<br>• 长期突破6000美元<br>• 去美元化+冲突升级</td>
-                            <td>• 当前4512美元 ✅<br>• 白银突破71美元 ✅<br>• 央行购金持续 ✅<br>• 中东冲突持续 ✅</td>
-                            <td>⭐⭐⭐⭐⭐<br>基于最新数据，风险收益比最优</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3 class="section-title">📈 实操投资策略（最终优化版）</h3>
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>策略类型</th>
-                            <th>持仓周期</th>
-                            <th>仓位建议</th>
-                            <th>操作区间</th>
-                            <th>目标价位</th>
-                            <th>止损设置</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>长线配置</strong></td>
-                            <td>6 个月以上</td>
-                            <td>10%-15%</td>
-                            <td>4400-4500 美元区间是长线优质加仓窗口，每下跌 50 美元分批加仓 5%，最高加仓至总资金的 20%</td>
-                            <td>持有至 6000+ 美元</td>
-                            <td>忽略短期波动，牢牢抓住去美元化、美元信用弱化的核心主线</td>
-                        </tr>
-                        <tr>
-                            <td><strong>中线布局</strong></td>
-                            <td>1-6 个月</td>
-                            <td>≤40%</td>
-                            <td>在 4300-4400 美元区间建仓 60%，4200-4300 美元区间建仓 40%，总仓位不超过总资金的 40%</td>
-                            <td>第一目标 4800 美元，第二目标 5354 美元</td>
-                            <td>统一止损设置在 4050 美元</td>
-                        </tr>
-                        <tr>
-                            <td><strong>短线交易</strong></td>
-                            <td>1 个月以内</td>
-                            <td>≤10%</td>
-                            <td>美联储 3 月决议落地前保持空仓观望，等待情绪充分释放后再操作，不盲目抄底</td>
-                            <td>第一目标 4550 美元</td>
-                            <td>仅在价格企稳 4400 美元以上，且 4 小时级别收出止跌阳线后，轻仓布局多单，仓位不超过总资金的 10%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="tags">
-                <span class="tag gold">黄金投资</span>
-                <span class="tag gold">汇丰观点</span>
-                <span class="tag gold">高盛观点</span>
-                <span class="tag gold">央行购金</span>
-                <span class="tag gold">长期牛市</span>
-                <span class="tag gold">去美元化</span>
-                <span class="tag gold">流动性危机</span>
-            </div>
-        </section>
-
-        <!-- 战争模块 -->
-        <section id="war" class="module war">
-            <div class="module-header">
-                <div class="module-icon">⚔️</div>
-                <div>
-                    <h2>中东战争局势升级</h2>
-                    <span class="subtitle">霍尔木兹海峡封闭 + 美国护航联盟</span>
-                </div>
-            </div>
-
-            <div class="conclusion-box danger">
-                <h4>🎯 核心结论</h4>
-                <p><strong>海峡封闭：</strong>霍尔木兹海峡被伊朗下达"禁航令"，3月3日宣布正式封闭，其间有十余艘油轮等各类货船报告在该海峡被袭击。</p>
-                <p><strong>部分通航：</strong>伊朗称将允许"非敌对国家"油轮通过霍尔木兹海峡，中方对此表示担忧。</p>
-                <p><strong>安全走廊：</strong>多艘船舶经"安全走廊"通过霍尔木兹海峡，供应中断程度低于最坏情景。</p>
-                <p><strong>冲突长期化：</strong>美以伊冲突已进入第29天，美国延长对伊朗能源设施暂停打击，但地面战风险仍存。</p>
-            </div>
-
-            <div class="tags">
-                <span class="tag war">霍尔木兹海峡</span>
-                <span class="tag war">禁航令</span>
-                <span class="tag war">军事升级</span>
-                <span class="tag war">冲突长期化</span>
-                <span class="tag war">地面战风险</span>
-                <span class="tag war">安全走廊</span>
-            </div>
-        </section>
-
-        <!-- 原油模块 -->
-        <section id="oil" class="module oil">
-            <div class="module-header">
-                <div class="module-icon">🛢️</div>
-                <div>
-                    <h2>原油市场深度分析</h2>
-                    <span class="subtitle">海峡封锁风险与油价走势预测</span>
-                </div>
-            </div>
-
-            <div class="conclusion-box warning">
-                <h4>🎯 核心结论</h4>
-                <p><strong>当前油价：</strong>WTI原油3月30日报102.67美元/桶，日内涨幅3.04% [[19]]。</p>
-                <p><strong>布伦特原油：</strong>触及108.55美元/桶，涨幅3.07%，创数月来最大单日涨幅 [[19]]。</p>
-                <p><strong>供应缺口：</strong>霍尔木兹海峡运量从2000万桶/日降至100-200万桶/日，占全球石油需求20%。</p>
-                <p><strong>机构预测：</strong>法兴上调2026年底布伦特原油价格预测至80美元/桶，高盛警告油价可能突破140美元。</p>
-            </div>
-
-            <h3 class="section-title">📊 原油市场核心数据（3月30日最新）</h3>
-            <div class="data-grid">
-                <div class="data-card oil">
-                    <div class="value">102.67 美元</div>
-                    <div class="label">WTI 原油</div>
-                </div>
-                <div class="data-card oil">
-                    <div class="value">108.55 美元</div>
-                    <div class="label">布伦特原油</div>
-                </div>
-                <div class="data-card oil">
-                    <div class="value">+3.04%</div>
-                    <div class="label">WTI 日涨幅</div>
-                </div>
-                <div class="data-card oil">
-                    <div class="value">+3.07%</div>
-                    <div class="label">布伦特日涨幅</div>
-                </div>
-                <div class="data-card oil">
-                    <div class="value">102.60 美元</div>
-                    <div class="label">WTI 开盘价</div>
-                </div>
-                <div class="data-card oil">
-                    <div class="value">107.75 美元</div>
-                    <div class="label">布伦特开盘价</div>
-                </div>
-                <div class="data-card oil">
-                    <div class="value">140 美元+</div>
-                    <div class="label">高盛极端情景预测</div>
-                </div>
-                <div class="data-card oil">
-                    <div class="value">30%</div>
-                    <div class="label">占全球海运原油贸易</div>
-                </div>
-            </div>
-
-            <div class="tags">
-                <span class="tag oil">霍尔木兹海峡</span>
-                <span class="tag oil">供应缺口</span>
-                <span class="tag oil">油价中枢</span>
-                <span class="tag oil">滞胀格局</span>
-                <span class="tag oil">多头策略</span>
-                <span class="tag oil">地缘溢价</span>
-            </div>
-        </section>
-
-        <!-- 美元模块 -->
-        <section id="dollar" class="module dollar">
-            <div class="module-header">
-                <div class="module-icon">💵</div>
-                <div>
-                    <h2>美元与去美元化趋势</h2>
-                    <span class="subtitle">新加坡黄金枢纽计划印证去美元化加速</span>
-                </div>
-            </div>
-
-            <div class="conclusion-box info">
-                <h4>🎯 核心结论</h4>
-                <p><strong>新加坡计划：</strong>新加坡金管局 (MAS) 已正式官宣打造全球黄金枢纽计划，联合摩根大通、瑞银、星展银行等成立专项工作组。</p>
-                <p><strong>去美元化印证：</strong>这一计划精准踩中全球黄金市场的三大不可逆趋势——去美元化加速、传统黄金枢纽信任危机、亚洲黄金需求与定价权严重错配。</p>
-                <p><strong>美元走势：</strong>美元指数报100.21，一度触及100.56创去年5月以来新高 [[26]]。但新加坡计划印证了去美元化进程正在加速，美元的长期下行趋势未变。</p>
-            </div>
-
-            <h3 class="section-title">📊 美元美债核心数据（3月30日最新）</h3>
-            <div class="data-grid">
-                <div class="data-card dollar">
-                    <div class="value">100.21</div>
-                    <div class="label">美元指数</div>
-                </div>
-                <div class="data-card dollar">
-                    <div class="value">100.56</div>
-                    <div class="label">日内高点</div>
-                </div>
-                <div class="data-card dollar">
-                    <div class="value">+0.04%</div>
-                    <div class="label">日涨跌幅</div>
-                </div>
-                <div class="data-card dollar">
-                    <div class="value">4.438%</div>
-                    <div class="label">美债 10 年期</div>
-                </div>
-                <div class="data-card dollar">
-                    <div class="value">4.906%</div>
-                    <div class="label">美债 30 年期</div>
-                </div>
-                <div class="data-card dollar">
-                    <div class="value">3.67%</div>
-                    <div class="label">美债 3 个月期</div>
-                </div>
-                <div class="data-card dollar">
-                    <div class="value">863 吨</div>
-                    <div class="label">2025央行净购金</div>
-                </div>
-                <div class="data-card dollar">
-                    <div class="value">38986 吨</div>
-                    <div class="label">全球央行黄金持有</div>
-                </div>
-            </div>
-
-            <div class="tags">
-                <span class="tag dollar">新加坡黄金枢纽</span>
-                <span class="tag dollar">去美元化</span>
-                <span class="tag dollar">央行购金</span>
-                <span class="tag dollar">地缘中立</span>
-                <span class="tag dollar">定价权重构</span>
-                <span class="tag dollar">储备多元化</span>
-            </div>
-        </section>
-
-        <!-- 经济模块 -->
-        <section id="economy" class="module economy">
-            <div class="module-header">
-                <div class="module-icon">📊</div>
-                <div>
-                    <h2>全球经济与市场风险</h2>
-                    <span class="subtitle">流动性危机预警与全资产配置</span>
-                </div>
-            </div>
-
-            <div class="conclusion-box economy">
-                <h4>🎯 核心结论</h4>
-                <p><strong>美股暴跌：</strong>标普500指数连续五周下跌，3月30日跌0.39%报6343.72点 [[41]]。</p>
-                <p><strong>全周表现：</strong>标普500累跌2.12%，纳指累跌3.23%，三大指数周线均五连跌 [[35]][[36]]。</p>
-                <p><strong>核心驱动：</strong>流动性危机 + 政策预期逆转，而非基本面趋势反转。受油价飙升与战争不确定性拖累。</p>
-                <p><strong>新加坡计划启示：</strong>新加坡打造黄金枢纽的计划，进一步印证了我们此前的核心判断——黄金正在从"传统避险资产"回归为全球货币体系的核心组成部分。</p>
-            </div>
-
-            <h3 class="section-title">📊 全球市场核心数据（3月30日最新）</h3>
-            <div class="data-grid">
-                <div class="data-card economy">
-                    <div class="value">6343.72 点</div>
-                    <div class="label">标普 500 指数</div>
-                </div>
-                <div class="data-card economy">
-                    <div class="value">20794.64 点</div>
-                    <div class="label">纳斯达克指数</div>
-                </div>
-                <div class="data-card economy">
-                    <div class="value">45216.14 点</div>
-                    <div class="label">道琼斯指数</div>
-                </div>
-                <div class="data-card economy">
-                    <div class="value">-0.39%</div>
-                    <div class="label">标普 500 日跌幅</div>
-                </div>
-                <div class="data-card economy">
-                    <div class="value">-0.73%</div>
-                    <div class="label">纳斯达克日跌幅</div>
-                </div>
-                <div class="data-card economy">
-                    <div class="value">5 周</div>
-                    <div class="label">标普连续下跌周数</div>
-                </div>
-                <div class="data-card economy">
-                    <div class="value">-2.12%</div>
-                    <div class="label">标普全周跌幅</div>
-                </div>
-                <div class="data-card economy">
-                    <div class="value">-3.23%</div>
-                    <div class="label">纳指全周跌幅</div>
-                </div>
-            </div>
-
-            <h3 class="section-title">⚠️ 绝对禁止的操作</h3>
-            <div class="conclusion-box danger">
-                <ol>
-                    <li><strong>盲目抄底美股、垃圾债、私募信贷产品；</strong></li>
-                    <li><strong>加杠杆满仓抄底黄金，忽视短期极端波动风险；</strong></li>
-                    <li><strong>提前押注美联储年内降息，忽视通胀与政策风险；</strong></li>
-                    <li><strong>做空原油，忽视供应端硬性缺口与地缘风险溢价永久抬升；</strong></li>
-                    <li><strong>因短期下跌否定黄金的长期配置价值，在底部割肉离场。</strong></li>
-                </ol>
-            </div>
-
-            <div class="tags">
-                <span class="tag economy">美股暴跌</span>
-                <span class="tag economy">流动性危机</span>
-                <span class="tag economy">资产配置</span>
-                <span class="tag economy">风险预警</span>
-                <span class="tag economy">五连跌</span>
-            </div>
-        </section>
-
-    </div>
-
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="footer-content">
-            <h4>🌍 全球地缘经济与投资策略分析</h4>
-            <div class="footer-divider"></div>
-            <p>本分析基于公开信息与专业研究，整合高盛、汇丰、巴克莱、彭博、IMF、摩根士丹利、华泰证券、新加坡金管局等权威数据</p>
-            <p>数据来源：新浪财经、英为财情、东方财富、央视新闻、金十数据等 [[1]][[2]][[19]][[21]][[25]][[30]][[41]]</p>
-            <p>仅供参考，不构成投资建议 · 投资有风险，决策需谨慎</p>
-            <p style="margin-top: 1rem; opacity: 0.6; font-size: 0.75rem;">© 2026 All Rights Reserved | 最后更新：2026 年 3 月 30 日</p>
-        </div>
-    </footer>
 
     <script>
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // ==========================================
+        // 三模式 SPA 视图切换逻辑
+        // ==========================================
+        function switchMode(mode) {
+            const modes = ['itinerary', 'food', 'shopping'];
+            
+            modes.forEach(m => {
+                // 控制按钮样式
+                const btn = document.getElementById(`btn-mode-${m}`);
+                if (m === mode) {
+                    btn.className = "flex-shrink-0 lg:flex-none px-4 py-1.5 rounded-lg text-sm font-bold transition-all bg-white text-slate-900 shadow-sm";
+                } else {
+                    btn.className = "flex-shrink-0 lg:flex-none px-4 py-1.5 rounded-lg text-sm font-medium transition-all text-slate-500 hover:text-slate-700";
+                }
+
+                // 控制视图显示
+                const view = document.getElementById(`view-${m}`);
+                if (m === mode) view.classList.add('active');
+                else view.classList.remove('active');
+
+                // 控制顶部次级导航链接
+                const navLinks = document.getElementById(`nav-${m}-links`);
+                if (m === mode) navLinks.classList.remove('hidden');
+                else navLinks.classList.add('hidden');
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // 修复内部锚点跳转白屏问题
+        document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }
             });
         });
 
-        // 导航栏滚动效果
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.2)';
+        // ==========================================
+        // Chart.js 预算图表渲染
+        // ==========================================
+        const ctx = document.getElementById('budgetChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['住宿', '交通', '餐饮', '游玩', '购物', '备用'],
+                datasets: [{
+                    data: [4750, 2259, 13750, 2620, 44000, 6000],
+                    backgroundColor: ['#64748B', '#94A3B8', '#F59E0B', '#10B981', '#3B82F6', '#475569'],
+                    borderWidth: 2, borderColor: '#1E293B', hoverOffset: 6
+                }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right', labels: { boxWidth: 10, usePointStyle: true, color: '#94A3B8', font: { size: 11 } } },
+                },
+                cutout: '70%', animation: { animateScale: true }
             }
         });
 
-        // 目录高亮当前章节
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('.module');
-            const navLinks = document.querySelectorAll('.nav-menu a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 150;
-                if (window.scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
+        // ==========================================
+        // Gemini API - 智能对话集成
+        // ==========================================
+        const apiKey = ""; // 环境自动注入
+        const chatWidget = document.getElementById('ai-chat-widget');
+        const triggerBtn = document.getElementById('ai-trigger-btn');
+        const closeBtn = document.getElementById('ai-close-btn');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('chat-send-btn');
 
-            navLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href === '#' + current) {
-                    link.style.background = 'rgba(255,255,255,0.2)';
-                    link.style.color = '#ffffff';
-                } else {
-                    link.style.background = 'transparent';
-                    link.style.color = '#cbd5e1';
+        triggerBtn.addEventListener('click', () => chatWidget.classList.add('active'));
+        closeBtn.addEventListener('click', () => chatWidget.classList.remove('active'));
+
+        const systemPrompt = `你是一个名为"东京浪漫指南"的AI管家，服务于度过6天5晚的情侣。
+你拥有三大数据库知识：
+1. 行程：吉卜力、高达、迪士尼、周边游。
+2. 美食体验：米其林(Florilege等)、和牛、寿司、Bar High Five、茶道、和服等。
+3. 购物：中古相机、优衣库旗舰、白州威士忌差价、免税政策。
+请用简短、浪漫的中文回答（尽量100字内，不用Markdown格式）。如果需要日语点菜翻译，请提供罗马音发音。`;
+
+        async function callGeminiAPI(prompt, retries = 3) {
+            if (!apiKey) return "系统提示：API Key 未配置，环境请在运行时注入 apiKey。";
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const payload = { contents: [{ parts: [{ text: prompt }] }], systemInstruction: { parts: [{ text: systemPrompt }] } };
+            const delays = [1000, 2000, 4000];
+
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                    if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+                    const data = await response.json();
+                    return data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，我的思绪有点飘，请再问一次。";
+                } catch (error) {
+                    if (i === retries - 1) return "抱歉，网络似乎开了小差，请稍后再试呀。";
+                    await new Promise(res => setTimeout(res, delays[i]));
                 }
-            });
-        });
+            }
+        }
+
+        function addMessage(text, isUser = false) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `flex items-start gap-2 chat-message ${isUser ? 'flex-row-reverse' : ''}`;
+            const avatar = isUser ? 
+                `<div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-white flex-shrink-0 text-xs shadow-sm"><i class="fa-solid fa-user"></i></div>` : 
+                `<div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0 shadow-sm">✨</div>`;
+            const bubble = isUser ? 
+                `bg-slate-900 text-white p-3 rounded-2xl rounded-tr-none text-sm shadow-sm max-w-[85%] leading-relaxed` : 
+                `bg-white text-slate-700 p-3 rounded-2xl rounded-tl-none border border-slate-200 text-sm shadow-sm max-w-[85%] leading-relaxed`;
+            msgDiv.innerHTML = `${avatar}<div class="${bubble}">${text}</div>`;
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showTyping() {
+            const msgDiv = document.createElement('div');
+            msgDiv.id = 'typing-indicator';
+            msgDiv.className = `flex items-start gap-2 chat-message`;
+            msgDiv.innerHTML = `<div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 flex-shrink-0 shadow-sm">✨</div><div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 shadow-sm typing-indicator flex items-center h-10"><span></span><span></span><span></span></div>`;
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTyping() {
+            const indicator = document.getElementById('typing-indicator');
+            if (indicator) indicator.remove();
+        }
+
+        async function handleSend() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+            chatInput.value = '';
+            addMessage(text, true);
+            showTyping();
+            const aiResponse = await callGeminiAPI(text);
+            removeTyping();
+            addMessage(aiResponse);
+        }
+
+        sendBtn.addEventListener('click', handleSend);
+        chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSend(); });
     </script>
 </body>
 </html>
