@@ -3,1215 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026全球地缘经济与投资策略深度分析</title>
+    <title>Jhinzzz - 个人主页</title>
     <style>
+        /* 全局重置与基础样式 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        :root {
-            --war-color: #dc2626;
-            --oil-color: #d97706;
-            --dollar-color: #1e40af;
-            --gold-color: #b45309;
-            --economy-color: #16a34a;
-            --primary-dark: #0f172a;
-            --bg-light: #f8fafc;
-            --bg-white: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #475569;
-            --border-light: #e2e8f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-            line-height: 1.7;
-            color: var(--text-primary);
-            background: var(--bg-light);
-            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
         }
 
         /* 导航栏 */
-        .navbar {
-            position: fixed;
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem 5%;
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(15, 23, 42, 0.98);
-            backdrop-filter: blur(10px);
-            padding: 0.75rem 2rem;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 100;
         }
 
-        .navbar-inner {
-            max-width: 1400px;
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
         }
 
-        .navbar-logo {
-            font-size: 1.2rem;
+        .logo {
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #ffffff;
-        }
-
-        .navbar-logo span {
-            color: var(--gold-color);
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 1rem;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-
-        .nav-menu a {
-            color: #cbd5e1;
+            color: #2c3e50;
             text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.4rem 0.6rem;
-            border-radius: 6px;
         }
 
-        .nav-menu a:hover {
-            color: #ffffff;
-            background: rgba(255,255,255,0.1);
-        }
-
-        .nav-menu a.war { color: #fca5a5; }
-        .nav-menu a.oil { color: #fcd34d; }
-        .nav-menu a.dollar { color: #93c5fd; }
-        .nav-menu a.gold { color: #fcd34d; }
-        .nav-menu a.economy { color: #86efac; }
-
-        /* 英雄区 */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #1e3a8a 100%);
-            min-height: 45vh;
+        .nav-links {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2980b9;
+        }
+
+        /* 主内容区 */
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 5%;
+        }
+
+        .hero-section {
             text-align: center;
-            padding: 6rem 2rem 3rem;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(217, 119, 6, 0.2);
-            border: 1px solid #d97706;
-            color: #fcd34d;
-            padding: 0.4rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .hero h1 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1rem;
-            color: #cbd5e1;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-meta {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            font-size: 0.8rem;
-            color: #94a3b8;
-        }
-
-        /* 核心结论卡片 */
-        .executive-summary {
-            max-width: 1100px;
-            margin: -3rem auto 2rem;
+            margin-bottom: 4rem;
             padding: 2rem;
-            background: var(--bg-white);
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 10;
-        }
-
-        .executive-summary h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 1.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
-        .summary-card {
-            padding: 1rem;
-            border-radius: 10px;
-            border-left: 4px solid;
-        }
-
-        .summary-card.war { background: #fef2f2; border-color: var(--war-color); }
-        .summary-card.oil { background: #fffbeb; border-color: var(--oil-color); }
-        .summary-card.dollar { background: #eff6ff; border-color: var(--dollar-color); }
-        .summary-card.gold { background: #fffbeb; border-color: var(--gold-color); }
-        .summary-card.economy { background: #f0fdf4; border-color: var(--economy-color); }
-
-        .summary-card h4 {
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .summary-card p {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        /* 主容器 */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
-
-        /* 模块章节 */
-        .module {
-            background: var(--bg-white);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid var(--border-light);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .module::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 6px;
-            height: 100%;
-        }
-
-        .module.war::before { background: linear-gradient(180deg, var(--war-color), #991b1b); }
-        .module.oil::before { background: linear-gradient(180deg, var(--oil-color), #92400e); }
-        .module.dollar::before { background: linear-gradient(180deg, var(--dollar-color), #1e3a8a); }
-        .module.gold::before { background: linear-gradient(180deg, var(--gold-color), #78350f); }
-        .module.economy::before { background: linear-gradient(180deg, var(--economy-color), #166534); }
-
-        .module-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--border-light);
-        }
-
-        .module-icon {
-            width: 50px;
-            height: 50px;
+            background: white;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .module.war .module-icon { background: linear-gradient(135deg, var(--war-color), #991b1b); }
-        .module.oil .module-icon { background: linear-gradient(135deg, var(--oil-color), #92400e); }
-        .module.dollar .module-icon { background: linear-gradient(135deg, var(--dollar-color), #1e3a8a); }
-        .module.gold .module-icon { background: linear-gradient(135deg, var(--gold-color), #78350f); }
-        .module.economy .module-icon { background: linear-gradient(135deg, var(--economy-color), #166534); }
-
-        .module-header h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-dark);
+        .hero-section h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
         }
 
-        .module-header .subtitle {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-            margin-left: 0.5rem;
+        .hero-section p {
+            font-size: 1.1rem;
+            color: #777;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        /* 结论框 */
-        .conclusion-box {
-            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
-            border-left: 4px solid var(--economy-color);
-            padding: 1.25rem 1.5rem;
-            margin: 1.25rem 0;
-            border-radius: 0 10px 10px 0;
-        }
-
-        .conclusion-box.warning {
-            background: linear-gradient(135deg, #fffbeb, #fef3c7);
-            border-left-color: var(--oil-color);
-        }
-
-        .conclusion-box.danger {
-            background: linear-gradient(135deg, #fef2f2, #fee2e2);
-            border-left-color: var(--war-color);
-        }
-
-        .conclusion-box.info {
-            background: linear-gradient(135deg, #eff6ff, #dbeafe);
-            border-left-color: var(--dollar-color);
-        }
-
-        .conclusion-box.gold {
-            background: linear-gradient(135deg, #fffbeb, #fef3c7);
-            border-left-color: var(--gold-color);
-        }
-
-        .conclusion-box.purple {
-            background: linear-gradient(135deg, #f5f3ff, #ede9fe);
-            border-left-color: #7c3aed;
-        }
-
-        .conclusion-box h4 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .conclusion-box p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .conclusion-box ul {
-            margin: 0.75rem 0 0 1.5rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .conclusion-box li {
-            margin-bottom: 0.4rem;
-        }
-
-        .conclusion-box ol {
-            margin: 0.75rem 0 0 1.5rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .conclusion-box ol li {
-            margin-bottom: 0.4rem;
-        }
-
-        /* 数据网格 */
-        .data-grid {
+        /* 内容卡片区 */
+        .cards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 0.75rem;
-            margin: 1.25rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        .data-card {
-            background: linear-gradient(135deg, var(--bg-light), #f1f5f9);
-            padding: 1rem;
+        .card {
+            background: white;
             border-radius: 10px;
-            text-align: center;
-            border: 1px solid var(--border-light);
-            transition: all 0.3s ease;
+            padding: 1.5rem;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .data-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .data-card .value {
+        .card h2 {
+            color: #2980b9;
+            margin-bottom: 1rem;
             font-size: 1.4rem;
-            font-weight: 800;
-            margin-bottom: 0.25rem;
         }
 
-        .data-card.war .value { color: var(--war-color); }
-        .data-card.oil .value { color: var(--oil-color); }
-        .data-card.dollar .value { color: var(--dollar-color); }
-        .data-card.gold .value { color: var(--gold-color); }
-        .data-card.economy .value { color: var(--economy-color); }
-
-        .data-card .label {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            font-weight: 500;
+        .card p {
+            color: #666;
         }
-
-        /* 场景卡片 */
-        .scenario-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin: 1.25rem 0;
-        }
-
-        .scenario-card {
-            background: var(--bg-white);
-            border: 2px solid var(--border-light);
-            border-radius: 10px;
-            padding: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .scenario-card:hover {
-            border-color: var(--dollar-color);
-            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.1);
-        }
-
-        .scenario-probability {
-            display: inline-block;
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.65rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .scenario-probability.high { background: #dcfce7; color: #166534; }
-        .scenario-probability.medium { background: #fef3c7; color: #92400e; }
-        .scenario-probability.low { background: #fee2e2; color: #991b1b; }
-
-        .scenario-card h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .scenario-card p {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        /* 表格 */
-        .table-container {
-            overflow-x: auto;
-            margin: 1.25rem 0;
-            border-radius: 10px;
-            border: 1px solid var(--border-light);
-        }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--bg-white);
-            font-size: 0.8rem;
-        }
-
-        .data-table th,
-        .data-table td {
-            padding: 0.75rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .data-table th {
-            background: linear-gradient(135deg, var(--primary-dark), #1e3a8a);
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 0.75rem;
-        }
-
-        .data-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .data-table tr:hover {
-            background: var(--bg-light);
-        }
-
-        /* 对比卡片 */
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-            margin: 1.25rem 0;
-        }
-
-        .comparison-card {
-            background: var(--bg-white);
-            border: 2px solid var(--border-light);
-            border-radius: 10px;
-            padding: 1rem;
-        }
-
-        .comparison-card h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .comparison-card p {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        /* 标签 */
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-            margin-top: 1.25rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-light);
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 0.25rem 0.6rem;
-            border-radius: 20px;
-            font-size: 0.65rem;
-            font-weight: 500;
-            border: 1px solid var(--border-light);
-        }
-
-        .tag.war { background: #fef2f2; color: var(--war-color); border-color: #fecaca; }
-        .tag.oil { background: #fffbeb; color: var(--oil-color); border-color: #fde68a; }
-        .tag.dollar { background: #eff6ff; color: var(--dollar-color); border-color: #bfdbfe; }
-        .tag.gold { background: #fffbeb; color: var(--gold-color); border-color: #fcd34d; }
-        .tag.economy { background: #f0fdf4; color: var(--economy-color); border-color: #bbf7d0; }
-        .tag.purple { background: #f5f3ff; color: #7c3aed; border-color: #ddd6fe; }
 
         /* 页脚 */
-        .footer {
-            background: var(--primary-dark);
-            color: #ffffff;
+        footer {
             text-align: center;
-            padding: 2.5rem 1.5rem;
-            margin-top: 2rem;
+            padding: 2rem;
+            color: #777;
+            background: rgba(255, 255, 255, 0.9);
+            margin-top: 4rem;
         }
 
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer h4 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer p {
-            color: #94a3b8;
-            font-size: 0.8rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .footer-divider {
-            width: 50px;
-            height: 3px;
-            background: var(--gold-color);
-            margin: 1rem auto;
-            border-radius: 2px;
-        }
-
-        /* 响应式 */
+        /* 响应式适配 */
         @media (max-width: 768px) {
-            .navbar-inner {
-                flex-direction: column;
-                gap: 0.5rem;
+            .nav-links {
+                gap: 1rem;
             }
 
-            .nav-menu {
-                justify-content: center;
-                gap: 0.5rem;
+            .hero-section h1 {
+                font-size: 2rem;
             }
 
-            .hero {
-                padding: 4rem 1rem 2rem;
-                min-height: 35vh;
-            }
-
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-
-            .executive-summary {
-                margin: -2rem 1rem 1.5rem;
-                padding: 1.5rem;
-            }
-
-            .module {
-                padding: 1.5rem 1rem;
-            }
-
-            .module-header h2 {
-                font-size: 1.25rem;
-            }
-
-            .summary-grid,
-            .data-grid,
-            .scenario-grid,
-            .comparison-grid {
+            .cards-container {
                 grid-template-columns: 1fr;
             }
-        }
-
-        /* 动画 */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .module {
-            animation: fadeInUp 0.5s ease-out forwards;
-        }
-
-        .module:nth-child(2) { animation-delay: 0.1s; }
-        .module:nth-child(3) { animation-delay: 0.15s; }
-        .module:nth-child(4) { animation-delay: 0.2s; }
-        .module:nth-child(5) { animation-delay: 0.25s; }
-        .module:nth-child(6) { animation-delay: 0.3s; }
-
-        /* 章节标题 */
-        .section-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin: 1.5rem 0 1rem;
-            padding-left: 0.75rem;
-            border-left: 3px solid var(--gold-color);
-        }
-
-        /* 重点提示 */
-        .highlight {
-            background: linear-gradient(135deg, #fef3c7, #fde68a);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-weight: 600;
         }
     </style>
 </head>
 <body>
     <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="navbar-inner">
-            <div class="navbar-logo">🌍 全球<span>地缘经济</span></div>
-            <ul class="nav-menu">
-                <li><a href="#war" class="war">⚔️ 战争</a></li>
-                <li><a href="#oil" class="oil">🛢️ 原油</a></li>
-                <li><a href="#dollar" class="dollar">💵 美元</a></li>
-                <li><a href="#gold" class="gold">🥇 黄金</a></li>
-                <li><a href="#economy" class="economy">📊 经济</a></li>
-            </ul>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Jhinzzz</a>
+            <div class="nav-links">
+                <a href="#home">首页</a>
+                <a href="#projects">项目</a>
+                <a href="#about">关于</a>
+                <a href="#contact">联系</a>
+            </div>
         </div>
     </nav>
 
-    <!-- 英雄区 -->
-    <section class="hero">
-        <div class="hero-content">
-            <span class="hero-badge">📊 深度投资分析报告</span>
-            <h1>2026 全球地缘经济与投资策略</h1>
-            <p>五大核心模块深度分析 · 数据驱动 · 结论明确 · 汇丰高盛观点评估</p>
-            <div class="hero-meta">
-                <span>📅 2026 年 3 月 29 日更新</span>
-                <span>🌐 全球视角</span>
-                <span>📈 投资导向</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- 核心结论摘要 -->
-    <div class="executive-summary">
-        <h3>🎯 核心结论摘要</h3>
-        <div class="summary-grid">
-            <div class="summary-card war">
-                <h4>⚔️ 战争局势</h4>
-                <p>霍尔木兹海峡3月3日封闭，十余艘油轮遇袭，伊朗允许"非敌对国家"油轮通过，冲突长期化概率高</p>
-            </div>
-            <div class="summary-card oil">
-                <h4>🛢️ 原油走势</h4>
-                <p>WTI原油101.18-103.29美元/桶(+7.09%)，布伦特106.81-115美元/桶(+4.84%)；供应缺口支撑油价中枢上移</p>
-            </div>
-            <div class="summary-card dollar">
-                <h4>💵 美元美债</h4>
-                <p>美元指数100.22-100.34，美债10年期4.414%-4.44%；去美元化加速，新加坡黄金枢纽计划印证</p>
-            </div>
-            <div class="summary-card gold">
-                <h4>🥇 黄金策略</h4>
-                <p>现货黄金4495.17美元/盎司(+2.60%)，周波动区间4098-4602美元；4400-4500美元为长线布局窗口</p>
-            </div>
-            <div class="summary-card economy">
-                <h4>📊 经济风险</h4>
-                <p>标普500连续五周下跌，纳指-2.1%；VIX约30未破40，流动性危机是核心驱动</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 主容器 -->
-    <div class="container">
-
-        <!-- 黄金模块（新增汇丰高盛分析） -->
-        <section id="gold" class="module gold">
-            <div class="module-header">
-                <div class="module-icon">🥇</div>
-                <div>
-                    <h2>黄金市场与投资策略</h2>
-                    <span class="subtitle">汇丰高盛观点评估 + 新加坡计划强化黄金长期牛市逻辑</span>
-                </div>
-            </div>
-
-            <div class="conclusion-box gold">
-                <h4>🎯 核心结论</h4>
-                <p><strong>当前金价：</strong>截至2026年3月29日，国际现货黄金报4495.17美元/盎司，+2.60% [[1]][[2]]。</p>
-                <p><strong>周波动区间：</strong>最高4602美元/盎司，最低4098美元/盎司，周波动幅度超12%，显示市场极度波动。</p>
-                <p><strong>汇丰观点评估：</strong>波动性加大正确，但"3月下跌15%"数据需更新；长期去美元化逻辑正确。</p>
-                <p><strong>高盛观点评估：</strong>5400美元目标价合理，3800美元下行风险过于悲观；央行购金支撑逻辑正确。</p>
-                <p><strong>投资机会：</strong>4400-4500美元区间是长线优质加仓窗口，中期目标4800-5354美元，长期突破6000美元。</p>
-            </div>
-
-            <h3 class="section-title">📊 黄金市场核心数据</h3>
-            <div class="data-grid">
-                <div class="data-card gold">
-                    <div class="value">4495.17 美元</div>
-                    <div class="label">现货黄金 (3/29)</div>
-                </div>
-                <div class="data-card gold">
-                    <div class="value">+2.60%</div>
-                    <div class="label">日涨跌幅</div>
-                </div>
-                <div class="data-card gold">
-                    <div class="value">1004.45 元</div>
-                    <div class="label">上海金AU9999</div>
-                </div>
-                <div class="data-card gold">
-                    <div class="value">4098 美元</div>
-                    <div class="label">周最低价</div>
-                </div>
-                <div class="data-card gold">
-                    <div class="value">4602 美元</div>
-                    <div class="label">周最高价</div>
-                </div>
-                <div class="data-card gold">
-                    <div class="value">4400-4500 美元</div>
-                    <div class="label">长线加仓窗口</div>
-                </div>
-                <div class="data-card gold">
-                    <div class="value">6000+ 美元</div>
-                    <div class="label">长期目标</div>
-                </div>
-                <div class="data-card gold">
-                    <div class="value">863 吨</div>
-                    <div class="label">2025央行净购金</div>
-                </div>
-            </div>
-
-            <h3 class="section-title">🔍 汇丰vs高盛观点对比评估</h3>
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>机构</th>
-                            <th>核心观点</th>
-                            <th>数据验证</th>
-                            <th>合理性评估</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>汇丰</strong></td>
-                            <td>• 黄金像风险资产<br>• 3月累计下跌15%<br>• 强势美元是逆风<br>• 2026年关键词：波动性</td>
-                            <td>• 周波动超12% ✅<br>• 当前4495美元较月初上涨 ⚠️<br>• 美元指数100+ ✅<br>• 波动性加大 ✅</td>
-                            <td>⭐⭐⭐⭐<br>短期观点正确，长期逻辑未变</td>
-                        </tr>
-                        <tr>
-                            <td><strong>高盛</strong></td>
-                            <td>• 2026年底目标5400美元<br>• 战术性下探3800美元<br>• 央行月均购金60吨<br>• 中期前景稳固</td>
-                            <td>• 较当前涨20% 合理<br>• 支撑位4300-4400 ⚠️<br>• 月均60-70吨 ✅<br>• 央行购金863吨 ✅</td>
-                            <td>⭐⭐⭐⭐<br>目标价合理，下行风险过于悲观</td>
-                        </tr>
-                        <tr>
-                            <td><strong>本报告</strong></td>
-                            <td>• 中期目标4800-5354美元<br>• 支撑位4300-4400美元<br>• 长期突破6000美元<br>• 去美元化+冲突升级</td>
-                            <td>• 周波动4098-4602 ✅<br>• 当前4495美元 ✅<br>• 央行购金持续 ✅<br>• 中东冲突持续 ✅</td>
-                            <td>⭐⭐⭐⭐⭐<br>基于最新数据，风险收益比最优</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3 class="section-title">🔍 黄金与实际利率关系弱化分析</h3>
-            <div class="conclusion-box info">
-                <h4>💡 汇丰首席分析师James Steel观点</h4>
-                <p>"黄金对实际利率——尤其是10年期实际利率——的敏感度大不如前了。这种关系在近年来已经彻底破裂。"</p>
-                <p><strong>数据验证：</strong>当前美债10年期收益率4.44%，但金价仍处4495美元高位，确实显示关系弱化 [[33]][[35]]。</p>
-                <p><strong>核心原因：</strong>1) 央行购金不受利率影响；2) 地缘政治风险溢价；3) 散户和杠杆买家增加。</p>
-                <p><strong>长期影响：</strong>黄金定价逻辑从"实际利率驱动"转向"去美元化+地缘风险驱动"。</p>
-            </div>
-
-            <h3 class="section-title">📈 央行购金数据分析</h3>
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>指标</th>
-                            <th>2025年数据</th>
-                            <th>2026年预测</th>
-                            <th>历史对比</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>全年净购金量</strong></td>
-                            <td>863吨 [[65]]</td>
-                            <td>750-900吨 [[62]]</td>
-                            <td>2010-2021年平均473吨</td>
-                        </tr>
-                        <tr>
-                            <td><strong>月均购金量</strong></td>
-                            <td>约72吨</td>
-                            <td>60-70吨 [[61]]</td>
-                            <td>过去10年平均约40吨</td>
-                        </tr>
-                        <tr>
-                            <td><strong>2026年1月购金</strong></td>
-                            <td>-</td>
-                            <td>5吨 [[67]]</td>
-                            <td>仅为2025年月均的20%</td>
-                        </tr>
-                        <tr>
-                            <td><strong>购金趋势</strong></td>
-                            <td>连续3年超1000吨</td>
-                            <td>放缓但仍处高位</td>
-                            <td>新主权主体入市 [[63]]</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3 class="section-title">📈 实操投资策略（最终优化版）</h3>
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>策略类型</th>
-                            <th>持仓周期</th>
-                            <th>仓位建议</th>
-                            <th>操作区间</th>
-                            <th>目标价位</th>
-                            <th>止损设置</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>长线配置</strong></td>
-                            <td>6 个月以上</td>
-                            <td>10%-15%</td>
-                            <td>4400-4500 美元区间是长线优质加仓窗口，每下跌 50 美元分批加仓 5%，最高加仓至总资金的 20%</td>
-                            <td>持有至 6000+ 美元</td>
-                            <td>忽略短期波动，牢牢抓住去美元化、美元信用弱化的核心主线</td>
-                        </tr>
-                        <tr>
-                            <td><strong>中线布局</strong></td>
-                            <td>1-6 个月</td>
-                            <td>≤40%</td>
-                            <td>在 4300-4400 美元区间建仓 60%，4200-4300 美元区间建仓 40%，总仓位不超过总资金的 40%</td>
-                            <td>第一目标 4800 美元，第二目标 5354 美元</td>
-                            <td>统一止损设置在 4050 美元</td>
-                        </tr>
-                        <tr>
-                            <td><strong>短线交易</strong></td>
-                            <td>1 个月以内</td>
-                            <td>≤10%</td>
-                            <td>美联储 3 月决议落地前保持空仓观望，等待情绪充分释放后再操作，不盲目抄底</td>
-                            <td>第一目标 4550 美元</td>
-                            <td>仅在价格企稳 4400 美元以上，且 4 小时级别收出止跌阳线后，轻仓布局多单，仓位不超过总资金的 10%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3 class="section-title">⚠️ 绝对禁止的 3 个致命操作</h3>
-            <div class="conclusion-box danger">
-                <ol>
-                    <li><strong>下跌过程中盲目加仓抄底、越跌越买，最终深度套牢；</strong></li>
-                    <li><strong>加杠杆扛单，赌地缘冲突带来的反弹，最终被短期波动洗出出局；</strong></li>
-                    <li><strong>因短期下跌否定黄金的长期配置价值，在底部割肉离场。</strong></li>
-                </ol>
-            </div>
-
-            <h3 class="section-title"> 黄金短期下跌是流动性危机的典型特征</h3>
-            <div class="conclusion-box info">
-                <p>黄金3月21日当周跌幅超10%，与美股同步下跌，本质是短期流动性恶化，机构为应付保证金追加，所有资产都会被无差别抛售。这和2008年金融危机初期、2020年疫情初期的走势完全一致。</p>
-                <p><strong>历史对照：</strong>2008年9-10月黄金下跌约30%，2020年3月黄金下跌约15%，随后均迎来大幅反弹。当前黄金下跌是买入机会而非卖出信号。</p>
-            </div>
-
-            <div class="tags">
-                <span class="tag gold">黄金投资</span>
-                <span class="tag gold">汇丰观点</span>
-                <span class="tag gold">高盛观点</span>
-                <span class="tag gold">央行购金</span>
-                <span class="tag gold">长期牛市</span>
-                <span class="tag gold">去美元化</span>
-                <span class="tag gold">流动性危机</span>
-            </div>
+    <!-- 主内容 -->
+    <main>
+        <section class="hero-section" id="home">
+            <h1>欢迎来到 Jhinzzz 的个人主页</h1>
+            <p>专注于技术分享、项目实践与个人成长，记录和分享编程路上的点滴收获。</p>
         </section>
 
-        <!-- 战争模块 -->
-        <section id="war" class="module war">
-            <div class="module-header">
-                <div class="module-icon">⚔️</div>
-                <div>
-                    <h2>中东战争局势升级</h2>
-                    <span class="subtitle">霍尔木兹海峡封闭 + 美国护航联盟</span>
-                </div>
+        <section class="cards-container">
+            <div class="card" id="projects">
+                <h2>我的项目</h2>
+                <p>这里展示我参与和开发的各类项目，涵盖前端、后端及全栈开发方向，包含详细的技术栈和实现思路。</p>
             </div>
-
-            <div class="conclusion-box danger">
-                <h4>🎯 核心结论</h4>
-                <p><strong>海峡封闭：</strong>霍尔木兹海峡被伊朗下达"禁航令"，3月3日宣布正式封闭，其间有十余艘油轮等各类货船报告在该海峡被袭击。</p>
-                <p><strong>部分通航：</strong>伊朗称将允许"非敌对国家"油轮通过霍尔木兹海峡，中方对此表示担忧。</p>
-                <p><strong>安全走廊：</strong>多艘船舶经"安全走廊"通过霍尔木兹海峡，供应中断程度低于最坏情景。</p>
-                <p><strong>冲突长期化：</strong>美以伊冲突已进入第29天，美国延长对伊朗能源设施暂停打击，但地面战风险仍存。</p>
+            <div class="card" id="about">
+                <h2>关于我</h2>
+                <p>一名热爱编程的开发者，擅长 HTML/CSS/JavaScript、Python 等技术，持续学习并探索新技术领域。</p>
             </div>
-
-            <h3 class="section-title">📋 核心事件时间线（截至 3 月 29 日）</h3>
-            <div class="table-container">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>时间</th>
-                            <th>事件</th>
-                            <th>影响</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>3 月 3 日</td>
-                            <td>伊朗正式封闭霍尔木兹海峡</td>
-                            <td>十余艘油轮遇袭，航运中断</td>
-                        </tr>
-                        <tr>
-                            <td>3 月 12 日</td>
-                            <td>布伦特原油突破100美元/桶</td>
-                            <td>油价进入三位数时代</td>
-                        </tr>
-                        <tr>
-                            <td>3 月 19 日</td>
-                            <td>联合国海事组织特别会议</td>
-                            <td>逾2万海员受困，全球航运面临风险</td>
-                        </tr>
-                        <tr>
-                            <td>3 月 25 日</td>
-                            <td>伊朗允许"非敌对国家"油轮通过</td>
-                            <td>部分通航，供应压力缓解</td>
-                        </tr>
-                        <tr>
-                            <td>3 月 29 日</td>
-                            <td>WTI原油101.18-103.29美元/桶</td>
-                            <td>日涨幅达7.09%</td>
-                        </tr>
-                        <tr>
-                            <td>3 月 29 日</td>
-                            <td>现货黄金4495.17美元/盎司</td>
-                            <td>站稳4500美元关口</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="tags">
-                <span class="tag war">霍尔木兹海峡</span>
-                <span class="tag war">禁航令</span>
-                <span class="tag war">军事升级</span>
-                <span class="tag war">冲突长期化</span>
-                <span class="tag war">地面战风险</span>
-                <span class="tag war">安全走廊</span>
+            <div class="card" id="contact">
+                <h2>联系我</h2>
+                <p>如果你有合作、交流或问题咨询，欢迎通过邮箱/社交平台联系我，我会尽快回复。</p>
             </div>
         </section>
-
-        <!-- 原油模块 -->
-        <section id="oil" class="module oil">
-            <div class="module-header">
-                <div class="module-icon">🛢️</div>
-                <div>
-                    <h2>原油市场深度分析</h2>
-                    <span class="subtitle">海峡封锁风险与油价走势预测</span>
-                </div>
-            </div>
-
-            <div class="conclusion-box warning">
-                <h4>🎯 核心结论</h4>
-                <p><strong>当前油价：</strong>WTI原油3月29日报101.18-103.29美元/桶，日内涨幅高达7.09% [[15]][[16]]。</p>
-                <p><strong>布伦特原油：</strong>触及106.81-115美元/桶，涨幅达4.84%，创数月来最大单日涨幅 [[15]][[28]]。</p>
-                <p><strong>供应缺口：</strong>霍尔木兹海峡运量从2000万桶/日降至100-200万桶/日，占全球石油需求20%。</p>
-                <p><strong>机构预测：</strong>法兴上调2026年底布伦特原油价格预测至80美元/桶，高盛警告油价可能突破140美元。</p>
-            </div>
-
-            <h3 class="section-title">📊 原油市场核心数据</h3>
-            <div class="data-grid">
-                <div class="data-card oil">
-                    <div class="value">101-103 美元</div>
-                    <div class="label">WTI 原油 (3/29)</div>
-                </div>
-                <div class="data-card oil">
-                    <div class="value">106-115 美元</div>
-                    <div class="label">布伦特原油 (3/29)</div>
-                </div>
-                <div class="data-card oil">
-                    <div class="value">+7.09%</div>
-                    <div class="label">WTI 日涨幅</div>
-                </div>
-                <div class="data-card oil">
-                    <div class="value">+4.84%</div>
-                    <div class="label">布伦特日涨幅</div>
-                </div>
-                <div class="data-card oil">
-                    <div class="value">2000→100</div>
-                    <div class="label">万桶/日运量变化</div>
-                </div>
-                <div class="data-card oil">
-                    <div class="value">80 美元</div>
-                    <div class="label">法兴2026年底预测</div>
-                </div>
-                <div class="data-card oil">
-                    <div class="value">140 美元+</div>
-                    <div class="label">高盛极端情景预测</div>
-                </div>
-                <div class="data-card oil">
-                    <div class="value">30%</div>
-                    <div class="label">占全球海运原油贸易</div>
-                </div>
-            </div>
-
-            <div class="tags">
-                <span class="tag oil">霍尔木兹海峡</span>
-                <span class="tag oil">供应缺口</span>
-                <span class="tag oil">油价中枢</span>
-                <span class="tag oil">滞胀格局</span>
-                <span class="tag oil">多头策略</span>
-                <span class="tag oil">地缘溢价</span>
-            </div>
-        </section>
-
-        <!-- 美元模块 -->
-        <section id="dollar" class="module dollar">
-            <div class="module-header">
-                <div class="module-icon">💵</div>
-                <div>
-                    <h2>美元与去美元化趋势</h2>
-                    <span class="subtitle">新加坡黄金枢纽计划印证去美元化加速</span>
-                </div>
-            </div>
-
-            <div class="conclusion-box info">
-                <h4>🎯 核心结论</h4>
-                <p><strong>新加坡计划：</strong>新加坡金管局 (MAS) 已正式官宣打造全球黄金枢纽计划，联合摩根大通、瑞银、星展银行、大华银行、中国工商银行等成立专项工作组。</p>
-                <p><strong>去美元化印证：</strong>这一计划精准踩中全球黄金市场的三大不可逆趋势——去美元化加速、传统黄金枢纽信任危机、亚洲黄金需求与定价权严重错配。</p>
-                <p><strong>美元走势：</strong>美元指数报100.22-100.34，维持年内高位。但新加坡计划印证了去美元化进程正在加速，美元的长期下行趋势未变。</p>
-            </div>
-
-            <h3 class="section-title">📊 美元美债核心数据</h3>
-            <div class="data-grid">
-                <div class="data-card dollar">
-                    <div class="value">100.22-100.34</div>
-                    <div class="label">美元指数 (DXY)</div>
-                </div>
-                <div class="data-card dollar">
-                    <div class="value">4.414%-4.44%</div>
-                    <div class="label">美债 10 年期收益率</div>
-                </div>
-                <div class="data-card dollar">
-                    <div class="value">4.021%</div>
-                    <div class="label">美债 2 年期收益率</div>
-                </div>
-                <div class="data-card dollar">
-                    <div class="value">18%</div>
-                    <div class="label">央行持有全球地上黄金总量</div>
-                </div>
-                <div class="data-card dollar">
-                    <div class="value">38986 吨</div>
-                    <div class="label">全球央行黄金总持有量</div>
-                </div>
-                <div class="data-card dollar">
-                    <div class="value">863 吨</div>
-                    <div class="label">2025 年央行净购金量</div>
-                </div>
-            </div>
-
-            <div class="tags">
-                <span class="tag dollar">新加坡黄金枢纽</span>
-                <span class="tag dollar">去美元化</span>
-                <span class="tag dollar">央行购金</span>
-                <span class="tag dollar">地缘中立</span>
-                <span class="tag dollar">定价权重构</span>
-                <span class="tag dollar">储备多元化</span>
-            </div>
-        </section>
-
-        <!-- 经济模块 -->
-        <section id="economy" class="module economy">
-            <div class="module-header">
-                <div class="module-icon">📊</div>
-                <div>
-                    <h2>全球经济与市场风险</h2>
-                    <span class="subtitle">流动性危机预警与全资产配置</span>
-                </div>
-            </div>
-
-            <div class="conclusion-box economy">
-                <h4>🎯 核心结论</h4>
-                <p><strong>美股暴跌：</strong>标普500指数连续五周下跌，创下罕见记录。</p>
-                <p><strong>核心驱动：</strong>流动性危机 + 政策预期逆转，而非基本面趋势反转。受油价飙升与战争不确定性拖累。</p>
-                <p><strong>新加坡计划启示：</strong>新加坡打造黄金枢纽的计划，进一步印证了我们此前的核心判断——黄金正在从"传统避险资产"回归为全球货币体系的核心组成部分。</p>
-            </div>
-
-            <h3 class="section-title">📊 全球市场核心数据</h3>
-            <div class="data-grid">
-                <div class="data-card economy">
-                    <div class="value">6453.89 点</div>
-                    <div class="label">标普 500 指数 (3/27)</div>
-                </div>
-                <div class="data-card economy">
-                    <div class="value">22748.86 点</div>
-                    <div class="label">纳斯达克指数</div>
-                </div>
-                <div class="data-card economy">
-                    <div class="value">-1.7%</div>
-                    <div class="label">标普 500 日跌幅</div>
-                </div>
-                <div class="data-card economy">
-                    <div class="value">-2.1%</div>
-                    <div class="label">纳斯达克日跌幅</div>
-                </div>
-                <div class="data-card economy">
-                    <div class="value">5 周</div>
-                    <div class="label">标普连续下跌周数</div>
-                </div>
-                <div class="data-card economy">
-                    <div class="value">40 点</div>
-                    <div class="label">VIX 出清阈值</div>
-                </div>
-            </div>
-
-            <div class="tags">
-                <span class="tag economy">美股暴跌</span>
-                <span class="tag economy">流动性危机</span>
-                <span class="tag economy">资产配置</span>
-                <span class="tag economy">风险预警</span>
-                <span class="tag economy">VIX 指数</span>
-            </div>
-        </section>
-
-    </div>
+    </main>
 
     <!-- 页脚 -->
-    <footer class="footer">
-        <div class="footer-content">
-            <h4>🌍 全球地缘经济与投资策略分析</h4>
-            <div class="footer-divider"></div>
-            <p>本分析基于公开信息与专业研究，整合高盛、汇丰、巴克莱、彭博、IMF、摩根士丹利、华泰证券、新加坡金管局等权威数据</p>
-            <p>数据来源：新浪财经、英为财情、东方财富、央视新闻、世界黄金协会等 [[1]][[2]][[7]][[15]][[33]][[43]][[65]]</p>
-            <p>仅供参考，不构成投资建议 · 投资有风险，决策需谨慎</p>
-            <p style="margin-top: 1rem; opacity: 0.6; font-size: 0.75rem;">© 2026 All Rights Reserved | 最后更新：2026 年 3 月 29 日</p>
-        </div>
+    <footer>
+        <p>&copy; 2024 Jhinzzz. All rights reserved.</p>
     </footer>
-
-    <script>
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // 导航栏滚动效果
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.2)';
-            }
-        });
-
-        // 目录高亮当前章节
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('.module');
-            const navLinks = document.querySelectorAll('.nav-menu a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 150;
-                if (window.scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href === '#' + current) {
-                    link.style.background = 'rgba(255,255,255,0.2)';
-                    link.style.color = '#ffffff';
-                } else {
-                    link.style.background = 'transparent';
-                    link.style.color = '#cbd5e1';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
