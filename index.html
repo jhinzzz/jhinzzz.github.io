@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jhinzzz - 个人主页</title>
+    <title>全球地缘政治与金融市场分析 | Jhinzzz</title>
     <style>
         /* 全局重置与基础样式 */
         * {
@@ -16,22 +16,23 @@
         body {
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             min-height: 100vh;
         }
 
         /* 导航栏 */
         nav {
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: rgba(26, 26, 46, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
             padding: 1rem 5%;
             position: sticky;
             top: 0;
             z-index: 100;
+            backdrop-filter: blur(10px);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -41,8 +42,11 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #2c3e50;
+            color: #e94560;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .nav-links {
@@ -51,72 +55,243 @@
         }
 
         .nav-links a {
-            color: #555;
+            color: #eee;
             text-decoration: none;
             transition: color 0.3s;
+            font-weight: 500;
         }
 
         .nav-links a:hover {
-            color: #2980b9;
+            color: #e94560;
         }
 
         /* 主内容区 */
         main {
-            max-width: 1200px;
-            margin: 3rem auto;
+            max-width: 1400px;
+            margin: 2rem auto;
             padding: 0 5%;
         }
 
+        /* 实时市场数据区 */
+        .market-ticker {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ticker-container {
+            display: flex;
+            gap: 2rem;
+            white-space: nowrap;
+        }
+
+        .ticker-item {
+            display: flex;
+            flex-direction: column;
+            min-width: 150px;
+        }
+
+        .ticker-name {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .ticker-price {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .ticker-change {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .positive {
+            color: #4ade80;
+        }
+
+        .negative {
+            color: #f87171;
+        }
+
+        /* Hero区域 */
         .hero-section {
             text-align: center;
-            margin-bottom: 4rem;
-            padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 3rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.1) 0%, rgba(22, 33, 62, 0.8) 100%);
+            border-radius: 15px;
+            border: 1px solid rgba(233, 69, 96, 0.2);
         }
 
         .hero-section h1 {
-            font-size: 2.5rem;
-            color: #2c3e50;
+            font-size: 2.8rem;
+            color: #fff;
             margin-bottom: 1rem;
+            background: linear-gradient(90deg, #e94560, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-section p {
             font-size: 1.1rem;
-            color: #777;
-            max-width: 800px;
-            margin: 0 auto;
+            color: #ccc;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(233, 69, 96, 0.2);
+            color: #e94560;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(233, 69, 96, 0.3);
         }
 
         /* 内容卡片区 */
+        .section-title {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 2rem;
+            background: #e94560;
+            border-radius: 2px;
+        }
+
         .cards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .card {
-            background: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.15);
+            border-color: rgba(233, 69, 96, 0.3);
         }
 
         .card h2 {
-            color: #2980b9;
+            color: #e94560;
             margin-bottom: 1rem;
             font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .card p {
-            color: #666;
+            color: #ccc;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 核心观点区 */
+        .insights-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .insight-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .insight-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .insight-title {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .insight-icon {
+            width: 24px;
+            height: 24px;
+            background: #e94560;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .insight-content {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        /* 投资策略区 */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .strategy-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            border-left: 4px solid #e94560;
+        }
+
+        .strategy-title {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .strategy-content {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         /* 页脚 */
@@ -124,14 +299,16 @@
             text-align: center;
             padding: 2rem;
             color: #777;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.3);
             margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         /* 响应式适配 */
         @media (max-width: 768px) {
             .nav-links {
                 gap: 1rem;
+                font-size: 0.9rem;
             }
 
             .hero-section h1 {
@@ -141,6 +318,10 @@
             .cards-container {
                 grid-template-columns: 1fr;
             }
+
+            .ticker-container {
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -148,42 +329,186 @@
     <!-- 导航栏 -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">Jhinzzz</a>
+            <a href="#" class="logo">
+                <span>🌍</span>
+                全球市场分析
+            </a>
             <div class="nav-links">
                 <a href="#home">首页</a>
-                <a href="#projects">项目</a>
+                <a href="#insights">核心观点</a>
+                <a href="#strategy">投资策略</a>
                 <a href="#about">关于</a>
-                <a href="#contact">联系</a>
             </div>
         </div>
     </nav>
 
     <!-- 主内容 -->
     <main>
+        <!-- 实时市场数据 -->
+        <div class="market-ticker">
+            <div class="ticker-container">
+                <div class="ticker-item">
+                    <span class="ticker-name">伦敦金现</span>
+                    <span class="ticker-price">$4,812.72</span>
+                    <span class="ticker-change positive">+0.63%</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="ticker-name">伦敦银现</span>
+                    <span class="ticker-price">$75.84</span>
+                    <span class="ticker-change positive">+0.93%</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="ticker-name">WTI原油</span>
+                    <span class="ticker-price">$116.87</span>
+                    <span class="ticker-change positive">+1.00%</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="ticker-name">布伦特原油</span>
+                    <span class="ticker-price">$124.72</span>
+                    <span class="ticker-change positive">+0.92%</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="ticker-name">美元指数</span>
+                    <span class="ticker-price">101.37</span>
+                    <span class="ticker-change positive">+0.13%</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="ticker-name">10年期美债</span>
+                    <span class="ticker-price">4.692%</span>
+                    <span class="ticker-change positive">+0.02%</span>
+                </div>
+                <div class="ticker-item">
+                    <span class="ticker-name">标普500期货</span>
+                    <span class="ticker-price">6,241.19</span>
+                    <span class="ticker-change negative">-0.21%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero区域 -->
         <section class="hero-section" id="home">
-            <h1>欢迎来到 Jhinzzz 的个人主页</h1>
-            <p>专注于技术分享、项目实践与个人成长，记录和分享编程路上的点滴收获。</p>
+            <span class="hero-tag">📅 2026年4月7日 实时更新</span>
+            <h1>中东局势与全球金融市场深度分析</h1>
+            <p>聚焦伊朗战争、霍尔木兹海峡封锁、美联储政策转向、全球滞胀风险，提供专业的市场洞察与投资策略建议。</p>
         </section>
 
-        <section class="cards-container">
-            <div class="card" id="projects">
-                <h2>我的项目</h2>
-                <p>这里展示我参与和开发的各类项目，涵盖前端、后端及全栈开发方向，包含详细的技术栈和实现思路。</p>
+        <!-- 核心动态卡片 -->
+        <h2 class="section-title">市场核心动态</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h2>⚔️ 中东局势</h2>
+                <p>伊朗战争持续升级，霍尔木兹海峡日均商船通行量降至个位数，全球20%原油贸易陷入停滞。伊朗无人机非对称战争优势凸显，美军扫雷能力真空，冲突长期化概率超80%。</p>
+                <div>
+                    <span class="card-tag">霍尔木兹海峡</span>
+                    <span class="card-tag">非对称战争</span>
+                    <span class="card-tag">地缘风险</span>
+                </div>
             </div>
-            <div class="card" id="about">
-                <h2>关于我</h2>
-                <p>一名热爱编程的开发者，擅长 HTML/CSS/JavaScript、Python 等技术，持续学习并探索新技术领域。</p>
+            <div class="card">
+                <h2>💰 能源市场</h2>
+                <p>布伦特原油逼近125美元，美国本土汽油均价突破4.1美元/加仑，涨幅反超亚欧。美国"能源免疫"神话破灭，页岩油产能瓶颈锁死对冲能力，IEA战略储备仅能支撑1个月。</p>
+                <div>
+                    <span class="card-tag">供应缺口</span>
+                    <span class="card-tag">油价暴涨</span>
+                    <span class="card-tag">能源危机</span>
+                </div>
             </div>
-            <div class="card" id="contact">
-                <h2>联系我</h2>
-                <p>如果你有合作、交流或问题咨询，欢迎通过邮箱/社交平台联系我，我会尽快回复。</p>
+            <div class="card">
+                <h2>🏦 央行政策</h2>
+                <p>美联储政策转向"双向观望"，6月加息概率升至78%，年内降息概率不足5%。欧洲央行、日本央行加息预期同步升温，全球流动性收紧周期重启在即，滞胀格局全面锁定。</p>
+                <div>
+                    <span class="card-tag">美联储</span>
+                    <span class="card-tag">加息预期</span>
+                    <span class="card-tag">政策死局</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 核心观点区 -->
+        <section class="insights-section" id="insights">
+            <h2 class="section-title">核心市场观点</h2>
+            
+            <div class="insight-item">
+                <div class="insight-title">
+                    <span class="insight-icon">1</span>
+                    美国"能源免疫"是认知误区
+                </div>
+                <div class="insight-content">
+                    尽管美国是石油净出口国，但原油层面仍日均进口720万桶，且进口原油定价锚定中东基准。全球一体化定价决定了美国无法独善其身，当前美国本土成品油涨幅已反超亚欧，能源价格传导机制正在反噬美国经济。
+                </div>
+            </div>
+            
+            <div class="insight-item">
+                <div class="insight-title">
+                    <span class="insight-icon">2</span>
+                    伊朗非对称战争优势决定冲突长期化
+                </div>
+                <div class="insight-content">
+                    伊朗"见证者-136"无人机与美军拦截弹成本比达1:200，越拦截越亏损；美军专业扫雷舰全部退役，清通海峡至少需要3-6个月。双方已无退路，冲突持续6个月以上的概率超80%。
+                </div>
+            </div>
+            
+            <div class="insight-item">
+                <div class="insight-title">
+                    <span class="insight-icon">3</span>
+                    美联储已陷入无解的政策死局
+                </div>
+                <div class="insight-content">
+                    油价上涨带来的是供给侧通胀，加息无法解决，反而会加剧衰退；降息则会放任通胀失控。70年代两次石油危机的历史证明，滞胀周期中，大宗商品、黄金的表现会全面跑赢美股、美债。
+                </div>
+            </div>
+            
+            <div class="insight-item">
+                <div class="insight-title">
+                    <span class="insight-icon">4</span>
+                    美国盟友体系出现不可逆裂痕
+                </div>
+                <div class="insight-content">
+                    本次伊朗战争是美国一个世纪以来首次没有任何传统盟友参与的重大冲突。34%的欧洲民众将美国视为与朝鲜、伊朗同级别的威胁，去美元化进程将全面加速，黄金作为终极储备资产的地位会进一步强化。
+                </div>
+            </div>
+        </section>
+
+        <!-- 投资策略区 -->
+        <section id="strategy">
+            <h2 class="section-title">投资策略建议</h2>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <div class="strategy-title">🥇 黄金投资（核心主线）</div>
+                    <div class="strategy-content">
+                        <strong>长线配置</strong>：维持10%-15%实物黄金/黄金ETF永久底仓，4600-4800美元区间分批加仓，最高至总资金25%。<br><br>
+                        <strong>核心逻辑</strong>：滞胀格局锁定、去美元化加速、美元信用弱化，70年代石油危机中黄金涨幅超1500%。
+                    </div>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-title">🛢️ 原油投资</div>
+                    <div class="strategy-content">
+                        <strong>操作建议</strong>：回调至110-112美元区间轻仓布局WTI多单，止损105美元，第一目标125美元，第二目标140美元。<br><br>
+                        <strong>核心逻辑</strong>：霍尔木兹海峡封锁带来1200万桶/日供应硬缺口，冲突长期化决定油价中枢将长期维持在100美元以上。
+                    </div>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-title">📊 权益类资产</div>
+                    <div class="strategy-content">
+                        <strong>美股</strong>：VIX未破40前绝不盲目抄底，仅轻仓布局能源、公用事业等防御性板块，纳指仍有10%-15%下跌空间。<br><br>
+                        <strong>A股/港股</strong>：重点关注油气开采、煤化工、电力、黄金等防御性板块，规避高估值成长股。
+                    </div>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-title">⚠️ 风险警示</div>
+                    <div class="strategy-content">
+                        <strong>绝对规避</strong>：私募信贷、CCC级垃圾债，违约风险已无利差补偿。<br><br>
+                        <strong>谨慎配置</strong>：长端美债、高估值科技股、中小盘股，全球流动性收紧周期中面临估值与盈利双重压力。
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- 页脚 -->
-    <footer>
-        <p>&copy; 2024 Jhinzzz. All rights reserved.</p>
+    <footer id="about">
+        <p>&copy; 2026 全球地缘政治与金融市场分析 | Jhinzzz</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">免责声明：本网站内容仅供参考，不构成任何投资建议。投资有风险，入市需谨慎。</p>
     </footer>
 </body>
 </html>
