@@ -295,6 +295,53 @@
             line-height: 1.7;
         }
 
+        /* 伊朗谈判进展 */
+        .negotiation-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .negotiation-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .negotiation-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .negotiation-title {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .negotiation-icon {
+            width: 24px;
+            height: 24px;
+            background: #f39c12;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .negotiation-content {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
         /* 投资策略区 */
         .strategy-grid {
             display: grid;
@@ -363,6 +410,7 @@
             <div class="nav-links">
                 <a href="#home">首页</a>
                 <a href="#insights">核心观点</a>
+                <a href="#negotiation">伊朗谈判</a>
                 <a href="#gold">黄金分析</a>
                 <a href="#strategy">投资策略</a>
                 <a href="#about">关于</a>
@@ -377,77 +425,77 @@
             <div class="ticker-container">
                 <div class="ticker-item">
                     <span class="ticker-name">伦敦金现</span>
-                    <span class="ticker-price">$4,762.72</span>
-                    <span class="ticker-change positive">+0.08%</span>
+                    <span class="ticker-price">$4,774.15</span>
+                    <span class="ticker-change positive">+0.36%</span>
                 </div>
                 <div class="ticker-item">
                     <span class="ticker-name">伦敦银现</span>
-                    <span class="ticker-price">$75.84</span>
-                    <span class="ticker-change positive">+0.15%</span>
+                    <span class="ticker-price">$77.689</span>
+                    <span class="ticker-change positive">+2.67%</span>
                 </div>
                 <div class="ticker-item">
                     <span class="ticker-name">WTI原油</span>
-                    <span class="ticker-price">$98.24</span>
-                    <span class="ticker-change positive">+0.38%</span>
+                    <span class="ticker-price">$97.99</span>
+                    <span class="ticker-change negative">-1.09%</span>
                 </div>
                 <div class="ticker-item">
                     <span class="ticker-name">布伦特原油</span>
-                    <span class="ticker-price">$96.12</span>
-                    <span class="ticker-change positive">+0.21%</span>
+                    <span class="ticker-price">$97.5</span>
+                    <span class="ticker-change negative">-1.87%</span>
                 </div>
                 <div class="ticker-item">
                     <span class="ticker-name">美元指数</span>
-                    <span class="ticker-price">101.47</span>
-                    <span class="ticker-change positive">+0.10%</span>
+                    <span class="ticker-price">98.37</span>
+                    <span class="ticker-change negative">-0.28%</span>
                 </div>
                 <div class="ticker-item">
                     <span class="ticker-name">10年期美债</span>
-                    <span class="ticker-price">4.2789%</span>
-                    <span class="ticker-change negative">-0.04BP</span>
+                    <span class="ticker-price">4.28%</span>
+                    <span class="ticker-change negative">-0.02BP</span>
                 </div>
                 <div class="ticker-item">
-                    <span class="ticker-name">标普500期货</span>
-                    <span class="ticker-price">6,321.45</span>
-                    <span class="ticker-change positive">+0.14%</span>
+                    <span class="ticker-name">标普500</span>
+                    <span class="ticker-price">6,611.83</span>
+                    <span class="ticker-change positive">+1.02%</span>
                 </div>
             </div>
         </div>
 
         <!-- Hero区域 -->
         <section class="hero-section" id="home">
-            <span class="hero-tag">📅 2026年4月10日 实时更新</span>
+            <span class="hero-tag">📅 2026年4月14日 实时更新</span>
             <h1>全球地缘政治与金融市场深度分析</h1>
-            <p>聚焦伊朗战争、霍尔木兹海峡封锁、美联储政策转向、全球滞胀风险、黄金牛市阶段分析，提供专业的市场洞察与投资策略建议。</p>
+            <p>聚焦伊朗战争、霍尔木兹海峡封锁、美伊谈判进展、美联储政策转向、全球滞胀风险，提供专业的市场洞察与投资策略建议。</p>
         </section>
 
         <!-- 核心动态卡片 -->
         <h2 class="section-title">市场核心动态</h2>
         <div class="cards-container">
             <div class="card">
-                <h2>⚔️ 中东局势</h2>
-                <p>伊朗战争持续升级，霍尔木兹海峡日均商船通行量降至个位数，全球20%原油贸易陷入停滞。伊朗无人机非对称战争优势凸显，美军扫雷能力真空，冲突长期化概率超80%。</p>
+                <h2>⚔️ 伊朗谈判</h2>
+                <p>伊朗转向欧洲施压美国，愿稀释高浓缩铀但拒绝移交境外，提出霍尔木兹海峡收费机制。美欧分歧加深，欧洲计划组建非交战性质海军联盟，冲突进入外交博弈新阶段。</p>
                 <div>
-                    <span class="card-tag">霍尔木兹海峡</span>
-                    <span class="card-tag">非对称战争</span>
-                    <span class="card-tag">地缘风险</span>
+                    <span class="card-tag">伊斯兰堡会谈</span>
+                    <span class="card-tag">海峡收费</span>
+                    <span class="card-tag">美欧裂痕</span>
                 </div>
             </div>
             <div class="card">
                 <h2>💰 能源市场</h2>
-                <p>布伦特原油短期波动不改长期供应缺口逻辑。美国"能源免疫"神话破灭，页岩油产能瓶颈锁死对冲能力，IEA战略储备仅能支撑1个月。达拉斯联储研究显示，若海峡封锁3个季度，油价将升至167美元。</p>
+                <p>受谈判预期升温影响，布伦特原油短期回调至97美元，但霍尔木兹海峡日均通行量仍不足战前10%，全球1200万桶/日供应缺口未实质性缓解，长期中枢仍在100美元以上。</p>
                 <div>
                     <span class="card-tag">供应缺口</span>
-                    <span class="card-tag">油价暴涨</span>
+                    <span class="card-tag">油价回调</span>
                     <span class="card-tag">能源危机</span>
                 </div>
             </div>
             <div class="card">
                 <h2>🏦 央行政策</h2>
-                <p>美联储政策转向"双向观望"，6月加息概率升至78%，年内降息概率不足5%。欧洲央行、日本央行加息预期同步升温，全球流动性收紧周期重启在即，滞胀格局全面锁定。</p>
+                <p>美联储加息预期进一步降温，市场定价6月加息概率降至50%以下。欧洲央行因能源通胀压力仍维持鹰派立场，全球央行政策分化加剧，滞胀格局全面锁定。</p>
                 <div>
                     <span class="card-tag">美联储</span>
                     <span class="card-tag">加息预期</span>
-                    <span class="card-tag">政策死局</span>
+                    <span class="card-tag">政策分化</span>
                 </div>
             </div>
         </div>
@@ -497,6 +545,57 @@
             </div>
         </section>
 
+        <!-- 伊朗谈判进展 -->
+        <section class="negotiation-section" id="negotiation">
+            <h2 class="section-title">伊朗谈判最新进展</h2>
+            
+            <div class="negotiation-item">
+                <div class="negotiation-title">
+                    <span class="negotiation-icon">📜</span>
+                    伊斯兰堡会谈核心分歧
+                </div>
+                <div class="negotiation-content">
+                    <strong>美国要求</strong>：伊朗暂停铀浓缩活动20年，将所有高浓缩铀运出境外，全面开放核设施核查。<br><br>
+                    <strong>伊朗让步</strong>：最多同意暂停铀浓缩5年，坚持将浓缩铀留在境内，可稀释450公斤高浓缩铀，成立伊朗、美国、沙特联合稀释小组。<br><br>
+                    <strong>核心矛盾</strong>：伊朗拒绝放弃核主权，美国无法保证制裁解除的永久性，双方在核心问题上仍存在巨大分歧。
+                </div>
+            </div>
+            
+            <div class="negotiation-item">
+                <div class="negotiation-title">
+                    <span class="negotiation-icon">⚓</span>
+                    霍尔木兹海峡收费机制
+                </div>
+                <div class="negotiation-content">
+                    伊朗议会正在审议法案，提议向所有通过霍尔木兹海峡的商业船只征收通行费，而非仅油轮。伊朗认为，这是对其保障海峡安全的合理补偿，也是比核弹更有效的战略威慑。<br><br>
+                    欧洲计划组建非交战性质的海军联盟，在冲突结束后负责维护航行自由，但英国坚持"航行自由意味着免费通行"，与伊朗的收费主张存在不可调和的矛盾。
+                </div>
+            </div>
+            
+            <div class="negotiation-item">
+                <div class="negotiation-title">
+                    <span class="negotiation-icon">🌍</span>
+                    伊朗外交分化美欧
+                </div>
+                <div class="negotiation-content">
+                    伊朗主动向法国、德国、沙特、阿曼、卡塔尔通报谈判进展，将欧洲推向调停者位置。欧洲因能源危机承受了远超美国的经济损失，有强烈的动力推动和谈。<br><br>
+                    意大利总理梅洛尼已明确拒绝参与美国主导的扫雷行动，欧洲内部立场分化加剧，美欧裂痕进一步加深。伊朗的外交策略已初见成效。
+                </div>
+            </div>
+            
+            <div class="negotiation-item">
+                <div class="negotiation-title">
+                    <span class="negotiation-icon">🔮</span>
+                    未来局势展望
+                </div>
+                <div class="negotiation-content">
+                    <strong>短期（1-2周）</strong>：谈判将继续进行，市场情绪会出现反复，原油和黄金将维持震荡走势。<br><br>
+                    <strong>中期（1-3个月）</strong>：特朗普中期选举压力增大，若谈判无果，大概率升级军事行动，油价将重回120美元以上。<br><br>
+                    <strong>长期（6个月以上）</strong>：最终将形成包含伊朗在内的霍尔木兹海峡新管理机制，这是解决问题的唯一可行路径。
+                </div>
+            </div>
+        </section>
+
         <!-- 黄金牛市阶段分析 -->
         <section id="gold">
             <h2 class="section-title">黄金牛市阶段分析（BCA研究）</h2>
@@ -541,7 +640,7 @@
                 <div class="strategy-card">
                     <div class="strategy-title">🥇 黄金投资（核心主线）</div>
                     <div class="strategy-content">
-                        <strong>长线配置（持仓周期12个月以上）</strong>：维持10%-15%实物黄金/黄金ETF永久底仓，4500-4700美元区间分批加仓，最高至总资金25%。坚定持有至美联储政策转向，目标价5594美元（历史前高），长期看6000美元。<br><br>
+                        <strong>长线配置（持仓周期12个月以上）</strong>：维持10%-15%实物黄金/黄金ETF永久底仓，4700-4800美元区间分批加仓，最高至总资金25%。坚定持有至美联储政策转向，目标价5594美元（历史前高），长期看6000美元。<br><br>
                         <strong>核心逻辑</strong>：滞胀格局锁定、去美元化加速、美元信用弱化，70年代石油危机中黄金10年上涨24倍。
                     </div>
                 </div>
@@ -555,14 +654,14 @@
                 <div class="strategy-card">
                     <div class="strategy-title">🛢️ 原油投资</div>
                     <div class="strategy-content">
-                        <strong>操作建议</strong>：4月9日的暴跌是特朗普停火消息引发的短期波动，霍尔木兹海峡封锁的核心矛盾未解决，供应缺口仍在。回调至90-95美元区间可轻仓布局WTI多单，止损85美元，第一目标110美元，第二目标130美元。<br><br>
-                        <strong>核心逻辑</strong>：霍尔木兹海峡封锁带来1200万桶/日供应硬缺口，冲突长期化决定油价中枢将长期维持在100美元以上。
+                        <strong>操作建议</strong>：当前回调是优质布局机会，90-95美元区间轻仓布局WTI多单，止损85美元，第一目标110美元，第二目标130美元。<br><br>
+                        <strong>核心逻辑</strong>：霍尔木兹海峡封锁带来1200万桶/日供应硬缺口，即便达成临时停火，产能恢复至少需要1-2年，油价中枢将长期维持在100美元以上。
                     </div>
                 </div>
                 <div class="strategy-card">
                     <div class="strategy-title">📊 权益类资产</div>
                     <div class="strategy-content">
-                        <strong>美股</strong>：短期受停火消息影响可能出现反弹，但下跌趋势未变，VIX未破40前绝不盲目抄底，仅轻仓布局能源、公用事业等防御性板块，纳指仍有10%-15%下跌空间。<br><br>
+                        <strong>美股</strong>：当前反弹是情绪性修复，下跌趋势未变，VIX回落至20以下是绝佳减仓机会，仅轻仓布局能源、公用事业等防御性板块。<br><br>
                         <strong>A股/港股</strong>：重点关注油气开采、煤化工、电力、黄金等滞胀受益板块，规避高估值成长股、保险、可选消费等受利率和经济下行影响大的板块。
                     </div>
                 </div>
