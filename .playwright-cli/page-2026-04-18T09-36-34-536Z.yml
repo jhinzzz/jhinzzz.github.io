@@ -1,0 +1,340 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: 
+        - text: 东京浪漫指南
+      - generic [ref=e7]:
+        - button "🗺️ 行程管家" [pressed] [ref=e8] [cursor=pointer]
+        - button "🍽️ 美食与体验" [ref=e9] [cursor=pointer]
+        - button "🛍️ 购物宝典" [ref=e10] [cursor=pointer]
+      - generic [ref=e11]:
+        - link " 准备" [ref=e12] [cursor=pointer]:
+          - /url: "#prep"
+          - generic [ref=e13]: 
+          - text: 准备
+        - link " 行程" [ref=e14] [cursor=pointer]:
+          - /url: "#daily"
+          - generic [ref=e15]: 
+          - text: 行程
+        - link " 餐厅" [ref=e16] [cursor=pointer]:
+          - /url: "#food-plan"
+          - generic [ref=e17]: 
+          - text: 餐厅
+        - link " 预算" [ref=e18] [cursor=pointer]:
+          - /url: "#budget"
+          - generic [ref=e19]: 
+          - text: 预算
+      - text:      
+  - main [ref=e20]:
+    - generic [ref=e22]:
+      - generic [ref=e23]:
+        - paragraph [ref=e24]: TOKYO GUIDE / EDITION 01
+        - heading "东京六天五晚松弛感行程" [level=1] [ref=e25]
+        - paragraph [ref=e26]: 4月29日 - 5月4日 · 深度浪漫体验版
+        - generic [ref=e27]:
+          - generic [ref=e28]:
+            - generic [ref=e29]: 
+            - text: 避开黄金周人潮
+          - generic [ref=e30]:
+            - generic [ref=e31]: 
+            - text: HKG 09:00 飞 / NRT 17:05 返
+        - generic [ref=e32]:
+          - link "行前准备" [ref=e33] [cursor=pointer]:
+            - /url: "#prep"
+          - link "每日路线" [ref=e34] [cursor=pointer]:
+            - /url: "#daily"
+          - link "预算与联络" [ref=e35] [cursor=pointer]:
+            - /url: "#budget"
+      - complementary [ref=e36]:
+        - generic [ref=e37]: Trip Snapshot
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - generic [ref=e40]: Flight
+            - generic [ref=e41]: HKG → NRT
+          - generic [ref=e42]:
+            - generic [ref=e43]: Stay
+            - generic [ref=e44]: 6D / 5N
+        - list [ref=e46]:
+          - listitem [ref=e47]:
+            - generic [ref=e48]: Priority
+            - generic [ref=e49]: 避开黄金周人潮，保留松弛感。
+          - listitem [ref=e50]:
+            - generic [ref=e51]: Coverage
+            - generic [ref=e52]: 行程 / 美食 / 购物 / 预算全保留。
+          - listitem [ref=e53]:
+            - generic [ref=e54]: Delivery
+            - generic [ref=e55]: 适合手机浏览，也适合电脑端长读。
+    - generic [ref=e57]:
+      - heading " 行前生死线" [level=2] [ref=e58]:
+        - generic [ref=e59]: 
+        - text: 行前生死线
+      - generic [ref=e60]:
+        - generic [ref=e61]:
+          - heading "抢票时间轴" [level=3] [ref=e62]
+          - list [ref=e63]:
+            - listitem [ref=e64]: 提前30天必抢：Shibuya Sky日落票、富士回游特急指定席（吉卜力未抢到，已切回松弛感路线）。
+            - listitem [ref=e65]: 提前 7 天预定：迪士尼乐园门票及园内餐厅预约。
+            - listitem [ref=e66]: 提前 3 天完成：Visit Japan Web (VJW) 海关申报二维码截图。
+        - generic [ref=e67]:
+          - heading "交通与支付基础" [level=3] [ref=e68]
+          - list [ref=e69]:
+            - listitem [ref=e70]:
+              - generic [ref=e71]: 
+              - text: 购买 JR东京广域周游券(3日)，覆盖乐园、周边游与送机。
+            - listitem [ref=e72]:
+              - generic [ref=e73]: 
+              - text: Apple Pay 绑定 Suica (西瓜卡) 用于地铁和便利店。
+            - listitem [ref=e74]:
+              - generic [ref=e75]: 
+              - text: 携带 JCB 信用卡（商场折扣）+ 银联卡 + 3万日元现金备用。
+    - generic [ref=e77]:
+      - heading " 每日路线图与三餐速选" [level=2] [ref=e78]:
+        - generic [ref=e79]: 
+        - text: 每日路线图与三餐速选
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - generic [ref=e82]:
+            - generic [ref=e83]: 4.29 (周三)
+            - heading "落地与二次元" [level=3] [ref=e84]
+          - generic [ref=e85]:
+            - generic [ref=e86]:
+              - generic [ref=e87]:
+                - text: 下午
+                - paragraph [ref=e88]: 成田VJW通关，乘Skyliner至秋叶原酒店入住。
+              - generic [ref=e89]:
+                - text: 傍晚
+                - paragraph [ref=e90]: 秋叶原电器街踩点（找中古相机、二次元手办）。
+              - generic [ref=e91]:
+                - text: 晚上
+                - paragraph [ref=e92]: 逛扭蛋机，转去浅草桥一带吃海鲜居酒屋，轻松收尾。
+            - generic [ref=e93]:
+              - generic [ref=e94]:
+                - generic [ref=e95]: 
+                - text: Day 1 推荐食单
+              - generic [ref=e96]:
+                - paragraph [ref=e97]: ☕ 早：香港出发，航班内解决
+                - paragraph [ref=e98]: 🍱 午：Kanda Matsuya（神田老铺荞麦，建议错峰，基本按现场排队）
+                - paragraph [ref=e99]: 🥩 晚：Taiko Chaya（浅草桥海鲜居酒屋，需预约制，晚餐建议提前订） / 备选：蓑寿司（同轴线的轻量寿司位，通常现场吃）
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - generic [ref=e102]: 4.30 (周四)
+            - heading "迪士尼乐园" [level=3] [ref=e103]
+            - generic [ref=e104]: 06:30 极速早起
+          - generic [ref=e105]:
+            - generic [ref=e106]:
+              - generic [ref=e107]:
+                - text: 早晨
+                - paragraph [ref=e108]: 6:30出门避开人潮。入园立抢美女与野兽DPA。
+              - generic [ref=e109]:
+                - text: 白天
+                - paragraph [ref=e110]: 花钱买松弛，刷太空山/飞溅山，园区拍照打卡。
+              - generic [ref=e111]:
+                - text: 晚上
+                - paragraph [ref=e112]: 园内餐厅就餐，20:00 观赏城堡烟花大赏。
+            - generic [ref=e113]:
+              - generic [ref=e114]:
+                - generic [ref=e115]: 
+                - text: Day 2 推荐食单
+              - generic [ref=e116]:
+                - paragraph [ref=e117]: ☕ 早：便利店 (FamilyMart/7-11) 买饭团咖啡，路上速战速决排队。
+                - paragraph [ref=e118]: 🍔 午：园内 红心女王宴会大厅(爱丽丝梦游仙境主题) 或 土拨鼠营地厨房(平价休闲)。
+                - paragraph [ref=e119]: 🍷 晚：园内 水晶宫餐厅(需提前7天预约) / 蓝海湾餐厅(加勒比海盗旁) / 若提早出园去Ikspiari吃 今半寿喜烧。
+        - generic [ref=e120]:
+          - generic [ref=e121]:
+            - generic [ref=e122]: 5.1 (周五)
+            - heading "森林神宫 与惠比寿夜景" [level=3] [ref=e123]:
+              - text: 森林神宫
+              - text: 与惠比寿夜景
+          - generic [ref=e124]:
+            - generic [ref=e125]:
+              - generic [ref=e126]:
+                - text: 上午
+                - paragraph [ref=e127]: 乘JR直达原宿。漫步明治神宫享受早晨森林浴与参拜。
+              - generic [ref=e128]:
+                - text: 下午
+                - paragraph [ref=e129]: 原宿表参道 City Walk。顺路逛涩谷 Parco 宝可梦中心。
+              - generic [ref=e130]:
+                - text: 傍晚至夜
+                - paragraph [ref=e131]: 转去惠比寿花园广场散步看夜景，晚餐进叙々苑 恵比寿ガーデンプレイス店。
+            - generic [ref=e132]:
+              - generic [ref=e133]:
+                - generic [ref=e134]: 
+                - text: Day 3 推荐食单
+              - generic [ref=e135]:
+                - paragraph [ref=e136]: ☕ 早：表参道 Bills (超人气松饼Brunch，环境极佳) 或 猿田彦珈琲。
+                - paragraph [ref=e137]: 🍔 午：原宿 Shake Shack (外苑前美式汉堡) / 或选 AFURI 阿夫利(柚子盐拉面) / Maisen迈泉猪排。若想插一餐串烧，可改到 Jomon Roppongi（建议预约）。
+                - paragraph [ref=e138]: 🥩 晚：惠比寿 叙々苑 恵比寿ガーデンプレイス店（夜景烧肉主线，建议预约） / 轻松备选：Jomon Roppongi（串烧，想加六本木夜生活时再换，建议预约）。
+        - generic [ref=e139]:
+          - generic [ref=e140]:
+            - generic [ref=e141]: 5.2 (周六)
+            - heading "周边一日游" [level=3] [ref=e142]
+          - generic [ref=e143]:
+            - generic [ref=e144]:
+              - generic [ref=e145]:
+                - text: ☀️ 晴天方案：富士山
+                - paragraph [ref=e146]: 乘“富士回游”。逛河口湖八音盒之森、自然生活馆、乘游船看富士山绝景。
+              - generic [ref=e147]:
+                - text: 🌧️ 阴雨避坑：横滨浪漫游
+                - paragraph [ref=e148]: 镰仓拍照限制多且遇节假日暴堵。改去横滨港未来：逛红砖仓库、日清杯面博物馆(室内)，傍晚乘高空缆车看无敌海港夜景；若当天改成新宿采购线，晚餐才启用 新宿 米新（建议预约）。
+            - generic [ref=e149]:
+              - generic [ref=e150]:
+                - generic [ref=e151]: 
+                - text: Day 4 推荐食单
+              - generic [ref=e152]:
+                - paragraph [ref=e153]: ☕ 早：酒店吃饱 或 找家 Komeda's Coffee (客美多) 吃经典厚吐司。
+                - paragraph [ref=e154]: 🍱 午：【富士】选 Houtou Fudou (馎饦面) ；【横滨】选 中华街边走边吃 或 Bills横滨红砖仓库店。
+                - paragraph [ref=e155]: 🍣 晚：返回东京市区吃 伊豆荣本店(上野鳗鱼饭) / 【留横滨】地标大厦 Sirius 高空餐厅度过浪漫之夜。
+        - generic [ref=e156]:
+          - generic [ref=e157]:
+            - generic [ref=e158]: 5.3 (周日)
+            - heading "浅草高达银座" [level=3] [ref=e159]
+          - generic [ref=e160]:
+            - generic [ref=e161]:
+              - generic [ref=e162]:
+                - text: 上午 (老城)
+                - paragraph [ref=e163]: 行李存车站。浅草寺雷门求签，中午在码头搭乘水上巴士。
+              - generic [ref=e164]:
+                - text: 下午 (台场)
+                - paragraph [ref=e165]: 游船直达台场。打卡富士电视台和DiverCity 独角兽高达。
+              - generic [ref=e166]:
+                - text: 晚上 (银座)
+                - paragraph [ref=e167]: 回银座逛优衣库旗舰店与高奢百货，晚餐放在银座收尾；晴空塔改成机动观景项。
+            - generic [ref=e168]:
+              - generic [ref=e169]:
+                - generic [ref=e170]: 
+                - text: Day 5 推荐食单
+              - generic [ref=e171]:
+                - paragraph [ref=e172]: ☕ 早：浅草 MISOJYU (顶级精致味噌汤+饭团) 或 仲见世通雷门小吃。
+                - paragraph [ref=e173]: 🍣 午：SUSHI EDOMARU Asakusa（浅草老城顺路的轻松寿司，可预约）；如果想把午餐升级成更正式寿司，本次不排 Ginza Kyūbey Honten（周日 / 周一闭店）。
+                - paragraph [ref=e174]: 🍜 晚：Sato Yosuke Ginza Inaniwa Udon（银座购物后的清爽收尾，周日不接受座位预约，建议早点到） / 同区替换：Tsukiji Sushikuro Ginza（可预约）。
+        - generic [ref=e175]:
+          - generic [ref=e176]:
+            - generic [ref=e177]: 5.4 (周一)
+            - heading "返程送机" [level=3] [ref=e178]
+          - generic [ref=e179]:
+            - generic [ref=e180]:
+              - generic [ref=e181]:
+                - text: 上午
+                - paragraph [ref=e182]: 睡到自然醒。买伴手礼，11点退房。
+              - generic [ref=e183]:
+                - text: 中午
+                - paragraph [ref=e184]: 13:40 搭乘 Skyliner 特急直达成田机场。
+              - generic [ref=e185]:
+                - text: 下午
+                - paragraph [ref=e186]: 机场买免税威士忌、伴手礼。17:05 登机返回香港。
+            - generic [ref=e187]:
+              - generic [ref=e188]:
+                - generic [ref=e189]: 
+                - text: Day 6 推荐食单
+              - generic [ref=e190]:
+                - paragraph [ref=e191]: ☕ 早：浅草 Fuglen Asakusa(绝美北欧咖啡馆) 或 Pelican Cafe(老字号吐司)。
+                - paragraph [ref=e192]: 🍱 午：浅草 牛炸肉(浅草牛かつ) / 或 ごはん処 花丸(快餐省时间赶车)。
+                - paragraph [ref=e193]: ✈️ 晚：成田机场免税区内解决 或 飞机餐（推荐起飞前吃 Sushi Kyotatsu 寿司京辰 质量很高）。
+    - generic [ref=e195]:
+      - heading " 本次餐厅分配图（午晚餐 / 预约提示）" [level=2] [ref=e196]:
+        - generic [ref=e197]: 
+        - text: 本次餐厅分配图（午晚餐 / 预约提示）
+      - generic [ref=e198]:
+        - generic [ref=e199]:
+          - generic [ref=e200]:
+            - generic [ref=e201]:
+              - paragraph [ref=e202]: 4/29 | 落地后
+              - heading "Kanda Matsuya + Taiko Chaya" [level=3] [ref=e203]
+              - paragraph [ref=e204]: 神田 / 秋叶原 / 浅草桥轴线
+            - generic [ref=e205]: 主线
+          - generic [ref=e206]:
+            - paragraph [ref=e207]: 午餐：Kanda Matsuya，先吃荞麦再进秋叶原，不绕路；现场排队即可。
+            - paragraph [ref=e208]: 晚餐：Taiko Chaya，海鲜居酒屋收尾，需预约，离酒店也近。
+            - paragraph [ref=e209]: 替换位：蓑寿司，若想把 Day 1 晚餐改成更轻的寿司收尾就用它。
+          - generic [ref=e210]:
+            - generic [ref=e211]: 荞麦
+            - generic [ref=e212]: 海鲜居酒屋
+            - generic [ref=e213]: 到店即吃
+        - generic [ref=e214]:
+          - generic [ref=e215]:
+            - generic [ref=e216]:
+              - paragraph [ref=e217]: 5/1 | 原宿-涩谷-惠比寿
+              - heading "叙々苑 恵比寿ガーデンプレイス店" [level=3] [ref=e218]
+              - paragraph [ref=e219]: 惠比寿花园广场夜景线
+            - generic [ref=e220]: 主线
+          - generic [ref=e221]:
+            - paragraph [ref=e222]: 晚餐：先在惠比寿花园广场散步看夜景，再进店吃烧肉；叙々苑建议预约。
+            - paragraph [ref=e223]: 替换位：Jomon Roppongi，若临时把惠比寿夜景线改成六本木串烧线就用它，也建议预约。
+          - generic [ref=e224]:
+            - generic [ref=e225]: 烧肉
+            - generic [ref=e226]: 夜景
+            - generic [ref=e227]: 惠比寿散步
+        - generic [ref=e228]:
+          - generic [ref=e229]:
+            - generic [ref=e230]:
+              - paragraph [ref=e231]: 5/2 | 阴雨 / 新宿线
+              - heading "新宿 米新" [level=3] [ref=e232]
+              - paragraph [ref=e233]: 只在周边一日游改成新宿采购线时启用
+            - generic [ref=e234]: 备选
+          - generic [ref=e235]:
+            - paragraph [ref=e236]: 启用条件：Day 4 若改走新宿采购线，就把它放在晚餐收尾，建议预约。
+            - paragraph [ref=e237]: 定位：寿喜烧备份，不作为富士山 / 横滨主线餐厅。
+          - generic [ref=e238]:
+            - generic [ref=e239]: 寿喜烧
+            - generic [ref=e240]: 新宿线
+            - generic [ref=e241]: 阴雨替换
+        - generic [ref=e242]:
+          - generic [ref=e243]:
+            - generic [ref=e244]:
+              - paragraph [ref=e245]: 5/3 | 浅草-台场-银座
+              - heading "SUSHI EDOMARU Asakusa + Sato Yosuke Ginza" [level=3] [ref=e246]
+              - paragraph [ref=e247]: 浅草老城到银座夜逛
+            - generic [ref=e248]: 主线
+          - generic [ref=e249]:
+            - paragraph [ref=e250]: 午餐：SUSHI EDOMARU Asakusa，老城散步后直接吃寿司，可预约。
+            - paragraph [ref=e251]: 晚餐：Sato Yosuke Ginza Inaniwa Udon，银座购物后做清爽收尾；周日不接受座位预约，建议早点到。
+            - paragraph [ref=e252]: 晚餐升级：Ginza Kyūbey Honten，本次不排，因周日 / 周一闭店。
+            - paragraph [ref=e253]: 晚餐替换：Tsukiji Sushikuro Ginza，可预约，若想把乌冬换成银座寿司就用它。
+          - generic [ref=e254]:
+            - generic [ref=e255]: 寿司
+            - generic [ref=e256]: 乌冬
+            - generic [ref=e257]: 浅草 / 银座
+    - generic [ref=e260]:
+      - generic [ref=e261]:
+        - heading "总体预算结构 (CNY)" [level=3] [ref=e262]
+        - table [ref=e265]:
+          - rowgroup [ref=e266]:
+            - row "住宿 (6晚) 3,250-4,750" [ref=e267]:
+              - cell "住宿 (6晚)" [ref=e268]
+              - cell "3,250-4,750" [ref=e269]
+            - row "交通机酒 2,259" [ref=e270]:
+              - cell "交通机酒" [ref=e271]
+              - cell "2,259" [ref=e272]
+            - row "餐饮微醺 9,750-13,750" [ref=e273]:
+              - cell "餐饮微醺" [ref=e274]
+              - cell "9,750-13,750" [ref=e275]
+            - row "门票游玩 2,620" [ref=e276]:
+              - cell "门票游玩" [ref=e277]
+              - cell "2,620" [ref=e278]
+            - row "购物额度 12,500-44,000" [ref=e279]:
+              - cell "购物额度" [ref=e280]
+              - cell "12,500-44,000" [ref=e281]
+            - row "预估总计 2.6万-6.5万" [ref=e282]:
+              - cell "预估总计" [ref=e283]
+              - cell "2.6万-6.5万" [ref=e284]
+      - generic [ref=e287]:
+        - heading " 紧急联络 (建议截图)" [level=3] [ref=e288]:
+          - generic [ref=e289]: 
+          - text: 紧急联络 (建议截图)
+        - list [ref=e290]:
+          - listitem [ref=e291]:
+            - generic [ref=e292]: 日本求助
+            - text: 110 (报警) / 119 (医疗急救)
+          - listitem [ref=e293]:
+            - generic [ref=e294]: 领事保护
+            - text: "外交部: 12308"
+            - text: "驻日使馆: 03-6450-2195"
+          - listitem [ref=e295]:
+            - generic [ref=e296]: 机场咨询
+            - text: "成田: 0476-34-8088"
+  - text:             • • • •             
+  - link "打开 Gemini App" [ref=e297] [cursor=pointer]:
+    - /url: https://gemini.google.com/app
+    - generic [ref=e298]: 
+    - generic [ref=e299]: Gemini
