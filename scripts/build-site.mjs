@@ -1,4 +1,4 @@
-import { cpSync, existsSync, mkdirSync, rmSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
 const root = process.cwd();
@@ -12,6 +12,7 @@ const vendorSources = [
 ];
 
 const siteFiles = ['index.html', 'main.html', 'app.js', 'styles.css', 'favicon.svg'];
+const cacheBuster = (process.env.GITHUB_SHA || Date.now().toString(36)).slice(0, 8);
 
 function copyEntry(sourceRelative, destinationRelative) {
   const source = resolve(root, sourceRelative);
@@ -38,3 +39,20 @@ for (const file of siteFiles) {
 }
 
 copyEntry('vendor', 'dist/vendor');
+
+const distIndexPath = resolve(root, 'dist/index.html');
+let distIndexHtml = readFileSync(distIndexPath, 'utf8');
+
+const versionedAssets = [
+  'styles.css',
+  'app.js',
+  'favicon.svg',
+  'vendor/fontawesome/css/all.min.css',
+  'vendor/chartjs/chart.umd.min.js',
+];
+
+for (const asset of versionedAssets) {
+  distIndexHtml = distIndexHtml.replaceAll(asset, `${asset}?v=${cacheBuster}`);
+}
+
+writeFileSync(distIndexPath, distIndexHtml);
