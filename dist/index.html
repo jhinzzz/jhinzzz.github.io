@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0F172A">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>东京六天五晚情侣全攻略 | Ultimate 3-in-1 Edition</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+    <script src="vendor/chartjs/chart.umd.min.js"></script>
+</head>
+<body class="antialiased selection:bg-blue-100 selection:text-blue-900">
+
+    <!-- 顶部悬浮导航与三模式切换器 -->
+    <nav class="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row justify-between items-center py-3 lg:py-0 lg:h-16 gap-3 lg:gap-0">
+                <!-- Logo -->
+                <div class="font-bold text-slate-800 text-lg hidden lg:block w-auto flex-shrink-0">
+                    <i class="fa-solid fa-map-location-dot text-blue-600 mr-2"></i>东京浪漫指南
+                </div>
+                
+                <!-- 核心：三模式切换器 -->
+                <div class="bg-slate-100 p-1 rounded-xl flex items-center shadow-inner w-full lg:w-auto overflow-x-auto no-scrollbar">
+                    <button type="button" data-mode="itinerary" aria-pressed="true" id="btn-mode-itinerary" class="flex-shrink-0 lg:flex-none px-4 py-1.5 rounded-lg text-sm font-bold transition-all bg-white text-slate-900 shadow-sm">
+                        🗺️ 行程管家
+                    </button>
+                    <button type="button" data-mode="food" aria-pressed="false" id="btn-mode-food" class="flex-shrink-0 lg:flex-none px-4 py-1.5 rounded-lg text-sm font-medium transition-all text-slate-500 hover:text-slate-700">
+                        🍽️ 美食与体验
+                    </button>
+                    <button type="button" data-mode="shopping" aria-pressed="false" id="btn-mode-shopping" class="flex-shrink-0 lg:flex-none px-4 py-1.5 rounded-lg text-sm font-medium transition-all text-slate-500 hover:text-slate-700">
+                        🛍️ 购物宝典
+                    </button>
+                </div>
+
+                <!-- 页面内锚点导航 (根据模式动态显示隐藏) -->
+                <div id="nav-itinerary-links" class="flex w-full lg:w-auto justify-center lg:justify-end gap-4 lg:gap-6 overflow-x-auto no-scrollbar flex-shrink-0">
+                    <a href="#prep" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-suitcase"></i> 准备</a>
+                    <a href="#daily" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-calendar-days"></i> 行程</a>
+                    <a href="#food-plan" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-utensils"></i> 餐厅</a>
+                    <a href="#budget" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-wallet"></i> 预算</a>
+                </div>
+                <div id="nav-food-links" class="hidden flex w-full lg:w-auto justify-center lg:justify-end gap-4 lg:gap-6 overflow-x-auto no-scrollbar flex-shrink-0">
+                    <a href="#food-michelin" class="text-xs md:text-sm font-medium text-slate-500 hover:text-orange-600 py-1"><i class="fa-solid fa-utensils"></i> 高分餐厅</a>
+                    <a href="#food-bars" class="text-xs md:text-sm font-medium text-slate-500 hover:text-purple-600 py-1"><i class="fa-solid fa-martini-glass"></i> 微醺指南</a>
+                    <a href="#food-culture" class="text-xs md:text-sm font-medium text-slate-500 hover:text-pink-600 py-1"><i class="fa-solid fa-fan"></i> 文化体验</a>
+                </div>
+                <div id="nav-shopping-links" class="hidden flex w-full lg:w-auto justify-center lg:justify-end gap-4 lg:gap-6 overflow-x-auto no-scrollbar flex-shrink-0">
+                    <a href="#shop-electronics" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-camera"></i> 数码服饰</a>
+                    <a href="#shop-brands" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-wine-glass"></i> 烟酒高奢</a>
+                    <a href="#shop-anime" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-gamepad"></i> 二次元</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================== -->
+    <!-- VIEW 1: 行程管家模式 (Itinerary) -->
+    <!-- ========================================== -->
+    <main id="view-itinerary" class="view-section active pt-32 lg:pt-20">
+        <!-- Hero -->
+                <section class="hero-banner relative pt-8 pb-12 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 hero-banner__grid">
+                <div class="hero-banner__copy text-center lg:text-left">
+                    <p class="hero-kicker text-[11px] font-bold uppercase tracking-[0.35em] text-slate-400 mb-4">TOKYO GUIDE / EDITION 01</p>
+                    <h1 class="hero-title text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4">东京六天五晚松弛感行程</h1>
+                    <p class="hero-lead text-lg text-slate-600 font-medium mb-6">4月29日 - 5月4日 · 深度浪漫体验版</p>
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 text-xs md:text-sm">
+                        <span class="px-3 py-1 bg-red-50 text-red-600 font-bold border border-red-200 rounded-full"><i class="fa-solid fa-triangle-exclamation"></i> 避开黄金周人潮</span>
+                        <span class="px-3 py-1 bg-slate-50 text-slate-700 font-medium border border-slate-200 rounded-full"><i class="fa-solid fa-plane"></i> HKG 09:00 飞 / NRT 17:05 返</span>
+                    </div>
+                    <div class="hero-quick-links mt-6 flex flex-wrap justify-center lg:justify-start gap-2 text-xs md:text-sm">
+                        <a href="#prep" class="px-3 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:text-blue-700 transition-colors">行前准备</a>
+                        <a href="#daily" class="px-3 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:text-blue-700 transition-colors">每日路线</a>
+                        <a href="#budget" class="px-3 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:text-blue-700 transition-colors">预算与联络</a>
+                    </div>
+                </div>
+                <aside class="hero-banner__panel">
+                    <div class="text-[11px] uppercase tracking-[0.35em] text-slate-400 font-bold mb-4">Trip Snapshot</div>
+                    <div class="flex items-end justify-between gap-4 mb-4">
+                        <div>
+                            <div class="text-slate-400 text-xs uppercase tracking-[0.28em] font-semibold mb-1">Flight</div>
+                            <div class="text-2xl font-black text-white">HKG → NRT</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-slate-400 text-xs uppercase tracking-[0.28em] font-semibold mb-1">Stay</div>
+                            <div class="text-2xl font-black text-white">6D / 5N</div>
+                        </div>
+                    </div>
+                    <div class="hero-route-line" aria-hidden="true"></div>
+                    <ul class="hero-banner__list mt-5 space-y-3 text-sm text-slate-200">
+                        <li class="flex gap-3"><span class="text-blue-300 font-bold w-24 shrink-0">Priority</span><span>避开黄金周人潮，保留松弛感。</span></li>
+                        <li class="flex gap-3"><span class="text-blue-300 font-bold w-24 shrink-0">Coverage</span><span>行程 / 美食 / 购物 / 预算全保留。</span></li>
+                        <li class="flex gap-3"><span class="text-blue-300 font-bold w-24 shrink-0">Delivery</span><span>适合手机浏览，也适合电脑端长读。</span></li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <!-- 行前准备 -->
+        <section id="prep" class="py-12 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-clipboard-check text-blue-600"></i> 行前生死线</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="info-card p-6">
+                        <h3 class="font-bold text-slate-800 mb-4 border-b pb-2">抢票时间轴</h3>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li><span class="font-bold text-red-500">提前30天必抢：</span>Shibuya Sky日落票、富士回游特急指定席（吉卜力未抢到，已切回松弛感路线）。</li>
+                            <li><span class="font-bold text-orange-500">提前 7 天预定：</span>迪士尼乐园门票及园内餐厅预约。</li>
+                            <li><span class="font-bold text-blue-500">提前 3 天完成：</span>Visit Japan Web (VJW) 海关申报二维码截图。</li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-6">
+                        <h3 class="font-bold text-slate-800 mb-4 border-b pb-2">交通与支付基础</h3>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li><i class="fa-solid fa-train"></i> 购买 <b>JR东京广域周游券(3日)</b>，覆盖乐园、周边游与送机。</li>
+                            <li><i class="fa-brands fa-apple"></i> Apple Pay 绑定 <b>Suica (西瓜卡)</b> 用于地铁和便利店。</li>
+                            <li><i class="fa-solid fa-credit-card"></i> 携带 JCB 信用卡（商场折扣）+ 银联卡 + 3万日元现金备用。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 每日行程 -->
+        <section id="daily" class="py-12 bg-white border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-calendar-days text-blue-600"></i> 每日路线图与三餐速选</h2>
+                <div class="space-y-6">
+                    
+                    <!-- Day 1 -->
+                    <div class="info-card flex flex-col md:flex-row border-l-4 border-l-blue-500">
+                        <div class="bg-slate-50 md:w-48 p-5 border-r border-slate-100 flex-shrink-0">
+                            <div class="text-xs font-bold text-blue-600 mb-1">4.29 (周三)</div>
+                            <h3 class="text-lg font-black text-slate-900">落地与二次元</h3>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                                <div><span class="text-xs font-bold text-slate-400">下午</span><p class="text-sm mt-1">成田VJW通关，乘Skyliner至秋叶原酒店入住。</p></div>
+                                <div><span class="text-xs font-bold text-slate-400">傍晚</span><p class="text-sm mt-1">秋叶原电器街踩点（找中古相机、二次元手办）。</p></div>
+                                <div><span class="text-xs font-bold text-slate-400">晚上</span><p class="text-sm mt-1">逛扭蛋机，转去浅草桥一带吃海鲜居酒屋，轻松收尾。</p></div>
+                            </div>
+                            <!-- 餐饮推荐区 -->
+                            <div class="bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                                <span class="text-xs font-bold text-blue-700 block mb-2"><i class="fa-solid fa-utensils"></i> Day 1 推荐食单</span>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-slate-700">
+                                    <p><b>☕ 早：</b><span class="text-slate-500">香港出发，航班内解决</span></p>
+                                    <p><b>🍱 午：</b><b>Kanda Matsuya</b>（神田老铺荞麦，建议错峰，基本按现场排队）</p>
+                                    <p><b>🥩 晚：</b><b>Taiko Chaya</b>（浅草桥海鲜居酒屋，需预约制，晚餐建议提前订） / 备选：<b>蓑寿司</b>（同轴线的轻量寿司位，通常现场吃）</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 -->
+                    <div class="info-card flex flex-col md:flex-row border-l-4 border-l-pink-500">
+                        <div class="bg-slate-50 md:w-48 p-5 border-r border-slate-100 flex-shrink-0">
+                            <div class="text-xs font-bold text-pink-600 mb-1">4.30 (周四)</div>
+                            <h3 class="text-lg font-black text-slate-900">迪士尼乐园</h3>
+                            <span class="text-[10px] bg-red-100 text-red-600 px-1 rounded mt-2 block w-max">06:30 极速早起</span>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                                <div><span class="text-xs font-bold text-slate-400">早晨</span><p class="text-sm mt-1">6:30出门避开人潮。入园立抢美女与野兽DPA。</p></div>
+                                <div><span class="text-xs font-bold text-slate-400">白天</span><p class="text-sm mt-1">花钱买松弛，刷太空山/飞溅山，园区拍照打卡。</p></div>
+                                <div><span class="text-xs font-bold text-slate-400">晚上</span><p class="text-sm mt-1">园内餐厅就餐，20:00 观赏城堡烟花大赏。</p></div>
+                            </div>
+                            <div class="bg-pink-50/50 p-3 rounded-xl border border-pink-100">
+                                <span class="text-xs font-bold text-pink-700 block mb-2"><i class="fa-solid fa-utensils"></i> Day 2 推荐食单</span>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-slate-700">
+                                    <p><b>☕ 早：</b><b>便利店 (FamilyMart/7-11)</b> 买饭团咖啡，路上速战速决排队。</p>
+                                    <p><b>🍔 午：</b>园内 <b>红心女王宴会大厅</b>(爱丽丝梦游仙境主题) 或 <b>土拨鼠营地厨房</b>(平价休闲)。</p>
+                                    <p><b>🍷 晚：</b>园内 <b>水晶宫餐厅</b>(需提前7天预约) / <b>蓝海湾餐厅</b>(加勒比海盗旁) / 若提早出园去Ikspiari吃 <b>今半寿喜烧</b>。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 3 -->
+                    <div class="info-card flex flex-col md:flex-row border-l-4 border-l-amber-500">
+                        <div class="bg-slate-50 md:w-48 p-5 border-r border-slate-100 flex-shrink-0">
+                            <div class="text-xs font-bold text-amber-600 mb-1">5.1 (周五)</div>
+                            <h3 class="text-lg font-black text-slate-900">森林神宫<br>与惠比寿夜景</h3>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                                <div><span class="text-xs font-bold text-slate-400">上午</span><p class="text-sm mt-1">乘JR直达原宿。漫步<b>明治神宫</b>享受早晨森林浴与参拜。</p></div>
+                                <div><span class="text-xs font-bold text-slate-400">下午</span><p class="text-sm mt-1">原宿表参道 City Walk。顺路逛涩谷 Parco <b>宝可梦中心</b>。</p></div>
+                                <div><span class="text-xs font-bold text-slate-400">傍晚至夜</span><p class="text-sm mt-1">转去<b>惠比寿花园广场</b>散步看夜景，晚餐进<b>叙々苑 恵比寿ガーデンプレイス店</b>。</p></div>
+                            </div>
+                            <div class="bg-amber-50/50 p-3 rounded-xl border border-amber-100">
+                                <span class="text-xs font-bold text-amber-700 block mb-2"><i class="fa-solid fa-utensils"></i> Day 3 推荐食单</span>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-slate-700">
+                                    <p><b>☕ 早：</b>表参道 <b>Bills</b> (超人气松饼Brunch，环境极佳) 或 <b>猿田彦珈琲</b>。</p>
+                                    <p><b>🍔 午：</b>原宿 <b>Shake Shack</b> (外苑前美式汉堡) / 或选 <b>AFURI 阿夫利</b>(柚子盐拉面) / <b>Maisen迈泉猪排</b>。若想插一餐串烧，可改到 <b>Jomon Roppongi</b>（建议预约）。</p>
+                                    <p><b>🥩 晚：</b>惠比寿 <b>叙々苑 恵比寿ガーデンプレイス店</b>（夜景烧肉主线，建议预约） / 轻松备选：<b>Jomon Roppongi</b>（串烧，想加六本木夜生活时再换，建议预约）。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 4 -->
+                    <div class="info-card flex flex-col md:flex-row border-l-4 border-l-emerald-500">
+                        <div class="bg-slate-50 md:w-48 p-5 border-r border-slate-100 flex-shrink-0">
+                            <div class="text-xs font-bold text-emerald-600 mb-1">5.2 (周六)</div>
+                            <h3 class="text-lg font-black text-slate-900">周边一日游</h3>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                                <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-100"><span class="text-xs font-bold text-emerald-700">☀️ 晴天方案：富士山</span><p class="text-sm mt-1 text-slate-700">乘“富士回游”。逛河口湖八音盒之森、自然生活馆、乘游船看富士山绝景。</p></div>
+                                <div class="bg-blue-50 p-3 rounded-lg border border-blue-100"><span class="text-xs font-bold text-blue-700">🌧️ 阴雨避坑：横滨浪漫游</span><p class="text-sm mt-1 text-slate-700">镰仓拍照限制多且遇节假日暴堵。改去<b>横滨港未来</b>：逛红砖仓库、日清杯面博物馆(室内)，傍晚乘高空缆车看无敌海港夜景；若当天改成新宿采购线，晚餐才启用 <b>新宿 米新</b>（建议预约）。</p></div>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                                <span class="text-xs font-bold text-slate-700 block mb-2"><i class="fa-solid fa-utensils"></i> Day 4 推荐食单</span>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-slate-700">
+                                    <p><b>☕ 早：</b>酒店吃饱 或 找家 <b>Komeda's Coffee (客美多)</b> 吃经典厚吐司。</p>
+                                    <p><b>🍱 午：</b>【富士】选 <b>Houtou Fudou (馎饦面)</b> ；【横滨】选 <b>中华街</b>边走边吃 或 <b>Bills横滨红砖仓库店</b>。</p>
+                                    <p><b>🍣 晚：</b>返回东京市区吃 <b>伊豆荣本店</b>(上野鳗鱼饭) / 【留横滨】地标大厦 <b>Sirius 高空餐厅</b>度过浪漫之夜。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 5 -->
+                    <div class="info-card flex flex-col md:flex-row border-l-4 border-l-purple-500">
+                        <div class="bg-slate-50 md:w-48 p-5 border-r border-slate-100 flex-shrink-0">
+                            <div class="text-xs font-bold text-purple-600 mb-1">5.3 (周日)</div>
+                            <h3 class="text-lg font-black text-slate-900">浅草高达银座</h3>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                                <div><span class="text-xs font-bold text-slate-400">上午 (老城)</span><p class="text-sm mt-1">行李存车站。浅草寺雷门求签，中午在码头搭乘水上巴士。</p></div>
+                                <div><span class="text-xs font-bold text-slate-400">下午 (台场)</span><p class="text-sm mt-1">游船直达台场。打卡<b>富士电视台</b>和<b>DiverCity 独角兽高达</b>。</p></div>
+                                <div><span class="text-xs font-bold text-slate-400">晚上 (银座)</span><p class="text-sm mt-1">回银座逛优衣库旗舰店与高奢百货，晚餐放在银座收尾；晴空塔改成机动观景项。</p></div>
+                            </div>
+                            <div class="bg-purple-50/50 p-3 rounded-xl border border-purple-100">
+                                <span class="text-xs font-bold text-purple-700 block mb-2"><i class="fa-solid fa-utensils"></i> Day 5 推荐食单</span>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-slate-700">
+                                    <p><b>☕ 早：</b>浅草 <b>MISOJYU</b> (顶级精致味噌汤+饭团) 或 仲见世通雷门小吃。</p>
+                                    <p><b>🍣 午：</b><b>SUSHI EDOMARU Asakusa</b>（浅草老城顺路的轻松寿司，可预约）；如果想把午餐升级成更正式寿司，本次不排 <b>Ginza Kyūbey Honten</b>（周日 / 周一闭店）。</p>
+                                    <p><b>🍜 晚：</b><b>Sato Yosuke Ginza Inaniwa Udon</b>（银座购物后的清爽收尾，周日不接受座位预约，建议早点到） / 同区替换：<b>Tsukiji Sushikuro Ginza</b>（可预约）。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 6 -->
+                    <div class="info-card flex flex-col md:flex-row border-l-4 border-l-slate-800 bg-slate-800 text-white">
+                        <div class="bg-slate-900 md:w-48 p-5 border-r border-slate-700 flex-shrink-0">
+                            <div class="text-xs font-bold text-slate-400 mb-1">5.4 (周一)</div>
+                            <h3 class="text-lg font-black text-white">返程送机</h3>
+                        </div>
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-slate-300 mb-4">
+                                <div><span class="text-xs font-bold text-slate-400">上午</span><p class="text-sm mt-1 text-white">睡到自然醒。买伴手礼，11点退房。</p></div>
+                                <div><span class="text-xs font-bold text-slate-400">中午</span><p class="text-sm mt-1 text-white">13:40 搭乘 Skyliner 特急直达成田机场。</p></div>
+                                <div><span class="text-xs font-bold text-slate-400">下午</span><p class="text-sm mt-1 text-white">机场买免税威士忌、伴手礼。17:05 登机返回香港。</p></div>
+                            </div>
+                            <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-700">
+                                <span class="text-xs font-bold text-slate-300 block mb-2"><i class="fa-solid fa-utensils"></i> Day 6 推荐食单</span>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-slate-400">
+                                    <p><b>☕ 早：</b>浅草 <b>Fuglen Asakusa</b>(绝美北欧咖啡馆) 或 <b>Pelican Cafe</b>(老字号吐司)。</p>
+                                    <p><b>🍱 午：</b>浅草 <b>牛炸肉(浅草牛かつ)</b> / 或 <b>ごはん処 花丸</b>(快餐省时间赶车)。</p>
+                                    <p><b>✈️ 晚：</b>成田机场免税区内解决 或 飞机餐（推荐起飞前吃 <b>Sushi Kyotatsu 寿司京辰</b> 质量很高）。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 餐厅分配 -->
+        <section id="food-plan" class="py-12 bg-slate-50 border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-utensils text-orange-500"></i> 本次餐厅分配图（午晚餐 / 预约提示）</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="info-card p-6">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <div>
+                                <p class="text-xs font-bold text-blue-600 mb-1">4/29 | 落地后</p>
+                                <h3 class="text-lg font-black text-slate-900">Kanda Matsuya + Taiko Chaya</h3>
+                                <p class="text-sm text-slate-600 mt-1">神田 / 秋叶原 / 浅草桥轴线</p>
+                            </div>
+                            <span class="px-2 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold">主线</span>
+                        </div>
+                        <div class="space-y-3 text-sm text-slate-600">
+                            <p><b class="text-slate-800">午餐：</b>Kanda Matsuya，先吃荞麦再进秋叶原，不绕路；现场排队即可。</p>
+                            <p><b class="text-slate-800">晚餐：</b>Taiko Chaya，海鲜居酒屋收尾，需预约，离酒店也近。</p>
+                            <p><b class="text-slate-800">替换位：</b>蓑寿司，若想把 Day 1 晚餐改成更轻的寿司收尾就用它。</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-[11px] mt-4">
+                            <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">荞麦</span>
+                            <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">海鲜居酒屋</span>
+                            <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">到店即吃</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card p-6">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <div>
+                                <p class="text-xs font-bold text-amber-600 mb-1">5/1 | 原宿-涩谷-惠比寿</p>
+                                <h3 class="text-lg font-black text-slate-900">叙々苑 恵比寿ガーデンプレイス店</h3>
+                                <p class="text-sm text-slate-600 mt-1">惠比寿花园广场夜景线</p>
+                            </div>
+                            <span class="px-2 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-bold">主线</span>
+                        </div>
+                        <div class="space-y-3 text-sm text-slate-600">
+                            <p><b class="text-slate-800">晚餐：</b>先在惠比寿花园广场散步看夜景，再进店吃烧肉；叙々苑建议预约。</p>
+                            <p><b class="text-slate-800">替换位：</b>Jomon Roppongi，若临时把惠比寿夜景线改成六本木串烧线就用它，也建议预约。</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-[11px] mt-4">
+                            <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">烧肉</span>
+                            <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">夜景</span>
+                            <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">惠比寿散步</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card p-6">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <div>
+                                <p class="text-xs font-bold text-emerald-600 mb-1">5/2 | 阴雨 / 新宿线</p>
+                                <h3 class="text-lg font-black text-slate-900">新宿 米新</h3>
+                                <p class="text-sm text-slate-600 mt-1">只在周边一日游改成新宿采购线时启用</p>
+                            </div>
+                            <span class="px-2 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold">备选</span>
+                        </div>
+                        <div class="space-y-3 text-sm text-slate-600">
+                            <p><b class="text-slate-800">启用条件：</b>Day 4 若改走新宿采购线，就把它放在晚餐收尾，建议预约。</p>
+                            <p><b class="text-slate-800">定位：</b>寿喜烧备份，不作为富士山 / 横滨主线餐厅。</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-[11px] mt-4">
+                            <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">寿喜烧</span>
+                            <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">新宿线</span>
+                            <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">阴雨替换</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card p-6">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <div>
+                                <p class="text-xs font-bold text-purple-600 mb-1">5/3 | 浅草-台场-银座</p>
+                                <h3 class="text-lg font-black text-slate-900">SUSHI EDOMARU Asakusa + Sato Yosuke Ginza</h3>
+                                <p class="text-sm text-slate-600 mt-1">浅草老城到银座夜逛</p>
+                            </div>
+                            <span class="px-2 py-1 rounded-full bg-purple-50 text-purple-700 text-xs font-bold">主线</span>
+                        </div>
+                        <div class="space-y-3 text-sm text-slate-600">
+                            <p><b class="text-slate-800">午餐：</b>SUSHI EDOMARU Asakusa，老城散步后直接吃寿司，可预约。</p>
+                            <p><b class="text-slate-800">晚餐：</b>Sato Yosuke Ginza Inaniwa Udon，银座购物后做清爽收尾；周日不接受座位预约，建议早点到。</p>
+                            <p><b class="text-slate-800">晚餐升级：</b>Ginza Kyūbey Honten，本次不排，因周日 / 周一闭店。</p>
+                            <p><b class="text-slate-800">晚餐替换：</b>Tsukiji Sushikuro Ginza，可预约，若想把乌冬换成银座寿司就用它。</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-[11px] mt-4">
+                            <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">寿司</span>
+                            <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">乌冬</span>
+                            <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700">浅草 / 银座</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 预算与联络 -->
+        <section id="budget" class="py-12 bg-slate-900 text-slate-300">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- 预算图表 -->
+                    <div class="lg:col-span-2 bg-slate-800 rounded-2xl p-6 border border-slate-700">
+                        <h3 class="text-xl font-bold text-white mb-6">总体预算结构 (CNY)</h3>
+                        <div class="flex flex-col md:flex-row gap-6 items-center">
+                            <div class="w-full md:w-1/2">
+                                <table class="w-full text-sm text-left">
+                                    <tr class="border-b border-slate-700"><td class="py-2 text-slate-400">住宿 (6晚)</td><td class="py-2 text-right">3,250-4,750</td></tr>
+                                    <tr class="border-b border-slate-700"><td class="py-2 text-slate-400">交通机酒</td><td class="py-2 text-right">2,259</td></tr>
+                                    <tr class="border-b border-slate-700"><td class="py-2 text-slate-400">餐饮微醺</td><td class="py-2 text-right">9,750-13,750</td></tr>
+                                    <tr class="border-b border-slate-700"><td class="py-2 text-slate-400">门票游玩</td><td class="py-2 text-right">2,620</td></tr>
+                                    <tr class="border-b border-slate-700"><td class="py-2 text-slate-400">购物额度</td><td class="py-2 text-right">12,500-44,000</td></tr>
+                                    <tr><td class="py-3 font-bold text-white">预估总计</td><td class="py-3 font-bold text-right text-blue-400 text-lg">2.6万-6.5万</td></tr>
+                                </table>
+                            </div>
+                            <div class="w-full md:w-1/2 h-48"><canvas id="budgetChart"></canvas></div>
+                        </div>
+                    </div>
+                    <!-- 紧急电话 -->
+                    <div class="bg-red-900/20 rounded-2xl p-6 border border-red-900/50 relative overflow-hidden">
+                        <h3 class="font-bold text-white mb-4"><i class="fa-solid fa-phone text-red-400"></i> 紧急联络 (建议截图)</h3>
+                        <ul class="space-y-4 text-sm">
+                            <li><div class="text-[10px] text-red-400/80 mb-1">日本求助</div><span class="text-white font-bold">110</span> (报警) / <span class="text-white font-bold">119</span> (医疗急救)</li>
+                            <li><div class="text-[10px] text-red-400/80 mb-1">领事保护</div>外交部: <span class="text-white">12308</span><br>驻日使馆: <span class="text-white">03-6450-2195</span></li>
+                            <li><div class="text-[10px] text-red-400/80 mb-1">机场咨询</div>成田: 0476-34-8088</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- VIEW 2: 美食与体验模式 (Food & Culture) -->
+    <!-- ========================================== -->
+    <section id="view-food" class="view-section pt-32 lg:pt-20 bg-white">
+        
+        <section class="relative pt-8 pb-10 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-4xl font-black text-slate-900 tracking-tight mb-3">感官盛宴：吃喝玩乐全收录</h1>
+                <p class="text-sm text-slate-600 font-medium">米其林 · 和牛烧肉 · 隐秘酒吧 · 茶道和服</p>
+            </div>
+        </section>
+
+        <!-- 高分餐厅库 -->
+        <section id="food-michelin" class="py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-utensils text-orange-500"></i> 高分美食甄选</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="info-card p-5 border-t-4 border-t-orange-500">
+                        <h3 class="font-bold text-orange-900 mb-3 text-sm"><i class="fa-solid fa-star text-orange-500"></i> 米其林与法餐</h3>
+                        <ul class="space-y-3 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">SÉZANNE (三星)</span><span class="font-medium text-slate-900">约 ¥30,000/人</span></li>
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">Florilège (二星+绿星)</span><span class="font-medium text-slate-900">约 ¥25,000/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">Takumi 乃木坂</span><span class="font-medium text-slate-900">约 ¥18,000/人</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 border-t-4 border-t-red-600">
+                        <h3 class="font-bold text-red-900 mb-3 text-sm"><i class="fa-solid fa-fire text-red-600"></i> 顶级和牛烧肉</h3>
+                        <ul class="space-y-3 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">韩之厨房别邸 (神户牛)</span><span class="font-medium text-slate-900">约 ¥15,000/人</span></li>
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">USHIHACHI 極 (A4)</span><span class="font-medium text-slate-900">约 ¥10,000/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">寿喜烧十二天 (A5放题)</span><span class="font-medium text-slate-900">约 ¥16,000/人</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 border-t-4 border-t-blue-500">
+                        <h3 class="font-bold text-blue-900 mb-3 text-sm"><i class="fa-solid fa-fish-fins text-blue-500"></i> 寿司绝赏</h3>
+                        <ul class="space-y-3 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">THE SAKAI Tokyo</span><span class="font-medium text-slate-900">约 ¥28,000/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">寿司胜 立川</span><span class="font-medium text-slate-900">约 ¥10,000/人</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 border-t-4 border-t-amber-600">
+                        <h3 class="font-bold text-amber-900 mb-3 text-sm"><i class="fa-solid fa-bowl-rice text-amber-600"></i> 传统日料绝品</h3>
+                        <ul class="space-y-3 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">美浓金 (神田鳗鱼饭)</span><span class="font-medium text-slate-900">约 ¥8,500/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">蟹一心 (品川蟹料理)</span><span class="font-medium text-slate-900">约 ¥20,000/人</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 微醺指南 -->
+        <section id="food-bars" class="py-12 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-martini-glass-citrus text-purple-600"></i> 东京夜色微醺指南</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="info-card p-5 border-l-4 border-l-amber-700">
+                        <h3 class="font-bold text-slate-800 mb-2 text-sm">威士忌名所</h3>
+                        <p class="text-[10px] text-slate-500 mb-3">世界各地的稀有酒款汇聚地</p>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">Zoetrope (300+藏酒)</span><span>¥4,000/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">Roppongi Whisky Salon</span><span>¥5,000/人</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 border-l-4 border-l-purple-600">
+                        <h3 class="font-bold text-slate-800 mb-2 text-sm">世界级特调鸡尾酒</h3>
+                        <p class="text-[10px] text-slate-500 mb-3">亚洲 Top 50 调酒师主理</p>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">Bar High Five (银座)</span><span>¥6,000/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">Tender Bar (手工冰块)</span><span>¥7,000/人</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 border-l-4 border-l-rose-500">
+                        <h3 class="font-bold text-slate-800 mb-2 text-sm">自然酒与酿酒厂</h3>
+                        <p class="text-[10px] text-slate-500 mb-3">有机葡萄酒与现场酿造</p>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">Wineshop Flow (涩谷)</span><span>¥4,500/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">FUJIMARU酿酒厂</span><span>¥6,500/人</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 border-l-4 border-l-slate-600">
+                        <h3 class="font-bold text-slate-800 mb-2 text-sm">烟火气居酒屋</h3>
+                        <p class="text-[10px] text-slate-500 mb-3">烤串、啤酒与深夜食堂</p>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span class="font-bold text-slate-800">居酒屋 黑田 (新宿)</span><span>¥3,500/人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">鸟良商店 (24h鸡肉)</span><span>¥3,000/人</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 文化体验 -->
+        <section id="food-culture" class="py-12 bg-white border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-fan text-pink-500"></i> 深度文化体验</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="info-card p-5 bg-pink-50/50">
+                        <h3 class="font-bold text-pink-900 mb-3 text-sm flex items-center gap-2"><i class="fa-solid fa-leaf"></i> 传统茶道</h3>
+                        <ul class="space-y-3 text-xs text-slate-700">
+                            <li class="flex justify-between border-b border-pink-100 pb-2"><span class="font-bold text-slate-800">银座 HiSUi TOKYO</span><span>¥11,000 / 项</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">Jasumo 传统院</span><span>¥5,000 / 人</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 bg-rose-50/50">
+                        <h3 class="font-bold text-rose-900 mb-3 text-sm flex items-center gap-2"><i class="fa-solid fa-shirt"></i> 和服写真</h3>
+                        <ul class="space-y-3 text-xs text-slate-700">
+                            <li class="flex justify-between border-b border-rose-100 pb-2"><span class="font-bold text-slate-800">浅草常规租赁漫步</span><span>¥5,500 / 天</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">银座高定和服体验</span><span>¥35,000 / 次</span></li>
+                        </ul>
+                    </div>
+                    <div class="info-card p-5 bg-slate-50">
+                        <h3 class="font-bold text-slate-800 mb-3 text-sm flex items-center gap-2"><i class="fa-solid fa-palette"></i> 匠人技艺尝鲜</h3>
+                        <ul class="space-y-3 text-xs text-slate-700">
+                            <li class="flex justify-between border-b border-slate-200 pb-2"><span class="font-bold text-slate-800">花道插花体验</span><span>¥12,000 / 人</span></li>
+                            <li class="flex justify-between border-b border-slate-200 pb-2"><span class="font-bold text-slate-800">书法挥毫体验</span><span>¥8,000 / 人</span></li>
+                            <li class="flex justify-between pb-1"><span class="font-bold text-slate-800">古典日本舞体验</span><span>¥15,000 / 人</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VIEW 3: 购物宝典模式 (Shopping Guide) -->
+    <!-- ========================================== -->
+    <section id="view-shopping" class="view-section pt-32 lg:pt-20 bg-white">
+        
+        <section class="relative pt-8 pb-10 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h1 class="text-4xl font-black text-slate-900 tracking-tight mb-3">血拼实操硬核指南</h1>
+                <p class="text-sm text-slate-600 font-medium">电器比价 · 名酒差价 · 服饰潮牌 · 二次元实价 · 退税防坑</p>
+            </div>
+        </section>
+
+        <!-- 数码电器与潮流服饰 -->
+        <section id="shop-electronics" class="py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-camera-retro text-blue-600"></i> 数码电器 & 潮流服饰指南</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="info-card p-6 border-t-4 border-blue-500">
+                        <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2 text-lg">
+                            <i class="fa-solid fa-laptop text-blue-500"></i> 相机与电子产品 (秋叶原主战区)
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-slate-800 text-sm mb-1">全新产品：Bic Camera / Yodobashi</h4>
+                                <ul class="list-dot text-xs text-slate-600 space-y-1">
+                                    <li><span class="font-bold text-slate-800">比价技巧：</span>同一家店不同楼层价格可能不同。Bic Camera 5楼是相机专区，1楼是Apple和IQOS。</li>
+                                    <li><span class="font-bold text-slate-800">信用卡优惠：</span>记得使用 JCB 或银联卡，通常除了免税还能再额外享受 5% 左右的专享折扣。</li>
+                                </ul>
+                            </div>
+                            <div class="bg-amber-50 p-4 rounded-xl border border-amber-100">
+                                <h4 class="font-bold text-amber-900 text-sm mb-1">省钱秘籍：中古数码 (二手)</h4>
+                                <ul class="list-dot text-xs text-amber-800 space-y-1">
+                                    <li><span class="font-bold">巨大差价：</span>相机和镜头如果接受 9成新/箱说全的中古品，能直接 <span class="bg-amber-200 px-1 rounded font-bold">节省 30% - 50%</span> 的费用。</li>
+                                    <li><span class="font-bold">寻宝推荐：</span>秋叶原的 Mandarake 或各大中古电器专门店，成色标定极为严格，可放心淘。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card p-6 border-t-4 border-pink-500">
+                        <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2 text-lg">
+                            <i class="fa-solid fa-shirt text-pink-500"></i> 服饰潮牌与高奢穿搭
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex gap-3">
+                                <div class="text-xl pt-1 text-slate-400"><i class="fa-solid fa-store"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm mb-1">原宿与表参道 (前卫潮流)</h4>
+                                    <p class="text-xs text-slate-600">聚集大量设计师品牌与潮牌。表参道满是高奢旗舰店(LV/Prada)。年轻人平价时尚在竹下通。</p>
+                                </div>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex gap-3">
+                                <div class="text-xl pt-1 text-slate-400"><i class="fa-solid fa-music"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm mb-1">涩谷 109 & Parco (日韩流行)</h4>
+                                    <p class="text-xs text-slate-600">年轻化、多元化的流行服饰大本营，涩谷109是日系时尚潮流发源地。</p>
+                                </div>
+                            </div>
+                            <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 flex gap-3">
+                                <div class="text-xl pt-1 text-red-500"><i class="fa-solid fa-bag-shopping"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm mb-1">银座 (高奢与国民旗舰)</h4>
+                                    <p class="text-xs text-slate-600">除了世界顶奢百货，这里还拥有 <span class="font-bold text-slate-800">UNIQLO 优衣库全球最大旗舰店</span> (12层，含定制UT)，十分好逛。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 烟酒免税与高奢 -->
+        <section id="shop-brands" class="py-12 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-wine-glass text-blue-600"></i> 烟酒免税与高奢选购</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="info-card p-5 border-t-4 border-t-emerald-600 flex flex-col">
+                        <h3 class="font-bold text-emerald-900 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-bottle-droplet"></i> 日本威士忌与清酒</h3>
+                        <p class="text-[10px] text-red-500 bg-red-50 px-2 py-1 rounded font-bold mb-3 border border-red-100 text-center">注意神级差价！买前必比价！</p>
+                        <ul class="space-y-3 text-xs text-slate-600 flex-1">
+                            <li class="border-b border-slate-100 pb-2">
+                                <span class="font-bold text-slate-800 block mb-1">🥃 白州威士忌真实比价：</span>
+                                ❌ 唐吉诃德 (免税): ¥19,900<br>
+                                ✅ 银座 Ginza Six (含税): <span class="text-emerald-600 font-bold">¥15,400</span><br>
+                                <span class="text-[10px] text-slate-400">退税后差价高达5000+日元！</span>
+                            </li>
+                            <li>
+                                <span class="font-bold text-slate-800 block mb-1">🍶 机场补漏：</span>
+                                獭祭清酒、梅酒等，建议最后在成田机场免税店带走，不用拎一路。
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card p-5 border-t-4 border-t-slate-800">
+                        <h3 class="font-bold text-slate-800 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-smoking"></i> 机场免税香烟</h3>
+                        <p class="text-[10px] text-slate-500 mb-3">价格比市区便宜1000-2000日元/条</p>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>七星尊贵5包(铁盒)</span><span class="font-medium text-slate-900">¥7,500</span></li>
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>七星硬盒 (200支)</span><span class="font-medium text-slate-900">¥4,100</span></li>
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>和平软黄特醇</span><span class="font-medium text-slate-900">¥4,300</span></li>
+                            <li class="flex justify-between pb-1"><span>梅比乌斯 (樱花限定)</span><span class="font-medium text-slate-900">约¥5,500</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card p-5 border-t-4 border-t-amber-800">
+                        <h3 class="font-bold text-amber-900 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-joint"></i> 进口雪茄名品</h3>
+                        <p class="text-[10px] text-slate-500 mb-3">主战区：六本木高端专卖店</p>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>COHIBA Siglo II (单支)</span><span class="font-medium text-slate-900">¥3,100</span></li>
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>COHIBA 兔年限定版</span><span class="font-medium text-slate-900">¥40,000</span></li>
+                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>Davidoff Escurio (6支)</span><span class="font-medium text-slate-900">¥7,000</span></li>
+                            <li class="flex justify-between pb-1"><span>Camaroto 红盒雪茄</span><span class="font-medium text-slate-900">¥3,900</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card p-5 border-t-4 border-t-blue-600">
+                        <h3 class="font-bold text-blue-900 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-bag-shopping"></i> 银座高奢退税指南</h3>
+                        <p class="text-[10px] text-slate-500 mb-3">银座三越 / 和光 / GINZA SIX</p>
+                        <ul class="space-y-3 text-xs text-slate-600">
+                            <li><i class="fa-solid fa-check text-green-500 mr-1"></i> <b class="text-slate-800">三越百货 95折：</b>带护照在一楼领 Guest Card，买奢侈品(部分除外)直接 <span class="bg-blue-100 px-1 rounded font-bold">折上免税</span>。</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-1"></i> <b class="text-slate-800">Japan Duty Free：</b>三越8楼市中心免税店，买完 <span class="font-bold text-slate-900">直接去机场提货</span>，解放双手极度松弛。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 二次元与潮玩实价 -->
+        <section id="shop-anime" class="py-12 bg-white border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-gamepad text-blue-600"></i> 二次元专区实价对照</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="info-card p-0">
+                        <div class="bg-yellow-50 px-5 py-3 border-b border-yellow-100 font-bold text-yellow-900">
+                            Pokémon Center (涩谷 Parco 6楼)
+                        </div>
+                        <table class="w-full text-sm text-left">
+                            <tr class="border-b border-slate-100 bg-slate-50 text-slate-500"><th class="py-2 px-4 font-normal">热门商品</th><th class="py-2 px-4 font-normal text-right">参考价(日元)</th></tr>
+                            <tr class="border-b border-slate-50"><td class="py-3 px-4">Leisure Style 皮卡丘毛绒</td><td class="py-3 px-4 text-right font-medium">¥2,640</td></tr>
+                            <tr class="border-b border-slate-50"><td class="py-3 px-4">My Little Bestie 小火马</td><td class="py-3 px-4 text-right font-medium">¥7,150</td></tr>
+                            <tr class="border-b border-slate-50"><td class="py-3 px-4">皮卡丘&玛力露 三只装</td><td class="py-3 px-4 text-right font-medium">¥4,950</td></tr>
+                            <tr><td class="py-3 px-4">年度限定徽章套装</td><td class="py-3 px-4 text-right font-medium">¥2,280</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="info-card p-0">
+                        <div class="bg-slate-800 px-5 py-3 border-b border-slate-900 font-bold text-white flex justify-between">
+                            <span>高达基地 THE GUNDAM BASE</span>
+                            <span class="text-xs font-normal text-slate-400 font-mono">台场 DiverCity 7楼</span>
+                        </div>
+                        <table class="w-full text-sm text-left">
+                            <tr class="border-b border-slate-100 bg-slate-50 text-slate-500"><th class="py-2 px-4 font-normal">模型级别 / 限定</th><th class="py-2 px-4 font-normal text-right">参考价(日元)</th></tr>
+                            <tr class="border-b border-slate-50"><td class="py-3 px-4">HG 1/144 RX-78-2 (基地限定)</td><td class="py-3 px-4 text-right font-medium">¥1,650</td></tr>
+                            <tr class="border-b border-slate-50"><td class="py-3 px-4">RG 1/144 高达艾比安 (限定)</td><td class="py-3 px-4 text-right font-medium">¥11,000</td></tr>
+                            <tr class="border-b border-slate-50"><td class="py-3 px-4">MG 1/100 百式 ver.2.0 (限定)</td><td class="py-3 px-4 text-right font-medium">¥17,600</td></tr>
+                            <tr><td class="py-3 px-4">PG 1/60 独角兽高达 (普通版)</td><td class="py-3 px-4 text-right font-medium">¥33,000</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 退税规则 -->
+        <section id="shop-rules" class="py-12 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 lg:p-8 flex flex-col md:flex-row gap-6 items-center">
+                    <div class="flex-shrink-0 text-blue-500 text-5xl"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">免税、限额与托运避坑守则</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-sm text-blue-800">
+                            <p><b>起退金额：</b>单店单笔消费满 <span class="bg-blue-200 px-1 rounded">5,000日元(含税)</span> 即可10%免税。结账出示护照原件。</p>
+                            <p><b>包装限制：</b>免税消耗品(食品/药妆)会被装进免税专用密封袋，<span class="text-red-500 font-bold">在日本境内绝对不可拆封</span>，否则可能查补税。</p>
+                            <p><b>液体托运：</b>免税买的化妆水、<span class="font-bold border-b border-blue-400">酒类（单件超100ml）必须放托运行李</span>，切勿随身带上飞机。</p>
+                            <p><b>海关限额：</b>回国入关时，每人免税香烟限带 <span class="bg-blue-200 px-1 rounded">200支(1条)</span>，免税酒类限带 <span class="bg-blue-200 px-1 rounded">3瓶(每瓶不超过760ml)</span>。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="text-center text-xs text-slate-400 py-12 uppercase tracking-widest font-medium">
+            <p>End of Shopping Guide. Have a great haul!</p>
+        </div>
+    </section>
+    <!-- ========================================== -->
+    <!-- Gemini 跳转入口 -->
+    <!-- ========================================== -->
+    <a id="gemini-link" href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer" aria-label="打开 Gemini App" class="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-3 text-white shadow-2xl transition-all hover:bg-slate-800 hover:scale-105">
+        <i class="fa-solid fa-arrow-up-right-from-square text-sm"></i>
+        <span class="text-sm font-semibold tracking-wide">Gemini</span>
+    </a>
+
+    <script src="app.js"></script>
+</body>
+</html>
