@@ -83,6 +83,8 @@
 
   .view-section.active {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
     animation: sectionIn 0.45s ease-out both;
   }
 
@@ -785,6 +787,7 @@
     .explore-card {
       animation: none !important;
       transition: none !important;
+      opacity: 1 !important;
       transform: none !important;
     }
   }
