@@ -38,6 +38,7 @@
                 <div id="nav-itinerary-links" class="flex w-full lg:w-auto justify-center lg:justify-end gap-4 lg:gap-6 overflow-x-auto no-scrollbar flex-shrink-0">
                     <a href="#prep" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-suitcase"></i> 准备</a>
                     <a href="#daily" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-calendar-days"></i> 行程</a>
+                    <a href="#explore" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-location-dot"></i> 逛点</a>
                     <a href="#food-plan" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-utensils"></i> 餐厅</a>
                     <a href="#budget" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-wallet"></i> 预算</a>
                 </div>
@@ -246,23 +247,235 @@
                     </div>
 
                     <!-- Day 6 -->
-                    <div class="info-card flex flex-col md:flex-row border-l-4 border-l-slate-800 bg-slate-800 text-white">
-                        <div class="bg-slate-900 md:w-48 p-5 border-r border-slate-700 flex-shrink-0">
-                            <div class="text-xs font-bold text-slate-400 mb-1">5.4 (周一)</div>
-                            <h3 class="text-lg font-black text-white">返程送机</h3>
+                    <div class="info-card day-closing-card flex flex-col md:flex-row border-l-4 border-l-slate-800 bg-gradient-to-br from-slate-50 to-slate-100">
+                        <div class="bg-slate-900 md:w-56 p-5 border-r border-slate-800 flex-shrink-0 text-white">
+                            <div class="text-xs font-bold tracking-[0.28em] text-blue-300 mb-2">5.4 (周一)</div>
+                            <h3 class="text-2xl font-black leading-tight text-white">返程送机</h3>
+                            <p class="text-xs text-slate-300 mt-3 leading-6">把最后半天留给补货、吃饭和机场收尾。</p>
                         </div>
                         <div class="p-5 flex-1 flex flex-col justify-between">
-                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-slate-300 mb-4">
-                                <div><span class="text-xs font-bold text-slate-400">上午</span><p class="text-sm mt-1 text-white">睡到自然醒。买伴手礼，11点退房。</p></div>
-                                <div><span class="text-xs font-bold text-slate-400">中午</span><p class="text-sm mt-1 text-white">13:40 搭乘 Skyliner 特急直达成田机场。</p></div>
-                                <div><span class="text-xs font-bold text-slate-400">下午</span><p class="text-sm mt-1 text-white">机场买免税威士忌、伴手礼。17:05 登机返回香港。</p></div>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                                <div class="day-closing-panel rounded-2xl bg-white p-4 border border-slate-200/80 shadow-sm">
+                                    <span class="text-xs font-bold text-slate-500 uppercase tracking-[0.24em]">上午</span>
+                                    <p class="text-sm mt-2 text-slate-700 leading-7">睡到自然醒。买伴手礼，11点退房。</p>
+                                </div>
+                                <div class="day-closing-panel rounded-2xl bg-white p-4 border border-slate-200/80 shadow-sm">
+                                    <span class="text-xs font-bold text-slate-500 uppercase tracking-[0.24em]">中午</span>
+                                    <p class="text-sm mt-2 text-slate-700 leading-7">13:40 搭乘 Skyliner 特急直达成田机场。</p>
+                                </div>
+                                <div class="day-closing-panel rounded-2xl bg-white p-4 border border-slate-200/80 shadow-sm">
+                                    <span class="text-xs font-bold text-slate-500 uppercase tracking-[0.24em]">下午</span>
+                                    <p class="text-sm mt-2 text-slate-700 leading-7">机场买免税威士忌、伴手礼。17:05 登机返回香港。</p>
+                                </div>
                             </div>
-                            <div class="bg-slate-900/50 p-3 rounded-xl border border-slate-700">
-                                <span class="text-xs font-bold text-slate-300 block mb-2"><i class="fa-solid fa-utensils"></i> Day 6 推荐食单</span>
-                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-slate-400">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 mb-4">
+                                <div class="rounded-2xl bg-white/85 p-4 border border-slate-200/80 shadow-sm">
+                                    <span class="text-xs font-bold text-slate-600 block mb-2 uppercase tracking-[0.24em]">返程前最后一圈</span>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="spot-chip">Naritasan Omotesando</span>
+                                        <span class="spot-chip">Naritasan Shinshoji</span>
+                                        <span class="spot-chip">AEON Mall Narita</span>
+                                    </div>
+                                </div>
+                                <div class="rounded-2xl bg-white/85 p-4 border border-slate-200/80 shadow-sm">
+                                    <span class="text-xs font-bold text-slate-600 block mb-2 uppercase tracking-[0.24em]">机场补货店</span>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="spot-chip">Fa-So-La</span>
+                                        <span class="spot-chip">ANA FESTA</span>
+                                        <span class="spot-chip">Narita Airport Duty Free</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white/85 p-4 rounded-2xl border border-slate-200/80 shadow-sm">
+                                <span class="text-xs font-bold text-slate-700 block mb-3"><i class="fa-solid fa-utensils text-slate-500"></i> Day 6 推荐食单</span>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm text-slate-600">
                                     <p><b>☕ 早：</b>浅草 <b>Fuglen Asakusa</b>(绝美北欧咖啡馆) 或 <b>Pelican Cafe</b>(老字号吐司)。</p>
                                     <p><b>🍱 午：</b>浅草 <b>牛炸肉(浅草牛かつ)</b> / 或 <b>ごはん処 花丸</b>(快餐省时间赶车)。</p>
                                     <p><b>✈️ 晚：</b>成田机场免税区内解决 或 飞机餐（推荐起飞前吃 <b>Sushi Kyotatsu 寿司京辰</b> 质量很高）。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 逛点索引 -->
+        <section id="explore" class="py-12 bg-slate-50 border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-location-dot text-blue-600"></i> 值得去逛的地点与商铺</h2>
+                <p class="section-subtitle">把每天还能顺路加塞的地标、商场和店铺单独拆出来，桌面端一眼能扫完，手机端也能直接照着走。</p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="explore-card p-6">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <div>
+                                <p class="text-xs font-bold text-blue-600 mb-1">4/29 | 秋叶原-浅草桥</p>
+                                <h3 class="text-xl font-black text-slate-900">电器街 + 中古店 + 神社</h3>
+                                <p class="text-sm text-slate-600 mt-1">落地当天最适合先逛电器街，再把夜宵和中古店一起收掉。</p>
+                            </div>
+                            <span class="px-2 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold">逛点</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-[11px] font-bold tracking-[0.28em] text-slate-400 mb-2 uppercase">值得去逛</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="spot-chip">Akihabara Electric Town</span>
+                                    <span class="spot-chip">Kanda Myojin</span>
+                                    <span class="spot-chip">2k540 Aki-Oka Artisan</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-bold tracking-[0.28em] text-slate-400 mb-2 uppercase">商铺 / 补货</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="spot-chip">Akihabara Radio Kaikan</span>
+                                    <span class="spot-chip">Yodobashi Akiba</span>
+                                    <span class="spot-chip">Akiba Ichi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="explore-card p-6">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <div>
+                                <p class="text-xs font-bold text-pink-600 mb-1">4/30 | 舞滨-迪士尼周边</p>
+                                <h3 class="text-xl font-black text-slate-900">园区外补给 + 最后一圈逛街</h3>
+                                <p class="text-sm text-slate-600 mt-1">排队、吃饭、买周边分开做，节奏会轻很多。</p>
+                            </div>
+                            <span class="px-2 py-1 rounded-full bg-pink-50 text-pink-700 text-xs font-bold">逛点</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-[11px] font-bold tracking-[0.28em] text-slate-400 mb-2 uppercase">值得去逛</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="spot-chip">Ikspiari</span>
+                                    <span class="spot-chip">Tokyo Disney Resort</span>
+                                    <span class="spot-chip">Maihama Station</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-bold tracking-[0.28em] text-slate-400 mb-2 uppercase">商铺 / 补货</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="spot-chip">Bon Voyage</span>
+                                    <span class="spot-chip">Ikspiari Shops</span>
+                                    <span class="spot-chip">Disney Resort Goods</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="explore-card p-6">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <div>
+                                <p class="text-xs font-bold text-amber-600 mb-1">5/1 | 原宿-涩谷-惠比寿</p>
+                                <h3 class="text-xl font-black text-slate-900">街区散步 + 商场扫货</h3>
+                                <p class="text-sm text-slate-600 mt-1">把神宫、表参道和夜景放在一起，逛起来最连贯。</p>
+                            </div>
+                            <span class="px-2 py-1 rounded-full bg-amber-50 text-amber-700 text-xs font-bold">逛点</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-[11px] font-bold tracking-[0.28em] text-slate-400 mb-2 uppercase">值得去逛</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="spot-chip">Meiji Jingu</span>
+                                    <span class="spot-chip">Omotesando Hills</span>
+                                    <span class="spot-chip">Shibuya Scramble Square</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-bold tracking-[0.28em] text-slate-400 mb-2 uppercase">商铺 / 补货</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="spot-chip">Shibuya PARCO</span>
+                                    <span class="spot-chip">Tokyu Plaza Omotesando Omokado</span>
+                                    <span class="spot-chip">Kiddy Land Harajuku</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="explore-card p-6">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <div>
+                                <p class="text-xs font-bold text-emerald-600 mb-1">5/2 | 富士 / 横滨</p>
+                                <h3 class="text-xl font-black text-slate-900">山景切换到海港夜色</h3>
+                                <p class="text-sm text-slate-600 mt-1">晴天看富士，阴天去横滨，都是很完整的一日游。</p>
+                            </div>
+                            <span class="px-2 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold">逛点</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-[11px] font-bold tracking-[0.28em] text-slate-400 mb-2 uppercase">值得去逛</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="spot-chip">Yokohama Red Brick Warehouse</span>
+                                    <span class="spot-chip">Minato Mirai</span>
+                                    <span class="spot-chip">Yamashita Park</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-bold tracking-[0.28em] text-slate-400 mb-2 uppercase">商铺 / 补货</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="spot-chip">Yokohama World Porters</span>
+                                    <span class="spot-chip">Landmark Plaza</span>
+                                    <span class="spot-chip">Motomachi Shopping Street</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="explore-card p-6">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <div>
+                                <p class="text-xs font-bold text-purple-600 mb-1">5/3 | 浅草-台场-银座</p>
+                                <h3 class="text-xl font-black text-slate-900">老城、海湾与银座一口气串起来</h3>
+                                <p class="text-sm text-slate-600 mt-1">这一段最适合把逛街和吃饭都放在同一条线上。</p>
+                            </div>
+                            <span class="px-2 py-1 rounded-full bg-purple-50 text-purple-700 text-xs font-bold">逛点</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-[11px] font-bold tracking-[0.28em] text-slate-400 mb-2 uppercase">值得去逛</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="spot-chip">Nakamise-dori</span>
+                                    <span class="spot-chip">Senso-ji</span>
+                                    <span class="spot-chip">Tokyo Solamachi</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-bold tracking-[0.28em] text-slate-400 mb-2 uppercase">商铺 / 补货</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="spot-chip">GINZA SIX</span>
+                                    <span class="spot-chip">Itoya Ginza</span>
+                                    <span class="spot-chip">Kappabashi Tool Street</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="explore-card p-6">
+                        <div class="flex items-start justify-between gap-3 mb-4">
+                            <div>
+                                <p class="text-xs font-bold text-slate-600 mb-1">5/4 | 成田返程</p>
+                                <h3 class="text-xl font-black text-slate-900">最后补货 + 机场购物</h3>
+                                <p class="text-sm text-slate-600 mt-1">返程日不必赶，把逛点和机场补给合并最省心。</p>
+                            </div>
+                            <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold">逛点</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-[11px] font-bold tracking-[0.28em] text-slate-400 mb-2 uppercase">值得去逛</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="spot-chip">Naritasan Omotesando</span>
+                                    <span class="spot-chip">Naritasan Shinshoji</span>
+                                    <span class="spot-chip">Narita Airport Garden</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-[11px] font-bold tracking-[0.28em] text-slate-400 mb-2 uppercase">商铺 / 补货</div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="spot-chip">Fa-So-La</span>
+                                    <span class="spot-chip">ANA FESTA</span>
+                                    <span class="spot-chip">Narita Airport Duty Free</span>
                                 </div>
                             </div>
                         </div>
