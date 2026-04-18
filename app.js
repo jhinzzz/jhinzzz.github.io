@@ -1,5 +1,5 @@
-const modeButtonClassActive = "flex-shrink-0 lg:flex-none px-4 py-1.5 rounded-lg text-sm font-bold transition-all bg-white text-slate-900 shadow-sm";
-const modeButtonClassInactive = "flex-shrink-0 lg:flex-none px-4 py-1.5 rounded-lg text-sm font-medium transition-all text-slate-500 hover:text-slate-700";
+const modeButtonClassActive = "flex-shrink-0 lg:flex-none px-4 py-1.5 rounded-full text-sm font-semibold transition-all bg-slate-900 text-white shadow-lg shadow-slate-900/15";
+const modeButtonClassInactive = "flex-shrink-0 lg:flex-none px-4 py-1.5 rounded-full text-sm font-medium transition-all text-slate-500 hover:bg-white hover:text-slate-900";
 
 function switchMode(mode) {
   const modes = ['itinerary', 'food', 'shopping'];
