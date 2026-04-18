@@ -36,6 +36,7 @@
 
                 <!-- 页面内锚点导航 (根据模式动态显示隐藏) -->
                 <div id="nav-itinerary-links" class="flex w-full lg:w-auto justify-center lg:justify-end gap-4 lg:gap-6 overflow-x-auto no-scrollbar flex-shrink-0">
+                    <a href="#packing" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-suitcase-rolling"></i> 行李</a>
                     <a href="#prep" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-suitcase"></i> 准备</a>
                     <a href="#daily" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-calendar-days"></i> 行程</a>
                     <a href="#explore" class="text-xs md:text-sm font-medium text-slate-500 hover:text-blue-600 py-1"><i class="fa-solid fa-location-dot"></i> 逛点</a>
@@ -61,7 +62,7 @@
     <!-- ========================================== -->
     <main id="view-itinerary" class="view-section active pt-32 lg:pt-20">
         <!-- Hero -->
-                <section class="hero-banner relative pt-8 pb-12 bg-white border-b border-slate-200">
+        <section class="hero-banner relative pt-8 pb-12 bg-white border-b border-slate-200">
             <div class="max-w-7xl mx-auto px-4 hero-banner__grid">
                 <div class="hero-banner__copy text-center lg:text-left">
                     <p class="hero-kicker text-[11px] font-bold uppercase tracking-[0.35em] text-slate-400 mb-4">TOKYO GUIDE / EDITION 01</p>
@@ -72,6 +73,7 @@
                         <span class="px-3 py-1 bg-slate-50 text-slate-700 font-medium border border-slate-200 rounded-full"><i class="fa-solid fa-plane"></i> HKG 09:00 飞 / NRT 17:05 返</span>
                     </div>
                     <div class="hero-quick-links mt-6 flex flex-wrap justify-center lg:justify-start gap-2 text-xs md:text-sm">
+                        <a href="#packing" class="px-3 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:text-blue-700 transition-colors">必备物品</a>
                         <a href="#prep" class="px-3 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:text-blue-700 transition-colors">行前准备</a>
                         <a href="#daily" class="px-3 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:text-blue-700 transition-colors">每日路线</a>
                         <a href="#day-disney" class="px-3 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:text-blue-700 transition-colors">迪士尼路线</a>
@@ -99,12 +101,87 @@
             </div>
         </section>
 
+        <section id="packing" class="py-12 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex flex-col gap-3 mb-6">
+                    <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-suitcase-rolling text-blue-600"></i> 出行必备物品</h2>
+                    <p class="section-subtitle">按这次东京 6天5晚行程整理，只保留真正会用到的东西。衣服、数码、药品和证件分开看，出门前更容易核对。</p>
+                </div>
+
+                <div class="packing-grid">
+                    <article class="packing-card">
+                        <p class="packing-card__eyebrow">衣服 / 鞋子</p>
+                        <h3 class="packing-card__title">够换洗，也够长时间步行</h3>
+                        <p class="packing-card__desc">东京 4 月底到 5 月初白天不算冷，但迪士尼、浅草、台场和成田返程都很吃脚力，鞋子优先级高于造型。</p>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li><span class="font-bold text-slate-800">必带：</span>轻薄外套、2 双好走的鞋、换洗内衣、睡衣、备用袜子。</li>
+                            <li><span class="font-bold text-slate-800">建议：</span>折叠伞、防风薄层、帽子、墨镜、可收纳的斜挎包。</li>
+                            <li><span class="font-bold text-slate-800">对应日：</span>4/30 迪士尼、5/2 周边一日游、5/3 浅草台场、5/4 成田返程。</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="packing-chip">轻薄外套</span>
+                            <span class="packing-chip">舒适步行鞋</span>
+                            <span class="packing-chip">折叠伞</span>
+                        </div>
+                    </article>
+
+                    <article class="packing-card">
+                        <p class="packing-card__eyebrow">数码 / 充电</p>
+                        <h3 class="packing-card__title">全程不断电，App 和预约才跑得动</h3>
+                        <p class="packing-card__desc">这次会频繁用到 Disney App、JR 交通、VJW 截图、预约页和地图，电量和网络都不能掉链子。</p>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li><span class="font-bold text-slate-800">必带：</span>手机、充电器、充电线、充电宝、耳机。</li>
+                            <li><span class="font-bold text-slate-800">建议：</span>相机、备用存储卡、国际漫游 / eSIM、适配你设备的转接头。</li>
+                            <li><span class="font-bold text-slate-800">对应日：</span>全程都用得到，尤其是 4/30 迪士尼、5/1 夜景、5/4 机场。</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="packing-chip">充电宝</span>
+                            <span class="packing-chip">eSIM / 漫游</span>
+                            <span class="packing-chip">转接头</span>
+                        </div>
+                    </article>
+
+                    <article class="packing-card">
+                        <p class="packing-card__eyebrow">药品 / 护理</p>
+                        <h3 class="packing-card__title">把常用药带齐，别把时间花在找药店上</h3>
+                        <p class="packing-card__desc">东京很方便，但真正出问题时，手边有药比临时找店更稳。尤其是长时间步行、园区排队和换乘日。</p>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li><span class="font-bold text-slate-800">必带：</span>肠胃药、头痛药、过敏药、创可贴、湿巾、口罩。</li>
+                            <li><span class="font-bold text-slate-800">建议：</span>眼药水、止痛贴、护唇膏、退热贴、小瓶消毒液。</li>
+                            <li><span class="font-bold text-slate-800">对应日：</span>4/30 迪士尼、5/2 周边一日游、5/3 浅草台场都更需要。</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="packing-chip">肠胃药</span>
+                            <span class="packing-chip">创可贴</span>
+                            <span class="packing-chip">湿巾</span>
+                        </div>
+                    </article>
+
+                    <article class="packing-card">
+                        <p class="packing-card__eyebrow">证件 / 支付</p>
+                        <h3 class="packing-card__title">过关、退税、买单三件事一次确认</h3>
+                        <p class="packing-card__desc">这次行程里有 VJW、Suica、JCB、银联、退税和机场购物，文件和卡片最好集中放在一个小袋子里。</p>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li><span class="font-bold text-slate-800">必带：</span>护照、机票、VJW 截图、酒店信息、信用卡、银联卡、少量现金。</li>
+                            <li><span class="font-bold text-slate-800">建议：</span>护照复印件、旅行保险信息、退税收纳袋、购物袋。</li>
+                            <li><span class="font-bold text-slate-800">对应日：</span>4/29 入境、5/3 购物、5/4 机场收尾都要用。</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="packing-chip">护照</span>
+                            <span class="packing-chip">Suica</span>
+                            <span class="packing-chip">JCB / 银联</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section class="guide-layout">
             <aside class="guide-rail">
                 <div class="guide-rail__card">
                     <p class="guide-rail__eyebrow">阅读顺序</p>
-                    <h2 class="guide-rail__title">先看主线，再看迪士尼，最后看收尾</h2>
-                    <p class="guide-rail__desc">左栏只负责导读，不重复正文；右栏保留全部内容，方便按自己的节奏往下读。</p>
+                    <h2 class="guide-rail__title">先看行李，再看主线，最后看餐厅和购物</h2>
+                    <p class="guide-rail__desc">这页按“出行必备物品 → 每日路线 → 餐厅 / 逛点 / 购物附录”排。左栏只负责导读，右栏保留全部内容，方便按自己的节奏往下读。</p>
                     <div class="guide-rail__meta">
                         <span>6天5晚</span>
                         <span>4月29日 - 5月4日</span>
@@ -131,6 +208,7 @@
                 <div class="guide-rail__card">
                     <p class="guide-rail__eyebrow">快速跳转</p>
                     <div class="guide-rail__links">
+                        <a href="#packing">必备物品</a>
                         <a href="#prep">行前准备</a>
                         <a href="#daily">每日路线</a>
                         <a href="#explore">逛点索引</a>
@@ -193,6 +271,39 @@
                                     <p><b>🥩 晚：</b><b>麹蔵 秋葉原店</b>（秋叶原站旁，Tabelog 3.38；Gurunavi 英文页写有 English Menu / English OK / Free & Instant Reservation，适合落地后稳妥收尾） / 备选：<b>Kanda Matsuya</b>（神田老铺荞麦，Tabelog 3.65，无预约，开门前常排队，想吃就要接受等位） / 再轻一点可用 <b>蓑寿司</b>（通常现场吃）</p>
                                 </div>
                             </div>
+                            <div class="day-spot-grid day-spot-grid--three">
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">餐厅</p>
+                                    <h4 class="day-spot-card__title">落地晚餐先稳住，不把时间浪费在找店上</h4>
+                                    <p class="day-spot-card__desc">麹蔵 秋葉原店作为主线，Kanda Matsuya 只在你们愿意等位时启用，蓑寿司留作更轻的兜底。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">麹蔵 秋葉原店</span>
+                                        <span class="spot-chip">Kanda Matsuya</span>
+                                        <span class="spot-chip">蓑寿司</span>
+                                    </div>
+                                </article>
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">顺路逛点</p>
+                                    <h4 class="day-spot-card__title">秋叶原电器街 + 中古店 + 神社</h4>
+                                    <p class="day-spot-card__desc">先把酒店到秋叶原站一带走完，再往电器街、Radio Kaikan、神田明神收。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">Akihabara Electric Town</span>
+                                        <span class="spot-chip">Radio Kaikan</span>
+                                        <span class="spot-chip">Kanda Myojin</span>
+                                    </div>
+                                </article>
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">购物 / 补给</p>
+                                    <h4 class="day-spot-card__title">先在秋叶原补齐电子和二次元</h4>
+                                    <p class="day-spot-card__desc">Yodobashi Akiba 负责数码，Akiba Ichi 和 2k540 负责顺手扫货，不必绕路去别区。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">Yodobashi Akiba</span>
+                                        <span class="spot-chip">Akiba Ichi</span>
+                                        <span class="spot-chip">2k540 Aki-Oka Artisan</span>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="day-note">Day 1 的原则很简单：落地晚，就把第一顿做轻，把夜里能顺路解决的餐厅和补货点一次收掉。</div>
                         </div>
                     </div>
 
@@ -226,6 +337,39 @@
                                     <p class="rounded-xl bg-white/90 border border-pink-100 p-3 leading-6 shadow-sm"><b>🍷 晚：</b>园内 <b>水晶宫餐厅</b>(需提前7天预约) / <b>蓝海湾餐厅</b>(加勒比海盗旁) / 若提早出园，直接去银座的 <b>银座しゃぶ通 本店</b>（官方英 / 中 / 韩 / TableCheck 可预约，Tabelog 3.45，Google Map 4.1，23:00 闭店 / L.O. 22:00）。</p>
                                 </div>
                             </div>
+                            <div class="day-spot-grid day-spot-grid--three">
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">餐厅</p>
+                                    <h4 class="day-spot-card__title">园内随便吃，园外只留一顿真正能吃到的晚餐</h4>
+                                    <p class="day-spot-card__desc">白天直接按园内节奏吃，烟花后若还想把晚餐补完整，就去银座しゃぶ通 本店，不再回 Ikspiari 二次折返。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">银座しゃぶ通 本店</span>
+                                        <span class="spot-chip">银座しゃぶ通 マロニエゲート店</span>
+                                        <span class="spot-chip">园内餐厅</span>
+                                    </div>
+                                </article>
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">顺路逛点</p>
+                                    <h4 class="day-spot-card__title">迪士尼和舞滨商圈拆开看</h4>
+                                    <p class="day-spot-card__desc">园内只管玩，园外把 Ikspiari、Maihama Station 和 Bon Voyage 当成补给点，不要把逛街挤进排队时间里。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">Ikspiari</span>
+                                        <span class="spot-chip">Maihama Station</span>
+                                        <span class="spot-chip">Bon Voyage</span>
+                                    </div>
+                                </article>
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">购物 / 补给</p>
+                                    <h4 class="day-spot-card__title">把周边和能量补给一次买完</h4>
+                                    <p class="day-spot-card__desc">Disney Resort Goods 直接在园区和 Bon Voyage 解决，回酒店前顺手补水、补电和补零食。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">Disney Resort Goods</span>
+                                        <span class="spot-chip">Ikspiari Shops</span>
+                                        <span class="spot-chip">便利店补给</span>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="day-note">Day 2 不追求多吃，重点是把园内节奏和园外晚餐分开，避免烟花前后来回折腾。</div>
                         </div>
                     </div>
 
@@ -249,6 +393,39 @@
                                     <p><b>🥩 晚：</b>惠比寿 <b>叙々苑 恵比寿ガーデンプレイス店</b>（夜景烧肉主线，Tabelog 3.38，网络预约可） / 关东煮插位：<b>こんぶや 恵比寿</b>（38F 夜景关东煮，Tabelog 3.48，TableCheck 可预约） / 串烧替换：<b>Ebisu Momodori</b>（惠比寿站 1 分钟，Tabelog 3.40，在线预约）；如果你们一定要六本木串烧，再切 <b>Jomon Roppongi</b>（Tabelog 3.32，预约可）。</p>
                                 </div>
                             </div>
+                            <div class="day-spot-grid day-spot-grid--three">
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">餐厅</p>
+                                    <h4 class="day-spot-card__title">把午餐和晚餐都压在原宿-惠比寿线里</h4>
+                                    <p class="day-spot-card__desc">中午可以在原宿随手解决，晚餐则留给惠比寿夜景线。叙々苑 是主线，关东煮和串烧是同区替换位。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">叙々苑 恵比寿ガーデンプレイス店</span>
+                                        <span class="spot-chip">こんぶや 恵比寿</span>
+                                        <span class="spot-chip">Ebisu Momodori</span>
+                                    </div>
+                                </article>
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">顺路逛点</p>
+                                    <h4 class="day-spot-card__title">明治神宫、表参道、涩谷、惠比寿一条线</h4>
+                                    <p class="day-spot-card__desc">从森林参拜切到街区散步，再把夜景放在惠比寿花园广场，路线本身就很顺。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">Meiji Jingu</span>
+                                        <span class="spot-chip">Omotesando Hills</span>
+                                        <span class="spot-chip">Shibuya PARCO</span>
+                                    </div>
+                                </article>
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">购物 / 补给</p>
+                                    <h4 class="day-spot-card__title">顺手把原宿和涩谷的店扫一遍</h4>
+                                    <p class="day-spot-card__desc">Kiddy Land、Tokyu Plaza Omotesando Omokado、Shibuya Scramble Square 都在这天的可控范围里。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">Kiddy Land Harajuku</span>
+                                        <span class="spot-chip">Tokyu Plaza Omotesando Omokado</span>
+                                        <span class="spot-chip">Shibuya Scramble Square</span>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="day-note">Day 3 的关键词是“同一条线内做完”，这样夜景、烧肉、关东煮和购物都不会互相打架。</div>
                         </div>
                     </div>
 
@@ -271,6 +448,39 @@
                                     <p><b>🍣 晚：</b>返回东京市区吃 <b>伊豆荣本店</b>(上野鳗鱼饭) / 【留横滨】地标大厦 <b>Sirius 高空餐厅</b>度过浪漫之夜。</p>
                                 </div>
                             </div>
+                            <div class="day-spot-grid day-spot-grid--three">
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">餐厅</p>
+                                    <h4 class="day-spot-card__title">晴天和阴天都各有一套吃法</h4>
+                                    <p class="day-spot-card__desc">晴天走富士山线，午餐就吃馎饦面；阴天去横滨，午晚餐更适合在中华街和红砖仓库周边解决。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">Houtou Fudou</span>
+                                        <span class="spot-chip">Bills 横滨红砖仓库店</span>
+                                        <span class="spot-chip">Sirius 高空餐厅</span>
+                                    </div>
+                                </article>
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">顺路逛点</p>
+                                    <h4 class="day-spot-card__title">富士湖区或港未来海港夜景</h4>
+                                    <p class="day-spot-card__desc">这天本来就是分支日，富士看景，横滨看夜景，路线不要混着跑。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">河口湖</span>
+                                        <span class="spot-chip">Yokohama Red Brick Warehouse</span>
+                                        <span class="spot-chip">Minato Mirai</span>
+                                    </div>
+                                </article>
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">购物 / 补给</p>
+                                    <h4 class="day-spot-card__title">把商业设施放在横滨或新宿支线里</h4>
+                                    <p class="day-spot-card__desc">World Porters、Landmark Plaza、Motomachi Shopping Street 都适合阴雨方案；如果改走新宿采购线，再把晚餐切到 Niimura。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">Yokohama World Porters</span>
+                                        <span class="spot-chip">Landmark Plaza</span>
+                                        <span class="spot-chip">Shabushabu Niimura Hon Ten</span>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="day-note">Day 4 的重点不是跑更多点，而是根据天气把路线切顺，保证当晚还能舒服收尾。</div>
                         </div>
                     </div>
 
@@ -294,6 +504,39 @@
                                     <p><b>🍜 晚：</b><b>Sato Yosuke Ginza Inaniwa Udon</b>（银座购物后的清爽收尾，Tabelog 3.56；预约只开放平日夜晚，周日按 walk-in 走） / 同区替换：<b>Ginza Sushi Den</b>（Tabelog 3.55，英文页可直接线上即时预约）。</p>
                                 </div>
                             </div>
+                            <div class="day-spot-grid day-spot-grid--three">
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">餐厅</p>
+                                    <h4 class="day-spot-card__title">寿司、乌冬、关东煮都放在同一天里</h4>
+                                    <p class="day-spot-card__desc">午餐用 SUSHI EDOMARU Asakusa，晚餐看当天状态在 Sato Yosuke、Ginza Sushi Den 和浅草大多福之间切换。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">SUSHI EDOMARU Asakusa</span>
+                                        <span class="spot-chip">Sato Yosuke Ginza</span>
+                                        <span class="spot-chip">浅草おでん大多福</span>
+                                    </div>
+                                </article>
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">顺路逛点</p>
+                                    <h4 class="day-spot-card__title">浅草老城、水上巴士、台场、银座</h4>
+                                    <p class="day-spot-card__desc">这天的结构是从老城走到海湾，再回到银座收尾，景点和吃饭完全同轴。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">Senso-ji</span>
+                                        <span class="spot-chip">Nakamise-dori</span>
+                                        <span class="spot-chip">DiverCity Tokyo Plaza</span>
+                                    </div>
+                                </article>
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">购物 / 补给</p>
+                                    <h4 class="day-spot-card__title">银座扫货就把退税和品牌一起做完</h4>
+                                    <p class="day-spot-card__desc">GINZA SIX、Itoya、UNIQLO 旗舰店都适合这天；如果还想补日本文具或厨具，顺手拐进 Kappabashi。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">GINZA SIX</span>
+                                        <span class="spot-chip">Itoya Ginza</span>
+                                        <span class="spot-chip">Kappabashi Tool Street</span>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="day-note">Day 5 是整趟最适合“一路吃一路逛”的一天，寿司、乌冬、关东煮和银座购物都可以压进同一条线。</div>
                         </div>
                     </div>
 
@@ -345,6 +588,39 @@
                                     <p><b>✈️ 晚：</b>成田机场免税区内解决 或 飞机餐（推荐起飞前吃 <b>Sushi Kyotatsu 寿司京辰</b> 质量很高）。</p>
                                 </div>
                             </div>
+                            <div class="day-spot-grid day-spot-grid--three">
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">餐厅</p>
+                                    <h4 class="day-spot-card__title">返程日把吃饭变成补能量</h4>
+                                    <p class="day-spot-card__desc">早上在浅草吃咖啡和吐司，中午用牛炸肉或快餐省时间，机场再看体力决定是否补一顿寿司。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">Fuglen Asakusa</span>
+                                        <span class="spot-chip">浅草牛かつ</span>
+                                        <span class="spot-chip">Sushi Kyotatsu</span>
+                                    </div>
+                                </article>
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">顺路逛点</p>
+                                    <h4 class="day-spot-card__title">成田表参道到机场一路收尾</h4>
+                                    <p class="day-spot-card__desc">返程前最后一圈只走最顺的点，别给自己增加换乘负担。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">Naritasan Omotesando</span>
+                                        <span class="spot-chip">Naritasan Shinshoji</span>
+                                        <span class="spot-chip">AEON Mall Narita</span>
+                                    </div>
+                                </article>
+                                <article class="day-spot-card">
+                                    <p class="day-spot-card__eyebrow">购物 / 补给</p>
+                                    <h4 class="day-spot-card__title">机场免税作为最后一站</h4>
+                                    <p class="day-spot-card__desc">Fa-So-La、ANA FESTA 和 Duty Free 负责烟酒、伴手礼和临门补货，到了机场再处理最省心。</p>
+                                    <div class="day-spot-list mt-3">
+                                        <span class="spot-chip">Fa-So-La</span>
+                                        <span class="spot-chip">ANA FESTA</span>
+                                        <span class="spot-chip">Narita Airport Duty Free</span>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="day-note">Day 6 只需要保持节奏稳定：补货、吃饭、进机场，不在最后一天加新的复杂度。</div>
                         </div>
                     </div>
                 </div>

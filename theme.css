@@ -37,6 +37,21 @@ body > nav {
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.07);
 }
 
+body > nav .bg-slate-100 {
+    display: flex !important;
+    gap: 0.25rem;
+    padding: 0.35rem;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    background: rgba(248, 250, 252, 0.96) !important;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04) inset;
+}
+
+.view-section {
+    display: block;
+    opacity: 1;
+    transform: none;
+}
+
 .max-w-7xl {
     max-width: var(--page-shell);
 }
@@ -107,6 +122,132 @@ body > nav {
 
 .guide-rail__links a:hover {
     transform: translateX(4px);
+}
+
+#packing {
+    scroll-margin-top: 7rem;
+}
+
+.packing-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.packing-card {
+    padding: 1rem 1.05rem;
+    border-radius: 20px;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+.packing-card__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 0.55rem;
+    color: #64748b;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+}
+
+.packing-card__title {
+    color: #0f172a;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.packing-card__desc {
+    margin-top: 0.55rem;
+    color: #475569;
+    font-size: 0.92rem;
+    line-height: 1.75;
+}
+
+.packing-card ul {
+    margin-top: 0.75rem;
+}
+
+.packing-card li + li {
+    margin-top: 0.45rem;
+}
+
+.packing-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.68rem;
+    border-radius: 9999px;
+    background: rgba(248, 250, 252, 0.96);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    color: #334155;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.day-spot-grid {
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 1rem;
+}
+
+.day-spot-grid--three {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.day-spot-card {
+    padding: 0.95rem 1rem;
+    border-radius: 18px;
+    background: rgba(248, 250, 252, 0.92);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+}
+
+.day-spot-card__eyebrow {
+    margin-bottom: 0.45rem;
+    color: #64748b;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.day-spot-card__title {
+    color: #0f172a;
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.28;
+}
+
+.day-spot-card__desc {
+    margin-top: 0.45rem;
+    color: #475569;
+    font-size: 0.88rem;
+    line-height: 1.7;
+}
+
+.day-spot-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+.day-spot-list .spot-chip {
+    padding: 0.38rem 0.68rem;
+    font-size: 0.72rem;
+}
+
+.day-note {
+    margin-top: 0.85rem;
+    padding: 0.9rem 1rem;
+    border-radius: 18px;
+    background: rgba(239, 246, 255, 0.72);
+    border: 1px solid rgba(191, 219, 254, 0.55);
+    color: #334155;
+    font-size: 0.9rem;
+    line-height: 1.75;
 }
 
 .hero-banner {
@@ -333,6 +474,14 @@ body > nav {
     line-height: 1.75;
 }
 
+#daily .info-card .day-spot-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+#daily .info-card .day-spot-grid--three {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
 #daily .day-closing-card {
     background: linear-gradient(180deg, rgba(248, 250, 252, 0.88), rgba(241, 245, 249, 0.94));
 }
@@ -409,6 +558,15 @@ body > nav {
     align-items: flex-start;
 }
 
+#food-michelin,
+#food-bars,
+#food-culture,
+#shop-electronics,
+#shop-brands,
+#shop-anime {
+    scroll-margin-top: 7rem;
+}
+
 #view-food .info-card,
 #view-shopping .info-card {
     background: rgba(255, 255, 255, 0.84);
@@ -479,6 +637,20 @@ body > nav {
         border-right: 0;
         border-bottom: 1px solid rgba(148, 163, 184, 0.16);
     }
+
+    .day-spot-grid--three {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .packing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .day-spot-grid--three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 639px) {
@@ -522,6 +694,12 @@ body > nav {
 
     #food-plan .info-card > .space-y-3 > p {
         padding: 0.85rem 0.9rem;
+    }
+
+    .packing-card,
+    .day-spot-card,
+    .day-note {
+        border-radius: 16px;
     }
 }
 
