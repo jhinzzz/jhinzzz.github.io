@@ -4,11 +4,9 @@ import { dirname, resolve } from 'node:path';
 const root = process.cwd();
 
 const vendorSources = [
-  ['node_modules/chart.js/dist/chart.umd.min.js', 'vendor/chartjs/chart.umd.min.js'],
-  ['node_modules/chart.js/LICENSE.md', 'vendor/chartjs/LICENSE.md'],
-  ['node_modules/@fortawesome/fontawesome-free/css/all.min.css', 'vendor/fontawesome/css/all.min.css'],
-  ['node_modules/@fortawesome/fontawesome-free/webfonts', 'vendor/fontawesome/webfonts'],
-  ['node_modules/@fortawesome/fontawesome-free/LICENSE.txt', 'vendor/fontawesome/LICENSE.txt'],
+  ['node_modules/@fortawesome/fontawesome-free/css/all.min.css', 'dist/vendor/fontawesome/css/all.min.css'],
+  ['node_modules/@fortawesome/fontawesome-free/webfonts', 'dist/vendor/fontawesome/webfonts'],
+  ['node_modules/@fortawesome/fontawesome-free/LICENSE.txt', 'dist/vendor/fontawesome/LICENSE.txt'],
 ];
 
 const siteFiles = ['index.html', 'main.html', 'app.js', 'styles.css', 'favicon.svg'];
@@ -26,19 +24,17 @@ function copyEntry(sourceRelative, destinationRelative) {
   cpSync(source, destination, { recursive: true });
 }
 
-for (const [sourceRelative, destinationRelative] of vendorSources) {
-  copyEntry(sourceRelative, destinationRelative);
-}
-
 const distDir = resolve(root, 'dist');
 rmSync(distDir, { recursive: true, force: true });
 mkdirSync(distDir, { recursive: true });
 
+for (const [sourceRelative, destinationRelative] of vendorSources) {
+  copyEntry(sourceRelative, destinationRelative);
+}
+
 for (const file of siteFiles) {
   copyEntry(file, `dist/${file}`);
 }
-
-copyEntry('vendor', 'dist/vendor');
 
 const distIndexPath = resolve(root, 'dist/index.html');
 let distIndexHtml = readFileSync(distIndexPath, 'utf8');
@@ -48,7 +44,6 @@ const versionedAssets = [
   'app.js',
   'favicon.svg',
   'vendor/fontawesome/css/all.min.css',
-  'vendor/chartjs/chart.umd.min.js',
 ];
 
 for (const asset of versionedAssets) {
