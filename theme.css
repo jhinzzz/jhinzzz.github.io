@@ -1,0 +1,540 @@
+/* Editorial refresh for the Tokyo trip planner.
+   Presentation only. Content remains unchanged. */
+
+:root {
+    --page-shell: min(98rem, calc(100vw - 1.75rem));
+    --surface-soft: rgba(255, 255, 255, 0.82);
+    --surface-strong: rgba(255, 255, 255, 0.95);
+    --surface-dark: rgba(15, 23, 42, 0.98);
+    --border-soft: rgba(15, 23, 42, 0.08);
+    --border-strong: rgba(59, 130, 246, 0.16);
+    --shadow-soft: 0 18px 44px rgba(15, 23, 42, 0.07);
+    --shadow-strong: 0 30px 84px rgba(15, 23, 42, 0.18);
+}
+
+html {
+    color-scheme: light;
+    font-variant-numeric: tabular-nums;
+}
+
+body {
+    color: #0f172a;
+    background:
+        radial-gradient(circle at 12% 0, rgba(59, 130, 246, 0.12), transparent 24%),
+        radial-gradient(circle at 88% 0, rgba(236, 72, 153, 0.08), transparent 22%),
+        linear-gradient(180deg, #fbf8f1 0%, #f7fafc 36%, #eef3f8 100%);
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+}
+
+body::before {
+    opacity: 0.16;
+    background-size: 56px 56px;
+}
+
+body > nav {
+    background: rgba(255, 255, 255, 0.86) !important;
+    border-bottom-color: rgba(226, 232, 240, 0.92) !important;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.07);
+}
+
+.max-w-7xl {
+    max-width: var(--page-shell);
+}
+
+.view-section.active {
+    animation-duration: 0.55s;
+}
+
+.guide-layout {
+    width: var(--page-shell);
+    gap: clamp(1.5rem, 3vw, 3.25rem);
+}
+
+.guide-rail {
+    top: 5.5rem;
+    gap: 1rem;
+}
+
+.guide-rail__card {
+    padding: 1.35rem 1.4rem;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.guide-rail__eyebrow {
+    letter-spacing: 0.3em;
+}
+
+.guide-rail__title,
+.hero-title,
+.section-header,
+#view-food > section:first-of-type h1,
+#view-shopping > section:first-of-type h1,
+#daily .info-card > div:first-child h3,
+.day-closing-card > div:first-child h3,
+#food-plan .info-card h3,
+#view-food .info-card h3,
+#view-shopping .info-card h3 {
+    font-family: "Source Han Serif SC", "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+    letter-spacing: -0.04em;
+}
+
+.guide-rail__title {
+    font-size: clamp(1.4rem, 1.8vw, 1.95rem);
+}
+
+.guide-rail__desc,
+.section-subtitle,
+.hero-lead,
+.info-card p,
+.explore-card p,
+.guide-rail__facts strong,
+#view-food .info-card li,
+#view-shopping .info-card li,
+#food-plan .info-card p {
+    line-height: 1.8;
+    text-wrap: pretty;
+}
+
+.guide-rail__links a {
+    padding: 1rem 1.05rem;
+    border-radius: 18px;
+}
+
+.guide-rail__links a:hover {
+    transform: translateX(4px);
+}
+
+.hero-banner {
+    background: linear-gradient(135deg, #fff 0%, #f4f8ff 48%, #eef2f7 100%) !important;
+}
+
+.hero-banner__grid {
+    gap: clamp(1.75rem, 4vw, 4.5rem);
+    padding-block: clamp(2.75rem, 6vw, 5.75rem);
+}
+
+.hero-banner__copy {
+    max-width: 44rem;
+}
+
+.hero-kicker {
+    letter-spacing: 0.34em;
+}
+
+.hero-title {
+    max-width: 10ch;
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 0.88;
+}
+
+.hero-lead {
+    max-width: 40rem;
+    font-size: clamp(1rem, 1.1vw, 1.15rem);
+}
+
+.hero-quick-links a {
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.hero-banner__panel {
+    padding: 1.5rem;
+    border-radius: 32px;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.88));
+    box-shadow: var(--shadow-strong);
+}
+
+.hero-banner__list li {
+    font-size: 0.95rem;
+    line-height: 1.75;
+}
+
+.section-header {
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    font-size: clamp(1.45rem, 1.45vw, 2.1rem) !important;
+    line-height: 1.1;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.section-header i {
+    display: inline-grid;
+    place-items: center;
+    width: 2.35rem;
+    height: 2.35rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+    flex: 0 0 auto;
+}
+
+.info-card,
+.explore-card,
+.guide-rail__card {
+    border-radius: 26px;
+    border-color: rgba(148, 163, 184, 0.18);
+    background: var(--surface-soft);
+    box-shadow: var(--shadow-soft);
+}
+
+.info-card:hover,
+.explore-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-strong);
+    background: var(--surface-strong);
+}
+
+.spot-chip {
+    padding: 0.48rem 0.82rem;
+    border-radius: 9999px;
+    background: rgba(248, 250, 252, 0.94);
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.spot-chip:hover {
+    transform: translateY(-1px);
+}
+
+#view-itinerary > section:first-of-type,
+#view-food > section:first-of-type,
+#view-shopping > section:first-of-type {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+#view-itinerary > section:first-of-type {
+    background: linear-gradient(135deg, #f8fafc, #eef4ff 42%, #fff) !important;
+}
+
+#view-food > section:first-of-type,
+#view-shopping > section:first-of-type {
+    background: linear-gradient(135deg, #f8fafc, #fff) !important;
+}
+
+#view-itinerary > section:first-of-type::before,
+#view-food > section:first-of-type::before,
+#view-shopping > section:first-of-type::before {
+    content: "";
+    position: absolute;
+    inset: -20% auto auto -10%;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 9999px;
+    pointer-events: none;
+}
+
+#view-itinerary > section:first-of-type::before {
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.14) 0, rgba(59, 130, 246, 0) 72%);
+}
+
+#view-food > section:first-of-type::before {
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0, rgba(249, 115, 22, 0) 72%);
+}
+
+#view-shopping > section:first-of-type::before {
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0, rgba(59, 130, 246, 0) 72%);
+}
+
+#view-food > section:first-of-type > div,
+#view-shopping > section:first-of-type > div {
+    position: relative;
+    z-index: 1;
+    padding-block: clamp(2.5rem, 5vw, 4.75rem);
+    text-align: left !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+#view-food > section:first-of-type h1,
+#view-shopping > section:first-of-type h1 {
+    max-width: 10ch;
+    margin-inline: 0;
+    font-size: clamp(2.8rem, 5.3vw, 5rem);
+    line-height: 0.9;
+}
+
+#view-food > section:first-of-type p,
+#view-shopping > section:first-of-type p {
+    max-width: 42rem;
+    margin-inline: 0;
+    line-height: 1.9;
+}
+
+#daily .info-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(248, 250, 252, 0.94));
+    border-radius: 28px;
+}
+
+#daily .info-card > div:first-child {
+    padding: 1.35rem;
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0.98), rgba(239, 246, 255, 0.88));
+}
+
+#daily .info-card > div:first-child h3 {
+    font-size: clamp(1.45rem, 2vw, 2.3rem);
+    line-height: 1.02;
+}
+
+#daily .info-card > div:last-child {
+    padding: clamp(1rem, 1.8vw, 1.55rem);
+}
+
+#daily .info-card > div:last-child .grid:first-child {
+    gap: 1rem;
+}
+
+#daily .info-card > div:last-child .grid:first-child > div {
+    min-width: 0;
+    min-height: 9rem;
+    padding: 1rem 1rem 1.05rem;
+    background: rgba(248, 250, 252, 0.92);
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+}
+
+#daily .info-card > div:last-child .grid:first-child > div span {
+    color: #64748b;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+}
+
+#daily .info-card > div:last-child .grid:first-child > div p {
+    margin-top: 0.6rem;
+    color: #334155;
+    font-size: 0.98rem;
+    line-height: 1.85;
+}
+
+#daily .info-card > div:last-child > div:not(.grid) {
+    border-radius: 20px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
+}
+
+#daily .info-card > div:last-child > div:not(.grid) .grid {
+    gap: 0.75rem;
+}
+
+#daily .info-card > div:last-child > div:not(.grid) .grid > p {
+    padding: 0.9rem 1rem;
+    border-radius: 16px;
+    line-height: 1.75;
+}
+
+#daily .day-closing-card {
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0.88), rgba(241, 245, 249, 0.94));
+}
+
+#daily .day-closing-card > div:first-child {
+    padding: 1.85rem 1.75rem;
+}
+
+#daily .day-closing-card > div:first-child h3 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 0.92;
+}
+
+#daily .day-closing-card > div:first-child p,
+.day-closing-card .day-closing-panel p {
+    line-height: 1.8;
+}
+
+.day-closing-card .day-closing-panel {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+}
+
+.day-closing-card .spot-chip {
+    background: rgba(255, 255, 255, 0.92);
+}
+
+#food-plan {
+    background: linear-gradient(180deg, #f8fafc 0%, #f8fafc 100%);
+}
+
+#food-plan .mb-6 {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.95));
+    border-radius: 24px;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+}
+
+#food-plan > .max-w-7xl > .grid {
+    gap: 1.25rem;
+}
+
+#food-plan .info-card {
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 26px;
+}
+
+#food-plan .info-card > .space-y-3 {
+    display: grid;
+    gap: 0.75rem;
+}
+
+#food-plan .info-card > .space-y-3 > p {
+    margin-top: 0 !important;
+    padding: 0.95rem 1rem;
+    background: rgba(248, 250, 252, 0.88);
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    border-radius: 16px;
+    line-height: 1.8;
+    color: #334155;
+}
+
+#food-plan .info-card > .space-y-3 > p b {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #0f172a;
+}
+
+#food-plan .info-card .flex.items-start.justify-between {
+    align-items: flex-start;
+}
+
+#view-food .info-card,
+#view-shopping .info-card {
+    background: rgba(255, 255, 255, 0.84);
+    border-radius: 24px;
+}
+
+#view-food .info-card li.flex.justify-between,
+#view-shopping .info-card li.flex.justify-between {
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+#view-food .info-card li,
+#view-shopping .info-card li {
+    line-height: 1.65;
+}
+
+#shop-anime table th,
+#shop-anime table td {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#shop-anime table tr:first-child th {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+#gemini-link {
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.34);
+}
+
+@media (max-width: 1023px) {
+    .guide-layout,
+    .hero-banner__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-layout {
+        gap: 1.15rem;
+    }
+
+    .guide-rail {
+        position: static;
+        gap: 0.85rem;
+    }
+
+    .guide-rail__card,
+    .explore-card,
+    .info-card {
+        border-radius: 22px;
+    }
+
+    .hero-title {
+        max-width: none;
+    }
+
+    .hero-banner__panel {
+        order: 2;
+    }
+
+    #daily .info-card {
+        display: block;
+    }
+
+    #daily .info-card > div:first-child {
+        border-right: 0;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+    }
+}
+
+@media (max-width: 639px) {
+    body {
+        background:
+            radial-gradient(circle at 15% 0, rgba(59, 130, 246, 0.08), transparent 26%),
+            linear-gradient(180deg, #fbf8f1 0%, #f7fafc 42%, #eef3f8 100%);
+    }
+
+    .hero-banner__grid {
+        padding-block: 2.2rem;
+    }
+
+    .hero-banner__panel {
+        padding: 1.25rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 12vw, 3.5rem);
+    }
+
+    .section-header {
+        gap: 0.65rem;
+        margin-bottom: 1rem;
+    }
+
+    .section-header i {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .guide-rail__card,
+    .info-card,
+    .explore-card {
+        border-radius: 20px;
+    }
+
+    #daily .info-card > div:last-child {
+        padding: 1rem;
+    }
+
+    #food-plan .info-card > .space-y-3 > p {
+        padding: 0.85rem 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .explore-card,
+    .guide-rail__links a,
+    .info-card,
+    .spot-chip,
+    .view-section,
+    .view-section.active {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
