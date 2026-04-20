@@ -9,7 +9,7 @@ const vendorSources = [
   ['node_modules/@fortawesome/fontawesome-free/LICENSE.txt', 'dist/vendor/fontawesome/LICENSE.txt'],
 ];
 
-const siteFiles = ['index.html', 'main.html', 'app.js', 'styles.css', 'favicon.svg'];
+const siteFiles = ['index.html', 'main.html', 'app.js', 'styles.css', 'theme.css', 'favicon.svg'];
 const cacheBuster = (process.env.GITHUB_SHA || Date.now().toString(36)).slice(0, 8);
 
 function copyEntry(sourceRelative, destinationRelative) {
@@ -41,6 +41,7 @@ let distIndexHtml = readFileSync(distIndexPath, 'utf8');
 
 const versionedAssets = [
   'styles.css',
+  'theme.css',
   'app.js',
   'favicon.svg',
   'vendor/fontawesome/css/all.min.css',
