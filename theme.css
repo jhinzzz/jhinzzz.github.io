@@ -280,6 +280,254 @@ body > nav .bg-slate-100 {
     font-style: italic;
 }
 
+.day-section {
+    position: relative;
+    margin-top: 1.5rem;
+}
+
+.day-section:first-child {
+    margin-top: 0;
+}
+
+.day-section__head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px dashed rgba(180, 160, 130, 0.35);
+}
+
+.day-section__num {
+    font-family: "Georgia", "Noto Serif SC", serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--warm-gray);
+    font-style: italic;
+    flex-shrink: 0;
+}
+
+.day-section__title {
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    color: var(--ink);
+    text-transform: uppercase;
+}
+
+.day-section__title i {
+    margin-right: 0.35rem;
+    color: var(--warm-gray);
+    font-size: 0.75rem;
+}
+
+.day-section__sub {
+    margin-left: auto;
+    font-size: 0.68rem;
+    color: var(--warm-gray);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.day-alert {
+    padding: 0.85rem 1rem;
+    border-radius: 16px;
+    margin-bottom: 1.1rem;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.day-alert__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+.day-alert--red {
+    background: rgba(199, 62, 29, 0.06);
+    border-color: rgba(199, 62, 29, 0.22);
+}
+
+.day-alert--red .day-alert__label { color: var(--vermillion); }
+
+.day-alert--amber {
+    background: rgba(180, 120, 40, 0.06);
+    border-color: rgba(180, 120, 40, 0.22);
+}
+
+.day-alert--amber .day-alert__label { color: #9a6b1f; }
+
+.day-alert__body {
+    font-size: 0.85rem;
+    line-height: 1.75;
+    color: #4a4032;
+}
+
+.day-alert__body b {
+    color: var(--ink);
+}
+
+.day-alert ul,
+.day-alert ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.day-alert li {
+    position: relative;
+    padding-left: 0.9rem;
+    margin-top: 0.35rem;
+    font-size: 0.82rem;
+    line-height: 1.75;
+    color: #4a4032;
+}
+
+.day-alert li:first-child {
+    margin-top: 0;
+}
+
+.day-alert li::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+    top: -0.08em;
+    font-weight: 900;
+    color: var(--warm-gray);
+}
+
+.day-meals {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.7rem;
+}
+
+.day-meal {
+    padding: 0.85rem 0.95rem;
+    border-radius: 16px;
+    background: rgba(255, 253, 248, 0.94);
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 6px 16px rgba(80, 60, 30, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.day-meal__slot {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+}
+
+.day-meal__slot i {
+    font-size: 0.72rem;
+    color: var(--vermillion);
+}
+
+.day-meal__body {
+    font-size: 0.83rem;
+    line-height: 1.7;
+    color: #3d3525;
+}
+
+.day-section > .grid > div {
+    min-width: 0;
+    padding: 0.95rem 1.05rem 1rem;
+    background: rgba(255, 253, 248, 0.92);
+    border: 1px solid rgba(200, 185, 160, 0.26);
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(80, 60, 30, 0.04);
+}
+
+.day-section > .grid > div > span {
+    display: block;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: var(--warm-gray);
+}
+
+.day-section > .grid > div > p {
+    color: #3d3525;
+    line-height: 1.8;
+}
+
+.day-section > ol,
+.day-section > p {
+    padding: 0.95rem 1.1rem;
+    background: rgba(255, 253, 248, 0.82);
+    border: 1px solid rgba(200, 185, 160, 0.22);
+    border-radius: 16px;
+    color: #3d3525;
+}
+
+.day-section > ol {
+    padding-left: 2.2rem;
+}
+
+.day-section > ol li {
+    margin-top: 0.35rem;
+}
+
+.day-section > ol li:first-child {
+    margin-top: 0;
+}
+
+.day-transit {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    align-items: center;
+}
+
+.day-transit__chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.38rem 0.72rem;
+    border-radius: 9999px;
+    background: rgba(250, 246, 239, 0.92);
+    border: 1px solid var(--border-soft);
+    font-size: 0.72rem;
+    color: #4a4032;
+    font-weight: 600;
+}
+
+.day-transit__chip i {
+    color: var(--warm-gray);
+    font-size: 0.62rem;
+}
+
+.day-transit__note {
+    flex-basis: 100%;
+    font-size: 0.72rem;
+    color: var(--warm-gray);
+    line-height: 1.6;
+    margin-top: 0.15rem;
+}
+
+@media (max-width: 639px) {
+    .day-meals {
+        grid-template-columns: 1fr;
+    }
+    .day-section__head {
+        flex-wrap: wrap;
+    }
+}
+
 .hero-banner {
     background: linear-gradient(135deg, #faf6ef 0%, #f5efe4 48%, #ede6d8 100%) !important;
 }
@@ -703,7 +951,7 @@ body > nav .bg-slate-100 {
     line-height: 1.85;
 }
 
-#daily .info-card > div:last-child > div:not(.grid) {
+#daily .info-card > div:last-child > div:not(.grid):not(.day-section):not(.day-alert):not(.day-note) {
     border-radius: 20px;
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
 }
@@ -1011,7 +1259,48 @@ body > nav .bg-slate-100 {
     }
 
     #daily .info-card > div:last-child {
-        padding: 1rem;
+        padding: 1.1rem 1rem 1.15rem;
+    }
+
+    .day-section {
+        margin-top: 1.2rem;
+    }
+
+    .day-section__head {
+        flex-wrap: wrap;
+        gap: 0.45rem;
+    }
+
+    .day-section__sub {
+        margin-left: 0;
+        width: 100%;
+        font-size: 0.64rem;
+    }
+
+    .day-section > .grid > div {
+        padding: 0.8rem 0.9rem 0.85rem;
+    }
+
+    .day-section > ol,
+    .day-section > p {
+        padding: 0.8rem 0.9rem;
+    }
+
+    .day-section > ol {
+        padding-left: 2rem;
+    }
+
+    .day-meals {
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+    }
+
+    .day-meal {
+        padding: 0.8rem 0.9rem;
+    }
+
+    .day-alert {
+        padding: 0.8rem 0.9rem;
     }
 
     #daily .space-y-6 {
