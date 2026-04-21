@@ -226,6 +226,10 @@ body > nav .bg-slate-100 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
+.day-spot-grid--two {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
 .day-spot-card {
     padding: 0.95rem 1rem;
     border-radius: 18px;
@@ -248,6 +252,8 @@ body > nav .bg-slate-100 {
     font-size: 0.95rem;
     font-weight: 800;
     line-height: 1.28;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .day-spot-card__desc {
@@ -255,6 +261,8 @@ body > nav .bg-slate-100 {
     color: #4a4032;
     font-size: 0.88rem;
     line-height: 1.75;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .day-spot-list {
@@ -368,6 +376,8 @@ body > nav .bg-slate-100 {
     font-size: 0.85rem;
     line-height: 1.75;
     color: #4a4032;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .day-alert__body b {
@@ -440,6 +450,8 @@ body > nav .bg-slate-100 {
     font-size: 0.83rem;
     line-height: 1.7;
     color: #3d3525;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .day-section > .grid > div {
@@ -463,6 +475,8 @@ body > nav .bg-slate-100 {
 .day-section > .grid > div > p {
     color: #3d3525;
     line-height: 1.8;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .day-section > ol,
@@ -617,6 +631,11 @@ body > nav .bg-slate-100 {
     background: rgba(250, 246, 239, 0.94);
     border: 1px solid var(--border-soft);
     box-shadow: 0 4px 14px rgba(80, 60, 30, 0.05);
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    text-align: left;
 }
 
 .spot-chip {
@@ -970,6 +989,10 @@ body > nav .bg-slate-100 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
+#daily .info-card .day-spot-grid.day-spot-grid--two {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
 #daily .info-card .day-spot-grid--three {
     grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -979,9 +1002,48 @@ body > nav .bg-slate-100 {
     border-radius: 28px;
 }
 
+#daily .day-closing-card.day-closing-card--departure {
+    background: linear-gradient(180deg, rgba(255, 253, 248, 0.98), rgba(247, 242, 234, 0.98));
+    border-left-color: rgba(143, 122, 95, 0.45) !important;
+    box-shadow: 0 20px 42px rgba(80, 60, 30, 0.06);
+}
+
 .day-closing-card__header {
     background: linear-gradient(180deg, rgba(245, 238, 226, 0.98), rgba(240, 232, 218, 0.92));
     border-color: var(--border-soft);
+}
+
+#daily .day-closing-card--departure .day-closing-card__header {
+    position: relative;
+    background:
+        radial-gradient(circle at 18% 22%, rgba(180, 120, 40, 0.06), transparent 28%),
+        linear-gradient(180deg, rgba(251, 247, 240, 0.98), rgba(244, 237, 227, 0.95));
+}
+
+#daily .day-closing-card.day-closing-card--departure > div:first-child {
+    background:
+        radial-gradient(circle at 18% 22%, rgba(180, 120, 40, 0.06), transparent 28%),
+        linear-gradient(180deg, rgba(251, 247, 240, 0.98), rgba(244, 237, 227, 0.95)) !important;
+    color: var(--ink) !important;
+    border-right: 1px solid rgba(180, 160, 130, 0.18);
+    min-width: clamp(11.5rem, 14vw, 13.5rem);
+}
+
+#daily .day-closing-card--departure .day-closing-card__header > * {
+    position: relative;
+    z-index: 1;
+}
+
+.day-closing-card__lead {
+    color: var(--warm-gray);
+}
+
+#daily .day-closing-card.day-closing-card--departure > div:first-child h3 {
+    color: var(--ink) !important;
+}
+
+#daily .day-closing-card.day-closing-card--departure > div:first-child p.day-closing-card__lead {
+    color: var(--warm-gray) !important;
 }
 
 #daily .day-closing-card > .day-closing-card__header h3 {
@@ -998,6 +1060,7 @@ body > nav .bg-slate-100 {
     gap: 1rem;
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
 #daily .day-closing-card > div:last-child > div {
@@ -1055,6 +1118,23 @@ body > nav .bg-slate-100 {
     background: rgba(250, 246, 239, 0.88);
     border: 1px solid var(--border-soft);
     box-shadow: none;
+}
+
+#daily .day-closing-card--departure .day-alert {
+    background: linear-gradient(135deg, rgba(180, 120, 40, 0.08), rgba(255, 252, 247, 0.92));
+    border-color: rgba(180, 120, 40, 0.2);
+}
+
+#daily .day-closing-card--departure .day-section > .grid > div,
+#daily .day-closing-card--departure .day-meal,
+#daily .day-closing-card--departure .day-spot-card {
+    background: rgba(255, 252, 247, 0.92);
+    border-color: rgba(180, 160, 130, 0.24);
+}
+
+#daily .day-closing-card--departure .day-note {
+    background: rgba(244, 237, 227, 0.78);
+    border-color: rgba(180, 160, 130, 0.28);
 }
 
 #daily .day-closing-card .day-note {
@@ -1215,6 +1295,10 @@ body > nav .bg-slate-100 {
 
 @media (min-width: 1024px) {
     .packing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #daily .info-card .day-spot-grid.day-spot-grid--two {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
