@@ -48,7 +48,8 @@ const versionedAssets = [
 ];
 
 for (const asset of versionedAssets) {
-  distIndexHtml = distIndexHtml.replaceAll(asset, `${asset}?v=${cacheBuster}`);
+  const escapedAsset = asset.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  distIndexHtml = distIndexHtml.replace(new RegExp(`${escapedAsset}(\\?[^"'\\s>]*)?`, 'g'), `${asset}?v=${cacheBuster}`);
 }
 
 writeFileSync(distIndexPath, distIndexHtml);
