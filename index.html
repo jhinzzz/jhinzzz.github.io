@@ -67,41 +67,69 @@
     <main id="view-itinerary" class="view-section active pt-32 lg:pt-20">
         <!-- Hero -->
         <section class="hero-banner relative pt-8 pb-12 bg-white border-b border-slate-200">
-            <div class="max-w-7xl mx-auto px-4 hero-banner__grid">
-                <div class="hero-banner__copy text-center lg:text-left">
-                    <p class="hero-kicker text-[11px] font-bold uppercase tracking-[0.35em] text-slate-400 mb-4">TOKYO GUIDE / EDITION 01</p>
-                    <h1 class="hero-title text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4">东京六天五晚松弛感行程</h1>
-                    <p class="hero-lead text-lg text-slate-600 font-medium mb-6">4月29日 - 5月4日 · 深度浪漫体验版</p>
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 text-xs md:text-sm">
-                        <span class="px-3 py-1 bg-red-50 text-red-600 font-bold border border-red-200 rounded-full"><i class="fa-solid fa-triangle-exclamation"></i> 避开黄金周人潮</span>
-                        <span class="px-3 py-1 bg-slate-50 text-slate-700 font-medium border border-slate-200 rounded-full"><i class="fa-solid fa-plane"></i> HKG 09:00 飞 / NRT 17:05 返</span>
+            <div class="max-w-7xl mx-auto px-4 hero-banner__grid hero-dashboard">
+                <div class="hero-banner__copy hero-dashboard__intro text-center lg:text-left">
+                    <p class="hero-kicker text-[11px] font-bold uppercase tracking-[0.35em] text-slate-400 mb-4">TOKYO FIELD GUIDE / 2026</p>
+                    <h1 class="hero-title text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-4">东京六天五晚行程管家</h1>
+                    <p class="hero-lead text-lg text-slate-600 font-medium mb-6">4月29日 - 5月4日 · 秋叶原 4 晚 + 浅草 1 晚 · 成田往返香港</p>
+                    <div class="hero-status-grid">
+                        <div>
+                            <span>入境</span>
+                            <strong>HKG 09:00 → NRT</strong>
+                        </div>
+                        <div>
+                            <span>返程</span>
+                            <strong>NRT 17:05 → HKG</strong>
+                        </div>
+                        <div>
+                            <span>风险</span>
+                            <strong>黄金周 / 退税排队</strong>
+                        </div>
                     </div>
                     <div class="hero-quick-links mt-6 flex flex-wrap justify-center lg:justify-start gap-2 text-xs md:text-sm">
-                        <a href="#packing" class="px-3 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:text-blue-700 transition-colors">必备物品</a>
-                        <a href="#prep" class="px-3 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:text-blue-700 transition-colors">行前准备</a>
+                        <a href="#safety" class="px-3 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:text-blue-700 transition-colors">应急联络</a>
                         <a href="#daily" class="px-3 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:text-blue-700 transition-colors">每日路线</a>
+                        <a href="#shop-brands" class="px-3 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:text-blue-700 transition-colors">烟酒茶叶雪茄</a>
                         <a href="#day-disney" class="px-3 py-2 rounded-full border border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:text-blue-700 transition-colors">迪士尼路线</a>
                     </div>
                 </div>
-                <aside class="hero-banner__panel">
-                    <div class="text-[11px] uppercase tracking-[0.35em] text-slate-400 font-bold mb-4">Trip Snapshot</div>
-                    <div class="flex items-end justify-between gap-4 mb-4">
-                        <div>
-                            <div class="text-slate-400 text-xs uppercase tracking-[0.28em] font-semibold mb-1">Flight</div>
-                            <div class="text-2xl font-black text-white">HKG → NRT</div>
-                        </div>
-                        <div class="text-right">
-                            <div class="text-slate-400 text-xs uppercase tracking-[0.28em] font-semibold mb-1">Stay</div>
-                            <div class="text-2xl font-black text-white">6D / 5N</div>
-                        </div>
+
+                <aside class="hero-emergency" aria-label="应急联络卡片">
+                    <div class="hero-emergency__header">
+                        <span>Emergency Card</span>
+                        <i class="fa-solid fa-kit-medical"></i>
                     </div>
-                    <div class="hero-route-line" aria-hidden="true"></div>
-                    <ul class="hero-banner__list mt-5 space-y-3 text-sm text-slate-200">
-                        <li class="flex gap-3"><span class="text-blue-300 font-bold w-24 shrink-0">Priority</span><span>避开黄金周人潮，保留松弛感。</span></li>
-                        <li class="flex gap-3"><span class="text-blue-300 font-bold w-24 shrink-0">Coverage</span><span>行程 / 迪士尼 / 美食 / 购物全保留。</span></li>
-                        <li class="flex gap-3"><span class="text-blue-300 font-bold w-24 shrink-0">Delivery</span><span>适合手机浏览，也适合电脑端长读。</span></li>
-                    </ul>
+                    <h2>出事先打电话，不先查攻略</h2>
+                    <div class="hero-emergency__numbers">
+                        <a href="tel:110"><span>警察</span><strong>110</strong></a>
+                        <a href="tel:119"><span>消防 / 救护</span><strong>119</strong></a>
+                        <a href="tel:118"><span>海上事故</span><strong>118</strong></a>
+                    </div>
+                    <a class="hero-emergency__hotline" href="tel:+815038162787">
+                        <span>JNTO 中文游客热线</span>
+                        <strong>+81-50-3816-2787</strong>
+                    </a>
+                    <p>支持中文 / 英文 / 韩文，24 小时。医疗去向、事故、灾害和旅游沟通都先用它兜底。</p>
                 </aside>
+
+                <div class="hero-route-board" aria-label="行程关键节点">
+                    <div class="hero-route-board__head">
+                        <span>Route Board</span>
+                        <strong>先看当天，不迷路</strong>
+                    </div>
+                    <div class="hero-route-board__days">
+                        <a href="#daily"><span>D1</span>秋叶原落地</a>
+                        <a href="#day-disney"><span>D2</span>迪士尼全日</a>
+                        <a href="#daily"><span>D3</span>原宿东京塔</a>
+                        <a href="#daily"><span>D4</span>富士山一日团</a>
+                        <a href="#shop-brands"><span>D5</span>浅草台场银座</a>
+                        <a href="#transport"><span>D6</span>成田返港</a>
+                    </div>
+                    <div class="hero-route-board__alert">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <p><b>5/3 购物：</b>茶叶在银座买，酒类轻拿；<b>5/4 成田：</b>补獭祭和 Peace Little Cigar，烟草按香港限额申报。</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -774,11 +802,12 @@
                                     <article class="day-spot-card">
                                         <p class="day-spot-card__eyebrow">购物 / 补给</p>
                                         <h4 class="day-spot-card__title">银座扫货 + 退税一次做完</h4>
-                                        <p class="day-spot-card__desc">GINZA SIX、Itoya、UNIQLO 旗舰店都适合这天；想补文具 / 厨具顺手拐 Kappabashi；送人茶叶看银座的茶铺。</p>
+                                        <p class="day-spot-card__desc">GINZA SIX、Itoya、UNIQLO 旗舰店都适合这天；茶叶优先去银座三越 B2F 一保堂，酒只买 1 瓶 CHOYA / いいちこ 这种轻决策款，重的清酒留到成田补。</p>
                                         <div class="day-spot-list mt-3">
                                             <span class="spot-chip">GINZA SIX</span>
                                             <span class="spot-chip">Itoya Ginza</span>
                                             <span class="spot-chip">Kappabashi Tool Street</span>
+                                            <span class="spot-chip">Ippodo Tea Ginza Mitsukoshi</span>
                                             <span class="spot-chip">うおがし銘茶 茶・銀座</span>
                                             <span class="spot-chip">HIGASHIYA GINZA</span>
                                         </div>
@@ -811,7 +840,7 @@
                                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                     <div><span class="text-xs font-bold text-slate-400">上午</span><p class="text-sm mt-1">09:00 起床，附近便利店或咖啡店吃早餐；10:30 前收拾完，11:00 退房。</p></div>
                                     <div><span class="text-xs font-bold text-red-500">中午 · 上车窗口</span><p class="text-sm mt-1">11:15–11:30 从浅草出发去京成上野 / 日暮里。<b>12:00–12:30 任一班 Skyliner</b> 都可，12:30 作为最晚目标。</p></div>
-                                    <div><span class="text-xs font-bold text-slate-400">下午</span><p class="text-sm mt-1">13:10 到机场，值机托运后逛免税店；17:05 登机返港。</p></div>
+                                    <div><span class="text-xs font-bold text-slate-400">下午</span><p class="text-sm mt-1">13:10 到机场，值机托运后逛免税店；酒类补獭祭 45，烟只在确认香港限额/愿意申报时买，17:05 登机返港。</p></div>
                                 </div>
                             </div>
                             <div class="day-section">
@@ -1028,7 +1057,7 @@
                             <div>
                                 <p class="text-xs font-bold text-slate-600 mb-1">5/4 | 成田返程</p>
                                 <h3 class="text-xl font-black text-slate-900">最后补货 + 机场购物</h3>
-                                <p class="text-sm text-slate-600 mt-1">返程日从浅草出发，不加跨区逛点，把早餐和机场补给合并最省心。</p>
+                                <p class="text-sm text-slate-600 mt-1">返程日从浅草出发，不加跨区逛点，把早餐和机场补给合并最省心；獭祭放机场买，烟草按香港限额谨慎处理。</p>
                             </div>
                             <span class="px-2 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold">逛点</span>
                         </div>
@@ -1047,6 +1076,9 @@
                                     <span class="spot-chip">Fa-So-La</span>
                                     <span class="spot-chip">ANA FESTA</span>
                                     <span class="spot-chip">Narita Airport Duty Free</span>
+                                    <span class="spot-chip">Dassai 45</span>
+                                    <span class="spot-chip">Seven Stars Duty Free</span>
+                                    <span class="spot-chip">Peace Little Cigar</span>
                                 </div>
                             </div>
                         </div>
@@ -1593,60 +1625,111 @@
             </div>
         </section>
 
-        <!-- 烟酒免税与高奢 -->
+        <!-- 烟酒茶叶：日本特色且价差明确 -->
         <section id="shop-brands" class="py-12 bg-slate-50 border-t border-slate-200">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-wine-glass text-blue-600"></i> 烟酒免税与高奢选购</h2>
+                <h2 class="section-header text-2xl font-bold text-slate-900"><i class="fa-solid fa-wine-glass text-blue-600"></i> 烟酒茶叶：日本特色且价差明确</h2>
+                <p class="section-subtitle">按本次 5/3 银座、5/4 成田返程动线安排，只保留“日本特色明确、比国内/跨境渠道更值得买”的项目。参考汇率按 ¥100≈RMB4.3 粗算，价格以 2026-04-25 查询为准。</p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                     
                     <div class="info-card p-5 border-t-4 border-t-emerald-600 flex flex-col">
-                        <h3 class="font-bold text-emerald-900 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-bottle-droplet"></i> 日本威士忌与清酒</h3>
-                        <p class="text-[10px] text-red-500 bg-red-50 px-2 py-1 rounded font-bold mb-3 border border-red-100 text-center">注意神级差价！买前必比价！</p>
+                        <h3 class="font-bold text-emerald-900 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-mug-hot"></i> Day 5 银座买茶</h3>
+                        <p class="text-[10px] text-emerald-700 bg-emerald-50 px-2 py-1 rounded font-bold mb-3 border border-emerald-100 text-center">轻、好送人、不会占托运行李重量</p>
                         <ul class="space-y-3 text-xs text-slate-600 flex-1">
                             <li class="border-b border-slate-100 pb-2">
-                                <span class="font-bold text-slate-800 block mb-1">🥃 白州威士忌真实比价：</span>
-                                ❌ 唐吉诃德 (免税): ¥19,900<br>
-                                ✅ 银座 Ginza Six (含税): <span class="text-emerald-600 font-bold">¥15,400</span><br>
-                                <span class="text-[10px] text-slate-400">退税后差价高达5000+日元！</span>
+                                <span class="font-bold text-slate-800 block mb-1">一保堂 芳泉 Hosen 煎茶 80g</span>
+                                日本官方 ¥1,500，约 RMB64；京都老铺煎茶，比海外官方价和代购渠道更划算。
+                            </li>
+                            <li class="border-b border-slate-100 pb-2">
+                                <span class="font-bold text-slate-800 block mb-1">一保堂 甘露 Kanro 玉露 50g</span>
+                                日本官方 ¥2,000，约 RMB86；玉露比普通绿茶更有日本辨识度，适合送懂茶的人。
                             </li>
                             <li>
-                                <span class="font-bold text-slate-800 block mb-1">🍶 机场补漏：</span>
-                                獭祭清酒、梅酒等，建议最后在成田机场免税店带走，不用拎一路。
+                                <span class="font-bold text-slate-800 block mb-1">购买点</span>
+                                银座三越 B2F 一保堂最顺路；若缺货，换玉露茶包或うおがし銘茶的煎茶小罐。
                             </li>
                         </ul>
                     </div>
 
-                    <div class="info-card p-5 border-t-4 border-t-slate-800">
-                        <h3 class="font-bold text-slate-800 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-smoking"></i> 机场免税香烟</h3>
-                        <p class="text-[10px] text-red-500 bg-red-50 px-2 py-1 rounded font-bold mb-3 border border-red-100 text-center">香港入境限额仅 19 支！买整条需缴税</p>
-                        <ul class="space-y-2 text-xs text-slate-600">
-                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>七星尊贵5包(铁盒)</span><span class="font-medium text-slate-900">¥7,500</span></li>
-                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>七星硬盒 (200支)</span><span class="font-medium text-slate-900">¥4,100</span></li>
-                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>和平软黄特醇</span><span class="font-medium text-slate-900">¥4,300</span></li>
-                            <li class="flex justify-between pb-1"><span>梅比乌斯 (樱花限定)</span><span class="font-medium text-slate-900">约¥5,500</span></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="info-card p-5 border-t-4 border-t-amber-800">
-                        <h3 class="font-bold text-amber-900 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-joint"></i> 进口雪茄名品</h3>
-                        <p class="text-[10px] text-slate-500 mb-3">主战区：六本木高端专卖店</p>
-                        <ul class="space-y-2 text-xs text-slate-600">
-                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>COHIBA Siglo II (单支)</span><span class="font-medium text-slate-900">¥3,100</span></li>
-                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>COHIBA Behike 52 (单支)</span><span class="font-medium text-slate-900">约 ¥8,000–12,000</span></li>
-                            <li class="flex justify-between border-b border-slate-50 pb-2"><span>Davidoff Escurio (6支)</span><span class="font-medium text-slate-900">¥7,000</span></li>
-                            <li class="flex justify-between pb-1"><span>Camaroto 红盒雪茄</span><span class="font-medium text-slate-900">¥3,900</span></li>
+                    <div class="info-card p-5 border-t-4 border-t-amber-600">
+                        <h3 class="font-bold text-amber-900 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-bottle-droplet"></i> Day 5 银座买酒</h3>
+                        <p class="text-[10px] text-amber-700 bg-amber-50 px-2 py-1 rounded font-bold mb-3 border border-amber-100 text-center">只买 1 瓶，重酒留给机场</p>
+                        <ul class="space-y-3 text-xs text-slate-600">
+                            <li class="border-b border-slate-100 pb-2">
+                                <span class="font-bold text-slate-800 block mb-1">いいちこ iichiko 麦烧酎 900ml</span>
+                                日本参考 ¥1,075 左右，约 RMB46；JETRO 北京样本同类 750ml 到 RMB148，价差明显。
+                            </li>
+                            <li class="border-b border-slate-100 pb-2">
+                                <span class="font-bold text-slate-800 block mb-1">The CHOYA 熟成1年 / 纪州梅酒 720ml</span>
+                                日本参考 ¥1,155 起，约 RMB50；国内样本梅酒多在 RMB115-389/720ml。
+                            </li>
+                            <li>
+                                <span class="font-bold text-slate-800 block mb-1">购买点</span>
+                                银座三越 / GINZA SIX 周边酒铺顺手看；看到合适价格再买，不为酒专门绕路。
+                            </li>
                         </ul>
                     </div>
                     
                     <div class="info-card p-5 border-t-4 border-t-blue-600">
-                        <h3 class="font-bold text-blue-900 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-bag-shopping"></i> 银座高奢退税指南</h3>
-                        <p class="text-[10px] text-slate-500 mb-3">银座三越 / 和光 / GINZA SIX</p>
+                        <h3 class="font-bold text-blue-900 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-plane-departure"></i> Day 6 成田补酒</h3>
+                        <p class="text-[10px] text-blue-700 bg-blue-50 px-2 py-1 rounded font-bold mb-3 border border-blue-100 text-center">值机托运后，安检后免税店补轻量目标</p>
                         <ul class="space-y-3 text-xs text-slate-600">
-                            <li><i class="fa-solid fa-check text-green-500 mr-1"></i> <b class="text-slate-800">三越百货 95折：</b>带护照在一楼领 Guest Card，买奢侈品(部分除外)直接 <span class="bg-blue-100 px-1 rounded font-bold">折上免税</span>。</li>
-                            <li><i class="fa-solid fa-check text-green-500 mr-1"></i> <b class="text-slate-800">Japan Duty Free：</b>三越8楼市中心免税店，买完 <span class="font-bold text-slate-900">直接去机场提货</span>，解放双手极度松弛。</li>
+                            <li class="border-b border-slate-100 pb-2">
+                                <span class="font-bold text-slate-800 block mb-1">獭祭 45 纯米大吟酿 720ml</span>
+                                日本酒铺参考 ¥2,475，约 RMB106；日本清酒代表款，国内进口渠道通常更高。
+                            </li>
+                            <li class="border-b border-slate-100 pb-2">
+                                <span class="font-bold text-slate-800 block mb-1">三得利 角瓶 700ml</span>
+                                日本参考 ¥1,751-2,101，约 RMB75-90；日本高球文化代表，但 40% 酒精，回香港按烈酒限额看。
+                            </li>
+                            <li>
+                                <span class="font-bold text-slate-800 block mb-1">购买点</span>
+                                Fa-So-La / Narita Airport Duty Free 有现货再买；热门威士忌如山崎、白州、响不列必买，缺货和溢价风险高。
+                            </li>
                         </ul>
                     </div>
+                    
+                    <div class="info-card p-5 border-t-4 border-t-slate-800">
+                        <h3 class="font-bold text-slate-800 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-smoking"></i> Day 6 香烟只做条件项</h3>
+                        <p class="text-[10px] text-red-500 bg-red-50 px-2 py-1 rounded font-bold mb-3 border border-red-100 text-center">回香港免税香烟仅 19 支，整条需申报/缴税</p>
+                        <ul class="space-y-3 text-xs text-slate-600">
+                            <li class="border-b border-slate-100 pb-2">
+                                <span class="font-bold text-slate-800 block mb-1">Seven Stars 硬盒 200支</span>
+                                ANA Duty Free ¥4,100，约 RMB176；日本老牌，辨识度比国际牌更强。
+                            </li>
+                            <li class="border-b border-slate-100 pb-2">
+                                <span class="font-bold text-slate-800 block mb-1">MEVIUS 200支</span>
+                                ANA Duty Free ¥3,900，约 RMB168；日本 JT 代表品牌，价格明确便宜。
+                            </li>
+                            <li>
+                                <span class="font-bold text-slate-800 block mb-1">执行建议</span>
+                                只在确认愿意申报或后续不是直接入境香港时买；若只是免税自用，不建议买整条。
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card p-5 border-t-4 border-t-purple-500">
+                        <h3 class="font-bold text-purple-900 mb-3 text-sm flex items-center gap-1"><i class="fa-solid fa-smoking"></i> Day 6 雪茄尝鲜</h3>
+                        <p class="text-[10px] text-purple-700 bg-purple-50 px-2 py-1 rounded font-bold mb-3 border border-slate-100 text-center">唯一过筛：日本 JT 系小雪茄，非进口古巴雪茄</p>
+                        <ul class="space-y-3 text-xs text-slate-600">
+                            <li class="border-b border-slate-100 pb-2">
+                                <span class="font-bold text-slate-800 block mb-1">Peace Little Cigar 20支</span>
+                                JT Peace 系列小雪茄，市区价 ¥650/盒；机场免税常见 ¥6,000/10盒，比国内代购常见价更便宜。
+                            </li>
+                            <li class="border-b border-slate-100 pb-2">
+                                <span class="font-bold text-slate-800 block mb-1">购买点</span>
+                                5/3 银座可顺路问 Ginza Kikusui；更省心是 5/4 成田 ANA Duty Free / JAL Duty Free 有现货再买。
+                            </li>
+                            <li>
+                                <span class="font-bold text-slate-800 block mb-1">执行建议</span>
+                                香港免税雪茄仅 1 支或总重 25g；想买整盒/整条就按申报处理。Cohiba、Davidoff 不是日本特色，不列入必买。
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-5 rounded-2xl border border-slate-200 bg-white p-4 text-xs text-slate-600 leading-6">
+                    <b class="text-slate-800">来源：</b>一保堂 / 丸久小山园官方价格、ANA Duty Free、JETRO 北京日本酒类样本价、JT Peace Little Cigar 官方价格、Ginza Kikusui 店铺信息、香港海关旅客免税限额、成田机场 Duty Free Pick Up，查询日 2026-04-26。茶叶、酒和烟草价格会随汇率与库存波动，到店以标签价为准。
                 </div>
             </div>
         </section>
@@ -1861,7 +1944,7 @@
                             <p><b>起退金额：</b>单店单笔消费满 <span class="bg-blue-200 px-1 rounded">5,000日元(含税)</span> 即可10%免税。结账出示护照原件。</p>
                             <p><b>包装限制：</b>免税消耗品(食品/药妆)会被装进免税专用密封袋，<span class="text-red-500 font-bold">在日本境内绝对不可拆封</span>，否则可能查补税。</p>
                             <p><b>液体托运：</b>免税买的化妆水、<span class="font-bold border-b border-blue-400">酒类（单件超100ml）必须放托运行李</span>，切勿随身带上飞机。</p>
-                            <p><b>海关限额：</b>回国入关时，香港海关免税香烟限带 <span class="bg-blue-200 px-1 rounded">19 支</span>（远低于国际通用的 200 支），免税酒类限带 <span class="bg-blue-200 px-1 rounded">1 瓶（1L 以内、酒精 ≤30%）</span>；超量需缴税，出发前查最新限额。</p>
+                            <p><b>香港入境限额：</b>免税香烟限带 <span class="bg-blue-200 px-1 rounded">19 支</span>；雪茄限 <span class="bg-blue-200 px-1 rounded">1 支或 25g</span>；烈酒（酒精浓度高于 30%）免税限带 <span class="bg-blue-200 px-1 rounded">1L</span>。超量烟草直接按申报处理。</p>
                         </div>
                     </div>
                 </div>

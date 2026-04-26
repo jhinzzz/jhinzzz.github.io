@@ -543,12 +543,32 @@ body > nav .bg-slate-100 {
 }
 
 .hero-banner {
-    background: linear-gradient(135deg, #faf6ef 0%, #f5efe4 48%, #ede6d8 100%) !important;
+    background:
+        linear-gradient(110deg, rgba(250, 246, 239, 0.96) 0%, rgba(245, 239, 228, 0.92) 48%, rgba(220, 231, 232, 0.9) 100%),
+        url("https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1800&q=80") center / cover !important;
+}
+
+.hero-banner::before,
+.hero-banner::after {
+    display: none;
 }
 
 .hero-banner__grid {
     gap: clamp(1.75rem, 4vw, 4.5rem);
     padding-block: clamp(2.75rem, 6vw, 5.75rem);
+}
+
+.hero-dashboard {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.72fr);
+    grid-template-areas:
+        "intro emergency"
+        "route route";
+    align-items: stretch;
+}
+
+.hero-dashboard__intro {
+    grid-area: intro;
 }
 
 .hero-banner__copy {
@@ -570,10 +590,209 @@ body > nav .bg-slate-100 {
     font-size: clamp(1rem, 1.1vw, 1.15rem);
 }
 
+.hero-status-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    max-width: 42rem;
+}
+
+.hero-status-grid div {
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(80, 60, 30, 0.14);
+    background: rgba(255, 253, 248, 0.82);
+    border-radius: 18px;
+}
+
+.hero-status-grid span,
+.hero-route-board__head span,
+.hero-emergency__header span {
+    display: block;
+    margin-bottom: 0.28rem;
+    color: var(--warm-gray);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.hero-status-grid strong {
+    color: var(--ink);
+    font-size: 0.92rem;
+    line-height: 1.35;
+}
+
 .hero-quick-links a {
     border-radius: 9999px;
     background: rgba(255, 253, 248, 0.92);
     box-shadow: 0 10px 24px rgba(80, 60, 30, 0.06);
+}
+
+.hero-emergency {
+    grid-area: emergency;
+    padding: 1.35rem;
+    border: 1px solid rgba(127, 29, 29, 0.2);
+    border-radius: 28px;
+    background: linear-gradient(180deg, rgba(69, 22, 22, 0.97), rgba(50, 33, 28, 0.93));
+    color: #fffaf3;
+    box-shadow: 0 28px 70px rgba(69, 22, 22, 0.22);
+}
+
+.hero-emergency__header,
+.hero-route-board__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.hero-emergency__header span,
+.hero-emergency p {
+    color: rgba(255, 250, 243, 0.72);
+}
+
+.hero-emergency__header i {
+    color: #fca5a5;
+}
+
+.hero-emergency h2 {
+    margin-bottom: 1rem;
+    color: #fffaf3;
+    font-size: 1.45rem;
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+}
+
+.hero-emergency__numbers {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.55rem;
+}
+
+.hero-emergency__numbers a,
+.hero-emergency__hotline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 4.4rem;
+    padding: 0.82rem;
+    border: 1px solid rgba(255, 250, 243, 0.14);
+    border-radius: 16px;
+    background: rgba(255, 250, 243, 0.08);
+    transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.hero-emergency__numbers a:hover,
+.hero-emergency__hotline:hover {
+    transform: translateY(-2px);
+    border-color: rgba(252, 165, 165, 0.42);
+    background: rgba(255, 250, 243, 0.13);
+}
+
+.hero-emergency__numbers span,
+.hero-emergency__hotline span {
+    color: rgba(255, 250, 243, 0.7);
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.hero-emergency__numbers strong {
+    color: #fffaf3;
+    font-size: 1.45rem;
+    line-height: 1.1;
+}
+
+.hero-emergency__hotline {
+    margin-top: 0.6rem;
+    min-height: auto;
+}
+
+.hero-emergency__hotline strong {
+    color: #fffaf3;
+    font-size: 1.05rem;
+}
+
+.hero-emergency p {
+    margin-top: 0.85rem;
+    font-size: 0.78rem;
+    line-height: 1.7;
+}
+
+.hero-route-board {
+    grid-area: route;
+    padding: 1rem;
+    border: 1px solid rgba(80, 60, 30, 0.14);
+    border-radius: 26px;
+    background: rgba(255, 253, 248, 0.88);
+    box-shadow: 0 20px 52px rgba(80, 60, 30, 0.1);
+}
+
+.hero-route-board__head {
+    margin-bottom: 0.7rem;
+}
+
+.hero-route-board__head strong {
+    color: var(--ink);
+    font-size: 0.95rem;
+}
+
+.hero-route-board__days {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.55rem;
+}
+
+.hero-route-board__days a {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-height: 3.45rem;
+    padding: 0.72rem 0.8rem;
+    border-radius: 16px;
+    border: 1px solid rgba(180, 160, 130, 0.18);
+    background: rgba(250, 246, 239, 0.78);
+    color: var(--ink);
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.25;
+    transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.hero-route-board__days a:hover {
+    transform: translateY(-2px);
+    border-color: rgba(80, 60, 30, 0.28);
+    background: rgba(255, 253, 248, 0.96);
+}
+
+.hero-route-board__days span {
+    display: inline-grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    flex: 0 0 2rem;
+    border-radius: 9999px;
+    background: #2c2418;
+    color: #fffaf3;
+    font-size: 0.7rem;
+}
+
+.hero-route-board__alert {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-top: 0.85rem;
+    padding: 0.8rem 0.9rem;
+    border-radius: 18px;
+    background: rgba(254, 242, 242, 0.74);
+    color: #7f1d1d;
+    font-size: 0.82rem;
+    line-height: 1.65;
+}
+
+.hero-route-board__alert i {
+    margin-top: 0.18rem;
 }
 
 .hero-banner__panel {
@@ -1238,6 +1457,13 @@ body > nav .bg-slate-100 {
         grid-template-columns: 1fr;
     }
 
+    .hero-dashboard {
+        grid-template-areas:
+            "intro"
+            "emergency"
+            "route";
+    }
+
     .guide-layout {
         gap: 1.15rem;
     }
@@ -1259,6 +1485,14 @@ body > nav .bg-slate-100 {
 
     .hero-banner__panel {
         order: 2;
+    }
+
+    .hero-status-grid {
+        max-width: none;
+    }
+
+    .hero-route-board__days {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     #daily .info-card {
@@ -1308,14 +1542,114 @@ body > nav .bg-slate-100 {
 }
 
 @media (max-width: 639px) {
+    html {
+        font-size: 16px;
+        scroll-padding-top: 5rem;
+    }
+
     body {
         background:
             radial-gradient(circle at 15% 0, rgba(61, 90, 128, 0.06), transparent 26%),
             linear-gradient(180deg, #faf6ef 0%, #f5f0e6 42%, #ede6d8 100%);
     }
 
+    body > nav {
+        position: sticky !important;
+        top: 0;
+        left: auto;
+        right: auto;
+        max-height: none;
+    }
+
+    body > nav .max-w-7xl {
+        padding-left: 0.85rem;
+        padding-right: 0.85rem;
+    }
+
+    body > nav .bg-slate-100 {
+        width: 100%;
+        padding: 0.28rem;
+        gap: 0.18rem;
+    }
+
+    body > nav button[data-mode] {
+        flex: 1 1 0;
+        justify-content: center;
+        min-width: max-content;
+        padding: 0.52rem 0.72rem;
+        font-size: 0.86rem;
+    }
+
+    body > nav button[data-mode] i {
+        margin-right: 0.25rem;
+    }
+
+    #nav-itinerary-links,
+    #nav-food-links,
+    #nav-shopping-links {
+        display: none !important;
+    }
+
+    body > nav a {
+        flex: 0 0 auto;
+        padding: 0.4rem 0.1rem !important;
+        font-size: 0.82rem !important;
+        line-height: 1.2;
+    }
+
+    main.view-section {
+        padding-top: 0 !important;
+    }
+
+    main .text-\[10px\],
+    main .text-\[11px\],
+    main .text-xs {
+        font-size: 0.82rem !important;
+        line-height: 1.55 !important;
+    }
+
+    main .text-sm {
+        font-size: 0.95rem !important;
+        line-height: 1.75 !important;
+    }
+
+    main .text-lg {
+        font-size: 1.08rem !important;
+        line-height: 1.62 !important;
+    }
+
+    .section-subtitle,
+    .info-card p,
+    .explore-card p,
+    .guide-rail__desc,
+    .guide-rail__facts strong,
+    #view-food .info-card li,
+    #view-shopping .info-card li,
+    #food-plan .info-card p,
+    .packing-card__desc {
+        font-size: 0.98rem;
+        line-height: 1.85;
+    }
+
     .hero-banner__grid {
-        padding-block: 2.2rem;
+        padding-block: 1.45rem 2rem;
+    }
+
+    .hero-dashboard {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 1.05rem;
+        min-width: 0;
+    }
+
+    .hero-dashboard__intro,
+    .hero-status-grid,
+    .hero-emergency,
+    .hero-route-board {
+        min-width: 0;
+        max-width: calc(100vw - 2rem);
     }
 
     .hero-banner__panel {
@@ -1323,12 +1657,125 @@ body > nav .bg-slate-100 {
     }
 
     .hero-title {
-        font-size: clamp(2.5rem, 12vw, 3.5rem);
+        max-width: none;
+        font-size: clamp(2.25rem, 10.5vw, 3rem);
+        line-height: 0.98;
+    }
+
+    .hero-lead {
+        max-width: 21rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1.1rem;
+        font-size: 1rem;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+
+    .hero-quick-links {
+        flex-wrap: nowrap !important;
+        justify-content: flex-start !important;
+        overflow-x: auto;
+        margin-left: -0.1rem;
+        padding: 0.1rem 0.15rem 0.45rem;
+        scrollbar-width: none;
+    }
+
+    .hero-quick-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .hero-quick-links a {
+        flex: 0 0 auto;
+        min-height: 2.55rem;
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.9rem !important;
+    }
+
+    .hero-route-board__days {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .hero-status-grid,
+    .hero-emergency__numbers {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-status-grid {
+        gap: 0.45rem;
+        width: calc(100vw - 2rem);
+        max-width: calc(100vw - 2rem);
+        justify-self: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-emergency,
+    .hero-route-board {
+        width: calc(100vw - 2rem);
+        justify-self: center;
+    }
+
+    .hero-status-grid div {
+        display: block;
+        padding: 0.58rem 0.82rem 0.68rem;
+        border-radius: 14px;
+        text-align: left;
+    }
+
+    .hero-status-grid span {
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        margin-bottom: 0.2rem;
+    }
+
+    .hero-status-grid strong {
+        display: block;
+        font-size: 0.88rem;
+        line-height: 1.35;
+        text-align: left;
+        overflow-wrap: anywhere;
+    }
+
+    .hero-emergency,
+    .hero-route-board {
+        border-radius: 22px;
+        padding: 1.05rem;
+    }
+
+    .hero-emergency h2 {
+        font-size: 1.28rem;
+        line-height: 1.18;
+    }
+
+    .hero-emergency__numbers a {
+        min-height: 3.75rem;
+    }
+
+    .hero-emergency__numbers strong {
+        font-size: 1.6rem;
+    }
+
+    .hero-emergency__hotline strong {
+        font-size: 1.08rem;
+        word-break: break-word;
+    }
+
+    .hero-route-board__days a {
+        min-height: 3.4rem;
+        font-size: 0.95rem;
+    }
+
+    .hero-route-board__alert {
+        font-size: 0.92rem;
     }
 
     .section-header {
         gap: 0.65rem;
         margin-bottom: 1rem;
+        font-size: 1.55rem !important;
+        line-height: 1.2;
     }
 
     .section-header i {
@@ -1340,34 +1787,36 @@ body > nav .bg-slate-100 {
     .info-card,
     .explore-card {
         border-radius: 20px;
+        box-shadow: 0 12px 26px rgba(80, 60, 30, 0.06);
     }
 
     #daily .info-card > div:last-child {
-        padding: 1.1rem 1rem 1.15rem;
+        padding: 1.25rem 1rem 1.35rem;
     }
 
     .day-section {
-        margin-top: 1.2rem;
+        margin-top: 1.35rem;
     }
 
     .day-section__head {
         flex-wrap: wrap;
-        gap: 0.45rem;
+        gap: 0.55rem;
     }
 
     .day-section__sub {
         margin-left: 0;
         width: 100%;
-        font-size: 0.64rem;
+        font-size: 0.84rem;
+        line-height: 1.45;
     }
 
     .day-section > .grid > div {
-        padding: 0.8rem 0.9rem 0.85rem;
+        padding: 1rem 1.05rem;
     }
 
     .day-section > ol,
     .day-section > p {
-        padding: 0.8rem 0.9rem;
+        padding: 1rem 1.05rem;
     }
 
     .day-section > ol {
@@ -1376,15 +1825,15 @@ body > nav .bg-slate-100 {
 
     .day-meals {
         grid-template-columns: 1fr;
-        gap: 0.55rem;
+        gap: 0.75rem;
     }
 
     .day-meal {
-        padding: 0.8rem 0.9rem;
+        padding: 1rem 1.05rem;
     }
 
     .day-alert {
-        padding: 0.8rem 0.9rem;
+        padding: 1rem 1.05rem;
     }
 
     #daily .space-y-6 {
@@ -1407,14 +1856,37 @@ body > nav .bg-slate-100 {
     .packing-card,
     .day-spot-card,
     .day-note {
-        border-radius: 16px;
+        border-radius: 18px;
+    }
+
+    .packing-card {
+        padding: 1.1rem;
+    }
+
+    .packing-card__eyebrow {
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+    }
+
+    .packing-card__title {
+        font-size: 1.16rem;
+        line-height: 1.32;
+    }
+
+    .packing-card li {
+        line-height: 1.75;
     }
 
     /* Mobile: Day card left panel stacks on top */
     #daily .info-card > div:first-child {
         min-height: auto;
-        padding: 1.15rem;
+        padding: 1.25rem;
         border-bottom: 1px solid var(--border-soft);
+    }
+
+    #daily .info-card > div:first-child h3 {
+        font-size: 1.7rem;
+        line-height: 1.08;
     }
 
     #daily .day-closing-card .day-closing-card__header {
@@ -1422,15 +1894,16 @@ body > nav .bg-slate-100 {
         border-right: 0;
     }
 
-    /* Mobile: tighter spot chips */
+    /* Mobile: larger touch-friendly chips */
     .spot-chip {
-        padding: 0.38rem 0.65rem;
-        font-size: 0.7rem;
+        padding: 0.55rem 0.78rem;
+        font-size: 0.86rem;
+        line-height: 1.35;
     }
 
     /* Mobile: food grid single column with tighter gaps */
     .day-spot-grid {
-        gap: 0.65rem;
+        gap: 0.85rem;
     }
 
     /* Mobile: section padding tighter */
@@ -1439,19 +1912,31 @@ body > nav .bg-slate-100 {
         margin-top: 1rem;
     }
 
-    /* Mobile: hero kicker smaller */
+    /* Mobile: hero kicker readable without dominating */
     .hero-kicker {
-        font-size: 10px;
-        letter-spacing: 0.28em;
+        font-size: 0.72rem;
+        letter-spacing: 0.2em;
     }
 
     /* Mobile: guide-rail cards tighter */
     .guide-rail__card {
-        padding: 1rem 1.1rem;
+        padding: 1.08rem 1.1rem;
     }
 
     .guide-rail__facts div {
-        padding: 0.7rem 0.8rem;
+        padding: 0.88rem 0.95rem;
+    }
+
+    .guide-rail__links a {
+        font-size: 0.96rem;
+    }
+
+    .day-note,
+    .day-alert__body,
+    .day-meal__body,
+    .day-spot-card__desc {
+        font-size: 0.96rem;
+        line-height: 1.8;
     }
 
     /* Mobile: explore cards */
